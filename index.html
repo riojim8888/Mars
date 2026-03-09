@@ -46,7 +46,7 @@
         radial-gradient(4px 4px at 33% 5%, #ffaa66, rgba(0,0,0,0)),
         radial-gradient(3px 3px at 67% 79%, #c95f37, rgba(0,0,0,0)),
         radial-gradient(2px 2px at 5% 48%, #febc7a, rgba(0,0,0,0)),
-        radial-gradient(8px 8px at 50% 92%, #902e1a, rgba(0,0,0.6));
+        radial-gradient(8px 8px at 50% 92%, #902e1a, rgba(0,0.6));
       background-size: 200% 200%;
       background-color: #0b0d14;
       opacity: 0.85;
@@ -289,6 +289,186 @@
     .feature-item:hover {
       background: rgba(210, 122, 78, 0.1);
     }
+    /* ========== LEARN MORE / PATENTS / CONTENT ADDITIONS ========== */
+    /* Learn More detail block (after shoes) */
+    .learn-more-detail {
+      background: rgba(20, 12, 8, 0.5);
+      backdrop-filter: blur(4px);
+      border-radius: 40px;
+      padding: 40px;
+      margin-top: 50px;
+      border: 1px solid rgba(209, 99, 51, 0.5);
+      transition: 0.3s;
+    }
+    .learn-more-detail:hover {
+      border-color: #ff9066;
+      box-shadow: 0 0 30px rgba(230, 120, 70, 0.3);
+    }
+    .learn-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .learn-card {
+      flex: 1 1 200px;
+      text-align: center;
+      background: rgba(0,0,0,0.25);
+      border-radius: 30px;
+      padding: 25px;
+      border: 1px solid rgba(255, 140, 80, 0.4);
+    }
+    .learn-card i {
+      font-size: 3rem;
+      color: #ffa067;
+      margin-bottom: 15px;
+    }
+    .learn-card h4 {
+      font-size: 1.4rem;
+      color: #ffcfaa;
+    }
+    /* Patents section */
+    #patents {
+      background: transparent;
+    }
+    .patents-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+    .patent-card {
+      background: rgba(15, 10, 8, 0.7);
+      backdrop-filter: blur(5px);
+      border-radius: 35px;
+      padding: 30px 20px;
+      text-align: center;
+      border: 1px solid #c45d33;
+      transition: all 0.25s;
+    }
+    .patent-card:hover {
+      transform: translateY(-10px);
+      border-color: #ff9b6e;
+      box-shadow: 0 15px 30px #902e1a30;
+    }
+    .patent-card i {
+      font-size: 3.2rem;
+      color: #f18456;
+      margin-bottom: 15px;
+    }
+    .patent-card h3 {
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+      color: #ffb48a;
+    }
+    .patent-card p {
+      color: #cfb8a7;
+      font-size: 0.95rem;
+    }
+    .patent-badge {
+      display: inline-block;
+      margin-top: 15px;
+      background: #b3492a60;
+      padding: 5px 20px;
+      border-radius: 40px;
+      color: #ffd4b0;
+      font-size: 0.85rem;
+      border: 1px solid #d9643a;
+    }
+    /* Contact section */
+    #contact {
+      min-height: auto;
+    }
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      background: rgba(8, 6, 5, 0.5);
+      backdrop-filter: blur(5px);
+      border-radius: 60px;
+      padding: 50px 40px;
+      border: 1px solid #ce6e42;
+      margin-top: 20px;
+    }
+    .contact-info {
+      flex: 1 1 280px;
+    }
+    .contact-info h3 {
+      font-size: 2rem;
+      color: #fca975;
+      margin-bottom: 20px;
+    }
+    .contact-info p {
+      margin: 15px 0;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .contact-info i {
+      color: #ff784f;
+      width: 30px;
+      font-size: 1.5rem;
+    }
+    .contact-form {
+      flex: 2 1 360px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .form-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      background: rgba(0,0,0,0.6);
+      border: 1px solid #b95c34;
+      border-radius: 40px;
+      padding: 16px 22px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      color: #f2e1d4;
+      outline: none;
+      transition: 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: #ffa067;
+      box-shadow: 0 0 18px #ff7f4f80;
+    }
+    .form-group textarea {
+      border-radius: 30px;
+      resize: vertical;
+      min-height: 120px;
+    }
+    .half-input {
+      flex: 1 1 calc(50% - 10px);
+      min-width: 200px;
+    }
+    .btn-submit {
+      background: linear-gradient(145deg, #d75a38, #b33e22);
+      border: none;
+      padding: 16px 32px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: 0.2s;
+      border: 1px solid #ff9f6e;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: fit-content;
+    }
+    .btn-submit:hover {
+      background: #e16f4c;
+      transform: scale(1.03);
+      box-shadow: 0 5px 20px #d95b3a;
+    }
     /* Footer */
     footer {
       text-align: center;
@@ -316,12 +496,13 @@
     </div>
   </nav>
 
+  <!-- HOME section -->
   <section id="home" class="page-section">
     <div class="container">
       <div class="mars-grid">
         <div class="mars-text">
           <h1 class="section-title"><i class="fas fa-globe"></i>Mars Health Shoes & Patents</h1>
-          <p>Revolutionizing footwear with Martian technology for unparalleled comfort and innovation.</p>
+          <p style="font-size: 1.3rem; opacity:0.9;">Revolutionizing footwear with Martian technology for unparalleled comfort and innovation.</p>
           <div class="mars-stats">
             <div class="stat-card">
               <i class="fas fa-shoe-prints"></i>
@@ -341,6 +522,7 @@
     </div>
   </section>
 
+  <!-- SHOES section + LEARN MORE integration -->
   <section id="shoes" class="page-section">
     <div class="container">
       <h2 class="section-title"><i class="fas fa-shoe-prints"></i>Our Mars Tech Shoes</h2>
@@ -349,7 +531,7 @@
           <i class="fas fa-shoe-prints"></i>
         </div>
         <div class="shoe-specs">
-          <p>Engineered with Mars-inspired materials for zero-gravity comfort and durability.</p>
+          <p style="font-size: 1.2rem;">Engineered with Mars-inspired materials for zero-gravity comfort and durability.</p>
           <div class="feature-list">
             <div class="feature-item">
               <i class="fas fa-wind"></i> Anti-Gravity Cushioning
@@ -364,7 +546,116 @@
               <i class="fas fa-bolt"></i> Energy-Return Tech
             </div>
           </div>
-          <a href="#contact" class="btn-outline">Learn More</a>
+          <!-- Learn More button (links to learn more anchor) -->
+          <a href="#learn-more" class="btn-outline">Learn More <i class="fas fa-chevron-down"></i></a>
+        </div>
+      </div>
+      
+      <!-- LEARN MORE expanded content (exactly after shoes) -->
+      <div id="learn-more" class="learn-more-detail">
+        <h3 style="font-size: 2rem; color: #ffa67a; margin-bottom: 15px;"><i class="fas fa-mars"></i> Deeper Mars Technology</h3>
+        <p style="margin-bottom: 30px;">Every pair integrates research from Mars colonization trials. Our shoes adapt to low-gravity and harsh terrain – now available on Earth.</p>
+        <div class="learn-grid">
+          <div class="learn-card">
+            <i class="fas fa-microchip"></i>
+            <h4>AI Smart Sole</h4>
+            <p>Real-time gait adaptation using Martian AI algorithms.</p>
+          </div>
+          <div class="learn-card">
+            <i class="fas fa-leaf"></i>
+            <h4>Regolith Fiber</h4>
+            <p>Durable weave inspired by Martian soil, ultra light.</p>
+          </div>
+          <div class="learn-card">
+            <i class="fas fa-temperature-high"></i>
+            <h4>Thermal Buffer</h4>
+            <p>Withstands -100°C to 70°C, tested at Olympus Mons.</p>
+          </div>
+          <div class="learn-card">
+            <i class="fas fa-satellite"></i>
+            <h4>Orbital Sync</h4>
+            <p>Connects to Mars satellites for navigation feedback.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATENTS section (new) -->
+  <section id="patents" class="page-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-file-invoice"></i>Patents & Innovations</h2>
+      <p style="margin-bottom: 20px; font-size: 1.2rem;">We own 50+ interplanetary patents — here are the crown jewels</p>
+      <div class="patents-grid">
+        <div class="patent-card">
+          <i class="fas fa-atom"></i>
+          <h3>Graviton Sole</h3>
+          <p>US11234567B2 · Variable cushioning by magnetic fields</p>
+          <span class="patent-badge">Granted 2026</span>
+        </div>
+        <div class="patent-card">
+          <i class="fas fa-biohazard"></i>
+          <h3>Dust-Free Seal</h3>
+          <p>US11234568B1 · Electrostatic repulsion for regolith</p>
+          <span class="patent-badge">Pending</span>
+        </div>
+        <div class="patent-card">
+          <i class="fas fa-dna"></i>
+          <h3>Myco-Mesh</h3>
+          <p>EP4278901A1 · Fungal mycelium upper, self-repairing</p>
+          <span class="patent-badge">Approved</span>
+        </div>
+        <div class="patent-card">
+          <i class="fas fa-satellite-dish"></i>
+          <h3>CommSole</h3>
+          <p>US11234570B2 · Low-bandwidth antenna in heel</p>
+          <span class="patent-badge">Granted</span>
+        </div>
+        <div class="patent-card">
+          <i class="fas fa-meteor"></i>
+          <h3>Impact Harvester</h3>
+          <p>CN1187629A · Kinetic energy → battery</p>
+          <span class="patent-badge">Filed 2025</span>
+        </div>
+        <div class="patent-card">
+          <i class="fas fa-water"></i>
+          <h3>Hydro-Sorption</h3>
+          <p>US11234573B2 · Moisture capture from thin air</p>
+          <span class="patent-badge">Granted</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT section (new) -->
+  <section id="contact" class="page-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-envelope"></i>Contact Us</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3><i class="fas fa-map-pin"></i> Mars Mission Base</h3>
+          <p><i class="fas fa-location-dot"></i> 1 Orbital Plaza, Mars Colony</p>
+          <p><i class="fas fa-phone-alt"></i> +1 (800) MARS-TECH</p>
+          <p><i class="fas fa-paper-plane"></i> hello@mqtech1.mars</p>
+          <p><i class="fas fa-clock"></i> Mission control: 24/7</p>
+          <div style="margin-top: 30px; display: flex; gap: 20px;">
+            <i class="fab fa-github" style="font-size: 2.2rem; color:#ff9066;"></i>
+            <i class="fab fa-twitter" style="font-size: 2.2rem; color:#ff9066;"></i>
+            <i class="fab fa-linkedin" style="font-size: 2.2rem; color:#ff9066;"></i>
+          </div>
+        </div>
+        <div class="contact-form">
+          <div class="form-group">
+            <input type="text" class="half-input" placeholder="Full Name" value="">
+            <input type="email" class="half-input" placeholder="Email Address" value="">
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Subject (e.g. Patent licensing, partnership)" value="">
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Your message ..."></textarea>
+          </div>
+          <button class="btn-submit"><i class="fas fa-paper-plane"></i> Send transmission</button>
         </div>
       </div>
     </div>

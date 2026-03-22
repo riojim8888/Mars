@@ -1,3 +1,756 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>MQtech1 · 五维健康温控 | 中英日三语职业打卡系统</title>
+    <!-- html2canvas 用于生成海报 -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1A3C4A 0%, #0F2C38 100%);
+            min-height: 100vh;
+            font-family: system-ui, -apple-system, 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
+            padding: 20px 16px 40px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .main-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 48px;
+            overflow: hidden;
+            box-shadow: 0 25px 45px rgba(0,0,0,0.3);
+        }
+
+        .career-header {
+            background: linear-gradient(135deg, #2A6F8F, #1A4A62);
+            padding: 24px 20px;
+            color: white;
+            text-align: center;
+        }
+        .career-badge {
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 6px 20px;
+            border-radius: 60px;
+            font-size: 12px;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .career-name {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .change-career {
+            background: none;
+            border: 1px solid rgba(255,255,255,0.5);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 60px;
+            font-size: 12px;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+        .lang-hint {
+            font-size: 9px;
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+
+        .dual-buttons {
+            display: flex;
+            gap: 16px;
+            padding: 24px 20px 20px;
+        }
+        .btn {
+            flex: 1;
+            border: none;
+            border-radius: 80px;
+            padding: 20px 12px;
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .btn-heat { background: linear-gradient(145deg, #E67E22, #D35400); }
+        .btn-heat.active { background: linear-gradient(145deg, #F39C12, #E67E22); transform: scale(0.98); }
+        .btn-cool { background: linear-gradient(145deg, #3498DB, #2980B9); }
+        .btn-cool.active { background: linear-gradient(145deg, #5DADE2, #3498DB); transform: scale(0.98); }
+        .btn .main-text { display: block; font-size: 24px; line-height: 1.2; }
+        .btn .sub-text { display: block; font-size: 10px; opacity: 0.9; margin-top: 4px; }
+        .btn .lang-sub {
+            display: block;
+            font-size: 8px;
+            opacity: 0.7;
+            margin-top: 2px;
+        }
+
+        .timer-area {
+            background: #F0F4FA;
+            margin: 0 20px 20px;
+            border-radius: 40px;
+            padding: 16px;
+            text-align: center;
+        }
+        .timer-label { font-size: 12px; color: #5A6E84; margin-bottom: 8px; }
+        .timer-value { font-size: 36px; font-weight: 800; font-family: monospace; color: #1A4A62; line-height: 1.2; }
+
+        .health-card {
+            background: linear-gradient(135deg, #1F5E7E, #143E54);
+            margin: 0 20px 20px;
+            border-radius: 36px;
+            padding: 20px;
+            color: white;
+        }
+        .health-title {
+            font-size: 13px;
+            opacity: 0.9;
+            margin-bottom: 16px;
+            text-align: center;
+            line-height: 1.4;
+        }
+        .health-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .health-item {
+            background: rgba(255,255,255,0.12);
+            border-radius: 28px;
+            padding: 12px;
+            text-align: center;
+        }
+        .health-value {
+            font-size: 28px;
+            font-weight: 800;
+        }
+        .health-label {
+            font-size: 10px;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+        .health-label-small {
+            font-size: 8px;
+            opacity: 0.6;
+            margin-top: 2px;
+        }
+        .focus-item {
+            background: rgba(255,255,255,0.2);
+            border-radius: 60px;
+            padding: 12px;
+            text-align: center;
+            margin-top: 8px;
+        }
+        .focus-number { font-size: 28px; font-weight: 800; margin-left: 8px; }
+
+        .history-card {
+            background: white;
+            margin: 0 20px 20px;
+            border-radius: 32px;
+            padding: 16px;
+        }
+        .history-title { font-weight: 600; margin-bottom: 12px; color: #1A4A62; font-size: 14px; text-align: center; }
+        .record-list { max-height: 200px; overflow-y: auto; }
+        .record-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #EEF2F8;
+            font-size: 13px;
+            flex-wrap: wrap;
+        }
+
+        .share-card {
+            background: white;
+            margin: 0 20px 24px;
+            border-radius: 32px;
+            padding: 20px;
+            text-align: center;
+        }
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .share-btn {
+            flex: 1;
+            background: #1F5E7E;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 60px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .share-btn-outline {
+            background: white;
+            color: #1F5E7E;
+            border: 1px solid #BCD3F0;
+        }
+        .share-small {
+            font-size: 9px;
+            margin-top: 4px;
+            opacity: 0.7;
+            display: block;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background: white;
+            border-radius: 48px;
+            padding: 28px 24px;
+            width: 340px;
+            max-width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 20px 0;
+        }
+        .career-option {
+            background: #F0F4FA;
+            border: none;
+            padding: 12px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2C3E50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-size: 13px;
+            opacity: 0;
+            transition: 0.2s;
+            pointer-events: none;
+            z-index: 1001;
+            text-align: center;
+            max-width: 90%;
+        }
+        .footer {
+            text-align: center;
+            font-size: 9px;
+            color: rgba(255,255,255,0.6);
+            margin-top: 16px;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="main-card">
+        <div class="career-header">
+            <div class="career-badge">
+                微气候身份 · 五维健康系统<br>
+                Microclimate ID · 5D Health System<br>
+                微気候ID · 五感健康システム
+            </div>
+            <div class="career-name" id="careerNameDisplay">追梦者</div>
+            <div class="lang-hint">Dream Chaser / 夢追い人</div>
+            <button class="change-career" id="changeCareerBtn">
+                ✎ 切换职业 / Switch Career / 職業切替
+            </button>
+        </div>
+
+        <div class="dual-buttons">
+            <button class="btn btn-heat" id="heatBtn">
+                <span class="main-text">🔥 加热</span>
+                <span class="sub-text">锁温保暖</span>
+                <span class="lang-sub">Heat · Keep Warm</span>
+                <span class="lang-sub">加温 · 保温快適</span>
+            </button>
+            <button class="btn btn-cool" id="coolBtn">
+                <span class="main-text">🌬️ 散热</span>
+                <span class="sub-text">排湿干爽</span>
+                <span class="lang-sub">Cool · Dry & Fresh</span>
+                <span class="lang-sub">冷却 · 除湿爽快</span>
+            </button>
+        </div>
+
+        <div class="timer-area">
+            <div class="timer-label">
+                当前模式 / Current Mode / 現在モード
+            </div>
+            <div class="timer-value" id="currentModeDisplay">⚪ 待机中</div>
+        </div>
+
+        <div class="health-card">
+            <div class="health-title">
+                🌟 五维健康提升报告<br>
+                5D Health Boost Report / 五感健康向上レポート
+            </div>
+            <div class="health-grid">
+                <div class="health-item">
+                    <div class="health-value" id="focusValue">0%</div>
+                    <div class="health-label">🧠 专注力</div>
+                    <div class="health-label-small">Focus / 集中力</div>
+                </div>
+                <div class="health-item">
+                    <div class="health-value" id="appetiteValue">0%</div>
+                    <div class="health-label">🍽️ 食欲</div>
+                    <div class="health-label-small">Appetite / 食欲</div>
+                </div>
+                <div class="health-item">
+                    <div class="health-value" id="sleepValue">0%</div>
+                    <div class="health-label">😴 睡眠质量</div>
+                    <div class="health-label-small">Sleep Quality / 睡眠の質</div>
+                </div>
+                <div class="health-item">
+                    <div class="health-value" id="physioValue">0%</div>
+                    <div class="health-label">💪 生理活力</div>
+                    <div class="health-label-small">Vitality / 身体的活力</div>
+                </div>
+            </div>
+            <div class="focus-item">
+                📊 综合健康指数<br>
+                <span style="font-size:9px;">Overall Health Index / 総合健康指数</span>
+                <span class="focus-number" id="totalHealthValue">0%</span>
+            </div>
+        </div>
+
+        <div class="history-card">
+            <div class="history-title">
+                📋 今日温控记录<br>
+                Today's Thermal Records / 本日の温控記録
+            </div>
+            <div class="record-list" id="recordList">
+                <div style="text-align:center; color:#A6BCCF; padding:16px;">
+                    暂无记录，点击按钮开始<br>
+                    No records yet, tap to start / 記録はありません、開始してください
+                </div>
+            </div>
+        </div>
+
+        <div class="share-card">
+            <div style="font-weight:600; margin-bottom:8px;">
+                ✨ 生成你的五维健康报告 ✨<br>
+                Generate Your 5D Health Report / 五感健康レポートを生成
+            </div>
+            <div class="share-buttons">
+                <button class="share-btn" id="posterBtn">
+                    📸 生成海报<br>
+                    <span class="share-small">Generate Poster / ポスター生成</span>
+                </button>
+                <button class="share-btn share-btn-outline" id="copyBtn">
+                    📋 复制文案<br>
+                    <span class="share-small">Copy Text / テキストコピー</span>
+                </button>
+            </div>
+            <p style="font-size:9px; margin-top:12px; color:#8AA0B5;">
+                分享到微信群，展示你的健康提升数据<br>
+                Share to show your health boost / シェアして健康向上を表示
+            </p>
+        </div>
+    </div>
+    <div class="footer">
+        MQtech1 · 让双脚跑在温度前面 | 温控舒适，五维健康全面提升<br>
+        Run Ahead of Temperature | Thermal Comfort, 5D Health Upgrade<br>
+        温度に先んじる | 快適温控、五感健康向上
+    </div>
+</div>
+<div id="toast" class="toast"></div>
+
+<script>
+    // ==================== 职业列表 ====================
+    const CAREER_LIST = [
+        "程序员", "设计师", "教师", "学生", "跑者", "自由职业",
+        "电工", "警察", "水利工程师", "建筑工人", "快递员", "消防员",
+        "外卖骑手", "环卫工人", "园艺师", "登山向导", "摄影师", "医生", "护士", "司机"
+    ];
+    
+    function getCareerSlogan(career) {
+        const slogans = {
+            "电工": "高空作业，脚底稳如磐石，健康在线",
+            "警察": "街头执勤，全天候舒适，精力充沛",
+            "水利工程师": "巡堤查险，双脚时刻在线，干劲十足",
+            "建筑工人": "工地奔走，干爽一整天，食欲旺盛",
+            "快递员": "日行万步，不闷不累，睡眠香甜",
+            "消防员": "火场逆行，脚下有支撑，体能满格",
+            "外卖骑手": "风雨兼程，温控护航，活力满满",
+            "程序员": "代码如风，专注力拉满，灵感不断",
+            "设计师": "灵感不降温，创意更流畅，心情愉悦",
+            "教师": "站三尺讲台，舒适全天，精神饱满",
+            "跑者": "每一步都干爽，配速稳，恢复快",
+            "医生": "连轴手术，脚部零负担，精力充沛"
+        };
+        return slogans[career] || "舒适温控，五维健康全面提升";
+    }
+    
+    function calculateHealthMetrics(heatMins, coolMins) {
+        const totalMins = heatMins + coolMins;
+        let baseScore = 0;
+        if (totalMins <= 0) baseScore = 0;
+        else if (totalMins <= 30) baseScore = 15 + totalMins * 1.2;
+        else if (totalMins <= 90) baseScore = 50 + (totalMins - 30) * 0.7;
+        else if (totalMins <= 150) baseScore = 85 + (totalMins - 90) * 0.25;
+        else baseScore = 100;
+        baseScore = Math.min(100, Math.floor(baseScore));
+        
+        const heatRatio = heatMins / (totalMins || 1);
+        const coolRatio = coolMins / (totalMins || 1);
+        
+        let focus = Math.floor(baseScore * (0.7 + coolRatio * 0.3));
+        let appetite = Math.floor(baseScore * (0.65 + coolRatio * 0.35));
+        let sleep = Math.floor(baseScore * (0.6 + heatRatio * 0.4));
+        let physiology = Math.floor(baseScore * (0.55 + heatRatio * 0.45));
+        
+        focus = Math.min(100, Math.max(0, focus));
+        appetite = Math.min(100, Math.max(0, appetite));
+        sleep = Math.min(100, Math.max(0, sleep));
+        physiology = Math.min(100, Math.max(0, physiology));
+        
+        const totalHealth = Math.floor((focus + appetite + sleep + physiology) / 4);
+        return { focus, appetite, sleep, physiology, totalHealth };
+    }
+    
+    let heatActive = false, coolActive = false;
+    let heatStartTime = null, coolStartTime = null;
+    let heatInterval = null, coolInterval = null;
+    let todayRecords = [];
+    let currentCareer = "追梦者";
+    
+    const careerNameDisplay = document.getElementById('careerNameDisplay');
+    const heatBtn = document.getElementById('heatBtn');
+    const coolBtn = document.getElementById('coolBtn');
+    const currentModeDisplay = document.getElementById('currentModeDisplay');
+    const recordListDiv = document.getElementById('recordList');
+    const posterBtn = document.getElementById('posterBtn');
+    const copyBtn = document.getElementById('copyBtn');
+    const changeCareerBtn = document.getElementById('changeCareerBtn');
+    const toastDiv = document.getElementById('toast');
+    const focusValueSpan = document.getElementById('focusValue');
+    const appetiteValueSpan = document.getElementById('appetiteValue');
+    const sleepValueSpan = document.getElementById('sleepValue');
+    const physioValueSpan = document.getElementById('physioValue');
+    const totalHealthValueSpan = document.getElementById('totalHealthValue');
+    
+    function showToast(msg) {
+        toastDiv.innerText = msg;
+        toastDiv.style.opacity = '1';
+        setTimeout(() => toastDiv.style.opacity = '0', 2000);
+    }
+    
+    function getTotalMins() {
+        let heatSec = 0, coolSec = 0;
+        todayRecords.forEach(r => {
+            if (r.type === 'heat') heatSec += r.durationSec;
+            if (r.type === 'cool') coolSec += r.durationSec;
+        });
+        return { heatMins: Math.floor(heatSec / 60), coolMins: Math.floor(coolSec / 60) };
+    }
+    
+    function updateHealthDisplay() {
+        const { heatMins, coolMins } = getTotalMins();
+        const metrics = calculateHealthMetrics(heatMins, coolMins);
+        focusValueSpan.innerText = metrics.focus + '%';
+        appetiteValueSpan.innerText = metrics.appetite + '%';
+        sleepValueSpan.innerText = metrics.sleep + '%';
+        physioValueSpan.innerText = metrics.physiology + '%';
+        totalHealthValueSpan.innerText = metrics.totalHealth + '%';
+        return metrics;
+    }
+    
+    function saveCareer(career) {
+        currentCareer = career;
+        localStorage.setItem('mqtech_career', career);
+        careerNameDisplay.innerText = career;
+        showToast(`职业已切换为「${career}」/ Career switched / 職業切替完了`);
+    }
+    
+    function loadCareer() {
+        const saved = localStorage.getItem('mqtech_career');
+        if (saved && CAREER_LIST.includes(saved)) {
+            currentCareer = saved;
+        } else {
+            currentCareer = "追梦者";
+        }
+        careerNameDisplay.innerText = currentCareer;
+    }
+    
+    function showCareerModal() {
+        const modal = document.createElement('div');
+        modal.className = 'modal';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <h3 style="margin-bottom:8px;">选择你的职业身份<br><span style="font-size:12px;">Choose Your Career / 職業を選択</span></h3>
+                <p style="font-size:11px; color:#6F8AA3;">职业标签将出现在健康报告中</p>
+                <div class="career-grid" id="careerGrid"></div>
+                <button id="closeModalBtn" style="width:100%; padding:12px; background:#EFF2F8; border:none; border-radius:40px; margin-top:12px;">取消 / Cancel / キャンセル</button>
+            </div>
+        `;
+        const grid = modal.querySelector('#careerGrid');
+        CAREER_LIST.forEach(career => {
+            const btn = document.createElement('button');
+            btn.className = 'career-option';
+            btn.innerText = career;
+            btn.onclick = () => {
+                saveCareer(career);
+                document.body.removeChild(modal);
+            };
+            grid.appendChild(btn);
+        });
+        modal.querySelector('#closeModalBtn').onclick = () => document.body.removeChild(modal);
+        document.body.appendChild(modal);
+    }
+    
+    changeCareerBtn.onclick = showCareerModal;
+    
+    function getTodayKey() {
+        return `mqtech_health_records_${new Date().toISOString().slice(0,10)}`;
+    }
+    
+    function loadTodayRecords() {
+        const key = getTodayKey();
+        const stored = localStorage.getItem(key);
+        todayRecords = stored ? JSON.parse(stored) : [];
+        updateHealthDisplay();
+        renderRecords();
+    }
+    
+    function saveTodayRecords() {
+        localStorage.setItem(getTodayKey(), JSON.stringify(todayRecords));
+        updateHealthDisplay();
+        renderRecords();
+    }
+    
+    function addRecord(type, startMs, endMs) {
+        const durationSec = Math.floor((endMs - startMs) / 1000);
+        if (durationSec < 3) return;
+        todayRecords.push({
+            id: Date.now(),
+            type: type,
+            startTime: startMs,
+            endTime: endMs,
+            durationSec: durationSec
+        });
+        saveTodayRecords();
+        const mins = Math.floor(durationSec / 60);
+        const secs = durationSec % 60;
+        showToast(`${type === 'heat' ? '🔥加热' : '🌬️散热'} ${mins}分${secs}秒 / Health updated`);
+    }
+    
+    function renderRecords() {
+        if (!todayRecords.length) {
+            recordListDiv.innerHTML = '<div style="text-align:center; color:#A6BCCF; padding:16px;">暂无记录，点击按钮开始<br><span style="font-size:10px;">No records yet, tap to start / 記録はありません</span></div>';
+            return;
+        }
+        const reversed = [...todayRecords].reverse();
+        recordListDiv.innerHTML = reversed.slice(0, 10).map(r => {
+            const date = new Date(r.startTime);
+            const timeStr = `${date.getHours().toString().padStart(2,'0')}:${date.getMinutes().toString().padStart(2,'0')}`;
+            const mins = Math.floor(r.durationSec / 60);
+            const secs = r.durationSec % 60;
+            const icon = r.type === 'heat' ? '🔥' : '🌬️';
+            const typeName = r.type === 'heat' ? '加热' : '散热';
+            const typeEn = r.type === 'heat' ? 'Heat' : 'Cool';
+            const typeJa = r.type === 'heat' ? '加温' : '冷却';
+            return `<div class="record-item">
+                        <span>${icon} ${typeName} ${timeStr}<br><span style="font-size:9px;">${typeEn} / ${typeJa}</span></span>
+                        <span>${mins}分${secs}秒<br><span style="font-size:9px;">${mins}m${secs}s / ${mins}分${secs}秒</span></span>
+                    </div>`;
+        }).join('');
+        if (todayRecords.length > 10) {
+            recordListDiv.innerHTML += `<div style="text-align:center; font-size:10px; color:#A6BCCF; padding:8px;">共${todayRecords.length}条记录 | Total ${todayRecords.length}</div>`;
+        }
+    }
+    
+    function startHeat() {
+        if (heatActive) return;
+        if (coolActive) stopCool();
+        heatActive = true;
+        heatStartTime = Date.now();
+        currentModeDisplay.innerHTML = '🔥 加热中...<br><span style="font-size:14px;">Heating / 加温中</span>';
+        heatBtn.classList.add('active');
+        if (heatInterval) clearInterval(heatInterval);
+        heatInterval = setInterval(() => {
+            if (heatActive && heatStartTime) {
+                const sec = Math.floor((Date.now() - heatStartTime) / 1000);
+                currentModeDisplay.innerHTML = `🔥 ${Math.floor(sec/60)}:${(sec%60).toString().padStart(2,'0')}<br><span style="font-size:14px;">Heating / 加温中</span>`;
+            }
+        }, 200);
+    }
+    
+    function stopHeat() {
+        if (!heatActive) return;
+        addRecord('heat', heatStartTime, Date.now());
+        heatActive = false;
+        if (heatInterval) clearInterval(heatInterval);
+        heatInterval = null;
+        heatBtn.classList.remove('active');
+        if (!coolActive) currentModeDisplay.innerHTML = '⚪ 待机中<br><span style="font-size:14px;">Standby / 待機中</span>';
+        else currentModeDisplay.innerHTML = '🌬️ 散热中...<br><span style="font-size:14px;">Cooling / 冷却中</span>';
+    }
+    
+    function startCool() {
+        if (coolActive) return;
+        if (heatActive) stopHeat();
+        coolActive = true;
+        coolStartTime = Date.now();
+        currentModeDisplay.innerHTML = '🌬️ 散热中...<br><span style="font-size:14px;">Cooling / 冷却中</span>';
+        coolBtn.classList.add('active');
+        if (coolInterval) clearInterval(coolInterval);
+        coolInterval = setInterval(() => {
+            if (coolActive && coolStartTime) {
+                const sec = Math.floor((Date.now() - coolStartTime) / 1000);
+                currentModeDisplay.innerHTML = `🌬️ ${Math.floor(sec/60)}:${(sec%60).toString().padStart(2,'0')}<br><span style="font-size:14px;">Cooling / 冷却中</span>`;
+            }
+        }, 200);
+    }
+    
+    function stopCool() {
+        if (!coolActive) return;
+        addRecord('cool', coolStartTime, Date.now());
+        coolActive = false;
+        if (coolInterval) clearInterval(coolInterval);
+        coolInterval = null;
+        coolBtn.classList.remove('active');
+        if (!heatActive) currentModeDisplay.innerHTML = '⚪ 待机中<br><span style="font-size:14px;">Standby / 待機中</span>';
+        else currentModeDisplay.innerHTML = '🔥 加热中...<br><span style="font-size:14px;">Heating / 加温中</span>';
+    }
+    
+    heatBtn.onclick = () => heatActive ? stopHeat() : startHeat();
+    coolBtn.onclick = () => coolActive ? stopCool() : startCool();
+    
+    function getShareText() {
+        const { heatMins, coolMins } = getTotalMins();
+        const metrics = calculateHealthMetrics(heatMins, coolMins);
+        const date = new Date().toLocaleDateString('zh-CN');
+        const slogan = getCareerSlogan(currentCareer);
+        return `【${currentCareer}的五维健康报告 / 5D Health Report】\n` +
+               `📅 ${date}\n` +
+               `🔥 加热 ${heatMins}分钟 / Heat ${heatMins}min / 加温 ${heatMins}分 | 散热 ${coolMins}分钟 / Cool ${coolMins}min / 冷却 ${coolMins}分\n` +
+               `🌟 专注力/Focus/集中力 +${metrics.focus}% | 食欲/Appetite/食欲 +${metrics.appetite}% | 睡眠质量/Sleep/睡眠の質 +${metrics.sleep}% | 生理活力/Vitality/身体的活力 +${metrics.physiology}%\n` +
+               `📊 综合健康指数/Overall Health/総合健康指数 +${metrics.totalHealth}%\n` +
+               `“${slogan}”\n#MQtech1 #五维健康 #5DHealth`;
+    }
+    
+    copyBtn.onclick = async () => {
+        const text = getShareText();
+        try {
+            await navigator.clipboard.writeText(text);
+            showToast('✅ 已复制 / Copied / コピー完了');
+        } catch {
+            alert(text);
+        }
+    };
+    
+    async function generatePoster() {
+        const { heatMins, coolMins } = getTotalMins();
+        const metrics = calculateHealthMetrics(heatMins, coolMins);
+        const date = new Date().toLocaleDateString('zh-CN');
+        const slogan = getCareerSlogan(currentCareer);
+        
+        const posterContainer = document.createElement('div');
+        posterContainer.style.position = 'fixed';
+        posterContainer.style.left = '-1000px';
+        posterContainer.style.top = '-1000px';
+        posterContainer.style.width = '380px';
+        posterContainer.style.backgroundColor = '#FFFFFF';
+        posterContainer.style.borderRadius = '48px';
+        posterContainer.style.padding = '28px 24px';
+        posterContainer.style.boxShadow = '0 20px 40px rgba(0,0,0,0.2)';
+        posterContainer.style.fontFamily = 'system-ui, -apple-system, "PingFang SC"';
+        
+        posterContainer.innerHTML = `
+            <div style="text-align:center; margin-bottom:16px;">
+                <div style="background:linear-gradient(135deg, #2A6F8F, #1A4A62); color:white; border-radius:40px; display:inline-block; padding:8px 24px; font-size:12px; font-weight:500;">MQtech1 五维健康报告<br><span style="font-size:9px;">5D Health Report / 五感健康レポート</span></div>
+            </div>
+            <div style="text-align:center; margin-bottom:16px;">
+                <div style="font-size:20px; font-weight:700; color:#1F5E7E;">👤 ${currentCareer}</div>
+                <div style="font-size:10px; color:#6F8AA3;">温控打卡 · 五维健康提升 / Thermal Check-in · 5D Health</div>
+            </div>
+            <div style="display:flex; justify-content:space-between; gap:8px; margin:16px 0;">
+                <div style="flex:1; background:#FEF3E8; border-radius:24px; padding:10px; text-align:center;"><div style="font-size:28px; font-weight:800;">${heatMins}</div><div style="font-size:9px;">🔥 加热分钟 / Heat min / 加温分</div></div>
+                <div style="flex:1; background:#E3F2FA; border-radius:24px; padding:10px; text-align:center;"><div style="font-size:28px; font-weight:800;">${coolMins}</div><div style="font-size:9px;">🌬️ 散热分钟 / Cool min / 冷却分</div></div>
+            </div>
+            <div style="background:linear-gradient(135deg, #1F5E7E, #143E54); border-radius:32px; padding:16px; margin:12px 0;">
+                <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px;">
+                    <div style="text-align:center;"><div style="font-size:22px; font-weight:800;">${metrics.focus}%</div><div style="font-size:9px;">🧠 专注力 / Focus / 集中力</div></div>
+                    <div style="text-align:center;"><div style="font-size:22px; font-weight:800;">${metrics.appetite}%</div><div style="font-size:9px;">🍽️ 食欲 / Appetite / 食欲</div></div>
+                    <div style="text-align:center;"><div style="font-size:22px; font-weight:800;">${metrics.sleep}%</div><div style="font-size:9px;">😴 睡眠 / Sleep / 睡眠</div></div>
+                    <div style="text-align:center;"><div style="font-size:22px; font-weight:800;">${metrics.physiology}%</div><div style="font-size:9px;">💪 活力 / Vitality / 活力</div></div>
+                </div>
+                <div style="text-align:center; margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,0.2);">
+                    <span style="font-size:12px;">📊 综合健康指数 / Overall Health / 総合健康指数</span>
+                    <span style="font-size:28px; font-weight:800; margin-left:8px;">${metrics.totalHealth}%</span>
+                </div>
+            </div>
+            <div style="background:#F5F9FF; border-radius:24px; padding:12px; text-align:center; margin:12px 0;">
+                <div style="font-size:13px; font-weight:500; color:#1F5E7E;">“${slogan}”</div>
+            </div>
+            <div style="margin-top:12px; border-top:1px solid #E9EFF5; padding-top:12px; text-align:center; font-size:9px; color:#8AA0B5;">
+                ${date} · MQtech1 · 让双脚跑在温度前面 | Run Ahead of Temperature | 温度に先んじる
+            </div>
+        `;
+        document.body.appendChild(posterContainer);
+        try {
+            const canvas = await html2canvas(posterContainer, { scale: 2, backgroundColor: '#FFFFFF' });
+            const link = document.createElement('a');
+            link.download = `MQtech1_${currentCareer}_健康报告.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            showToast('✅ 海报已生成 / Poster generated / ポスター生成完了');
+        } catch(e) {
+            showToast('生成失败，可截图保存 / Failed, try screenshot');
+        } finally {
+            document.body.removeChild(posterContainer);
+        }
+    }
+    
+    posterBtn.onclick = generatePoster;
+    
+    loadCareer();
+    loadTodayRecords();
+    
+    window.addEventListener('beforeunload', () => {
+        if (heatActive) stopHeat();
+        if (coolActive) stopCool();
+    });
+</script>
+</body>
+</html>
+-------------------------------------------------------------------------------------------------------
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

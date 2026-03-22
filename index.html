@@ -748,15 +748,13 @@
 </script>
 </body>
 </html>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MQTech1 · Mars Health Shoes & Patents MQTech1 康鞋类及专利</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>MQtech1 · 五维健康温控 | 中英日三语专利鞋履系统</title>
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Google Fonts: Poppins -->
@@ -771,15 +769,15 @@
       scroll-behavior: smooth;
     }
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #03050a;
+      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(135deg, #1A3C4A 0%, #0F2C38 100%);
+      min-height: 100vh;
       color: #e0e9f0;
       line-height: 1.6;
       overflow-x: hidden;
       position: relative;
-      animation: twinkle 10s infinite linear;
     }
-    /* Mars / starfield background effect with animation */
+    /* 火星星光背景点缀 */
     body::before {
       content: "";
       position: fixed;
@@ -793,40 +791,11 @@
         radial-gradient(3px 3px at 8% 82%, #d94f3e, rgba(0,0,0,0)),
         radial-gradient(4px 4px at 55% 17%, #c4492e, rgba(0,0,0,0)),
         radial-gradient(2px 2px at 91% 68%, #f09c5a, rgba(0,0,0,0)),
-        radial-gradient(6px 6px at 23% 91%, #b33e28, rgba(0,0,0,0)),
-        radial-gradient(3px 3px at 42% 58%, #d97c45, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 88% 13%, #ed7642, rgba(0,0,0,0)),
-        radial-gradient(4px 4px at 33% 5%, #ffaa66, rgba(0,0,0,0)),
-        radial-gradient(3px 3px at 67% 79%, #c95f37, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 5% 48%, #febc7a, rgba(0,0,0,0)),
-        radial-gradient(8px 8px at 50% 92%, #902e1a, rgba(0,0.6));
+        radial-gradient(6px 6px at 23% 91%, #b33e28, rgba(0,0,0,0));
       background-size: 200% 200%;
-      background-color: #0b0d14;
-      opacity: 0.85;
+      opacity: 0.4;
       pointer-events: none;
-      z-index: -2;
-      animation: drift 20s infinite linear;
-    }
-    body::after {
-      content: "";
-      position: fixed;
-      top: -20%;
-      left: -10%;
-      width: 120%;
-      height: 120%;
-      background: radial-gradient(circle at 30% 40%, rgba(230, 90, 50, 0.12) 0%, transparent 45%),
-                  radial-gradient(circle at 80% 70%, rgba(200, 70, 30, 0.1) 0%, transparent 50%),
-                  radial-gradient(circle at 10% 85%, rgba(160, 50, 20, 0.08) 0%, transparent 40%);
       z-index: -1;
-      pointer-events: none;
-    }
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.8; }
-      50% { opacity: 1; }
-    }
-    @keyframes drift {
-      0% { transform: translateX(0) translateY(0); }
-      100% { transform: translateX(10px) translateY(10px); }
     }
     .container {
       max-width: 1280px;
@@ -841,11 +810,11 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 0;
-      border-bottom: 1px solid rgba(230, 120, 80, 0.25);
+      border-bottom: 1px solid rgba(230, 120, 80, 0.35);
       flex-wrap: wrap;
       position: sticky;
       top: 0;
-      background-color: rgba(3,5,10,0.8);
+      background: linear-gradient(135deg, #1A3C4A 0%, #0F2C38 100%);
       backdrop-filter: blur(10px);
       z-index: 100;
     }
@@ -885,9 +854,7 @@
     .nav-links a:hover {
       color: #ffa067;
       border-bottom-color: #ff7f4f;
-      transform: scale(1.05);
     }
-    /* section styling */
     .page-section {
       padding: 70px 0 80px;
       min-height: 100vh;
@@ -907,6 +874,12 @@
     .section-title i {
       color: #ff784f;
       margin-right: 15px;
+    }
+    .section-sub {
+      font-size: 12px;
+      opacity: 0.8;
+      margin-top: 5px;
+      display: block;
     }
     .btn {
       display: inline-block;
@@ -929,7 +902,6 @@
     }
     .btn:hover {
       background: linear-gradient(145deg, #e57a58, #c24d2e);
-      box-shadow: 0 12px 30px rgba(230, 90, 40, 0.7);
       transform: translateY(-3px);
     }
     .btn-outline {
@@ -942,10 +914,7 @@
     .btn-outline:hover {
       background: rgba(230, 100, 60, 0.15);
       border-color: #ff9066;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px #b33e2250;
     }
-    /* page 1: mars background */
     .mars-grid {
       display: flex;
       flex-wrap: wrap;
@@ -957,12 +926,12 @@
     }
     .mars-stats {
       display: grid;
-      grid-template-columns: repeat(2,1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 25px;
       margin-top: 40px;
     }
     .stat-card {
-      background: rgba(20, 12, 8, 0.6);
+      background: rgba(20, 12, 8, 0.5);
       backdrop-filter: blur(5px);
       border-radius: 25px;
       padding: 25px;
@@ -970,14 +939,14 @@
       transition: transform 0.3s;
     }
     .stat-card:hover {
-      transform: scale(1.05);
+      transform: scale(1.02);
     }
     .stat-card i {
       font-size: 2.5rem;
       color: #ff8a5c;
     }
     .stat-card h3 {
-      font-size: 1.9rem;
+      font-size: 1.5rem;
       color: #ffc49c;
     }
     .mars-visual {
@@ -998,7 +967,6 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
-    /* page 2: shoe details */
     .shoe-showcase {
       display: flex;
       flex-wrap: wrap;
@@ -1013,10 +981,6 @@
       border-radius: 60px;
       padding: 40px;
       border: 1px solid #d27a4e;
-      transition: transform 0.3s;
-    }
-    .shoe-image:hover {
-      transform: rotate(5deg);
     }
     .shoe-image i {
       font-size: 12rem;
@@ -1028,7 +992,7 @@
     }
     .feature-list {
       display: grid;
-      grid-template-columns: repeat(2,1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       margin: 30px 0;
     }
@@ -1037,12 +1001,7 @@
       padding: 20px;
       border-radius: 30px;
       border: 1px solid rgba(210, 122, 78, 0.3);
-      transition: background 0.3s;
     }
-    .feature-item:hover {
-      background: rgba(210, 122, 78, 0.1);
-    }
-    /* Learn More detail block (after shoes) */
     .learn-more-detail {
       background: rgba(20, 12, 8, 0.5);
       backdrop-filter: blur(4px);
@@ -1050,11 +1009,6 @@
       padding: 40px;
       margin-top: 50px;
       border: 1px solid rgba(209, 99, 51, 0.5);
-      transition: 0.3s;
-    }
-    .learn-more-detail:hover {
-      border-color: #ff9066;
-      box-shadow: 0 0 30px rgba(230, 120, 70, 0.3);
     }
     .learn-grid {
       display: flex;
@@ -1077,10 +1031,12 @@
       margin-bottom: 15px;
     }
     .learn-card h4 {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       color: #ffcfaa;
     }
-    /* ========== PATENT PRODUCTS (新增样式) ========== */
+    .learn-card p {
+      font-size: 0.85rem;
+    }
     .patent-products {
       display: flex;
       flex-wrap: wrap;
@@ -1088,183 +1044,109 @@
       margin-top: 40px;
     }
     .product-card {
-      flex: 1 1 400px;
+      flex: 1 1 380px;
       background: rgba(15, 10, 8, 0.6);
       backdrop-filter: blur(5px);
       border-radius: 40px;
-      padding: 30px;
+      padding: 25px;
       border: 1px solid #d1643b60;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
       transition: transform 0.3s, border-color 0.3s;
     }
     .product-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-5px);
       border-color: #ff9066;
-      box-shadow: 0 15px 30px #b33e2250;
     }
     .product-img {
-      flex: 1 1 180px;
       text-align: center;
+      margin-bottom: 15px;
     }
     .product-img img {
       width: 100%;
-      max-width: 220px;
+      max-width: 200px;
       border-radius: 30px;
       border: 2px solid #c96f46;
       box-shadow: 0 10px 25px #701e0a;
-      transition: 0.2s;
-    }
-    .product-img img:hover {
-      transform: scale(1.02);
-      border-color: #ffa067;
-    }
-    .product-desc {
-      flex: 2 1 250px;
     }
     .product-desc h3 {
-      font-size: 1.9rem;
+      font-size: 1.5rem;
       color: #ffb48a;
       margin-bottom: 10px;
-    }
-    .product-desc h3 i {
-      color: #ff784f;
-      margin-right: 8px;
     }
     .product-desc ul {
       list-style: none;
       margin: 15px 0;
     }
     .product-desc li {
-      margin-bottom: 12px;
-      font-size: 1rem;
+      margin-bottom: 8px;
+      font-size: 0.85rem;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
     .product-desc li i {
       color: #ff784f;
-      width: 24px;
-      font-size: 1.2rem;
+      width: 20px;
     }
     .patent-badge-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin: 15px 0 5px;
+      gap: 8px;
+      margin: 12px 0 5px;
     }
     .patent-badge-small {
       background: #b3492a60;
       border-radius: 40px;
-      padding: 4px 16px;
-      font-size: 0.85rem;
+      padding: 4px 12px;
+      font-size: 0.7rem;
       border: 1px solid #d9643a;
       color: #ffd4b0;
     }
-    /* Contact section */
-    #contact {
-      min-height: auto;
-    }
     .contact-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
       background: rgba(8, 6, 5, 0.5);
       backdrop-filter: blur(5px);
       border-radius: 60px;
-      padding: 50px 40px;
+      padding: 40px;
       border: 1px solid #ce6e42;
       margin-top: 20px;
     }
-    .contact-info {
-      flex: 1 1 280px;
-    }
     .contact-info h3 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       color: #fca975;
       margin-bottom: 20px;
     }
     .contact-info p {
       margin: 15px 0;
-      font-size: 1.1rem;
+      font-size: 1rem;
       display: flex;
       align-items: center;
       gap: 15px;
+      flex-wrap: wrap;
     }
     .contact-info i {
       color: #ff784f;
       width: 30px;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     }
-    .contact-form {
-      flex: 2 1 360px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .form-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-    .form-group input, .form-group textarea {
-      width: 100%;
-      background: rgba(0,0,0,0.6);
-      border: 1px solid #b95c34;
-      border-radius: 40px;
-      padding: 16px 22px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 1rem;
-      color: #f2e1d4;
-      outline: none;
-      transition: 0.2s;
-    }
-    .form-group input:focus, .form-group textarea:focus {
-      border-color: #ffa067;
-      box-shadow: 0 0 18px #ff7f4f80;
-    }
-    .form-group textarea {
-      border-radius: 30px;
-      resize: vertical;
-      min-height: 120px;
-    }
-    .half-input {
-      flex: 1 1 calc(50% - 10px);
-      min-width: 200px;
-    }
-    .btn-submit {
-      background: linear-gradient(145deg, #d75a38, #b33e22);
-      border: none;
-      padding: 16px 32px;
-      border-radius: 60px;
-      font-weight: 600;
-      color: white;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: 0.2s;
-      border: 1px solid #ff9f6e;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: fit-content;
-    }
-    .btn-submit:hover {
-      background: #e16f4c;
-      transform: scale(1.03);
-      box-shadow: 0 5px 20px #d95b3a;
-    }
-    /* Footer */
     footer {
       text-align: center;
       padding: 20px;
-      background: rgba(3,5,10,0.8);
+      background: rgba(3,5,10,0.7);
       color: #e0e9f0;
       border-top: 1px solid rgba(230, 120, 80, 0.25);
     }
-    footer p {
-      margin: 0;
+    .lang-hint-sm {
+      font-size: 9px;
+      opacity: 0.7;
+      display: block;
+    }
+    .two-line {
+      line-height: 1.3;
+    }
+    @media (max-width: 768px) {
+      .navbar { flex-direction: column; gap: 15px; }
+      .nav-links { gap: 20px; flex-wrap: wrap; justify-content: center; }
+      .section-title { font-size: 1.8rem; }
+      .container { padding: 0 20px; }
     }
   </style>
 </head>
@@ -1275,31 +1157,36 @@
       <span>MQTech1</span>
     </div>
     <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#shoes">Shoes</a>
-      <a href="#patents">Patents</a>
-      <a href="#contact">Contact</a>
+      <a href="#home">Home / 首页 / ホーム</a>
+      <a href="#shoes">Shoes / 鞋履 / シューズ</a>
+      <a href="#patents">Patents / 专利 / 特許</a>
+      <a href="#contact">Contact / 联系 / 連絡</a>
     </div>
   </nav>
 
-  <!-- HOME section -->
+  <!-- HOME section 三语 -->
   <section id="home" class="page-section">
     <div class="container">
       <div class="mars-grid">
         <div class="mars-text">
-          <h1 class="section-title"><i class="fas fa-globe"></i>Mars Health Shoes & Patents</h1>
-          <p style="font-size: 1.3rem; opacity:0.9;">Revolutionizing footwear with Martian technology for unparalleled comfort and innovation.运用火星科技革新鞋履，带来无与伦比的舒适度和创新性。</p>
+          <h1 class="section-title">
+            <i class="fas fa-globe"></i>Mars Health Shoes & Patents<br>
+            <span class="section-sub">火星健康鞋及专利 / 火星健康靴と特許</span>
+          </h1>
+          <p style="font-size: 1.2rem;">Revolutionizing footwear with Martian technology for unparalleled comfort and innovation.<br>
+          运用火星科技革新鞋履，带来无与伦比的舒适度和创新性。<br>
+          火星技術で靴を革新、比類なき快適さと革新性を実現。</p>
           <div class="mars-stats">
             <div class="stat-card">
               <i class="fas fa-shoe-prints"></i>
-              <h3>10K+ Shoes Sold售出超过1万双鞋</h3>
+              <h3>10K+ Shoes Sold<br><span style="font-size:0.9rem;">售出超过1万双鞋 / 10,000足以上販売</span></h3>
             </div>
             <div class="stat-card">
               <i class="fas fa-lightbulb"></i>
-              <h3>50+ Patents50多项专利</h3>
+              <h3>50+ Patents<br><span style="font-size:0.9rem;">50多项专利 / 50以上の特許</span></h3>
             </div>
           </div>
-          <a href="#shoes" class="btn">Explore Shoes探索鞋履 <i class="fas fa-arrow-right"></i></a>
+          <a href="#shoes" class="btn">Explore Shoes / 探索鞋履 / 靴を探す <i class="fas fa-arrow-right"></i></a>
         </div>
         <div class="mars-visual">
           <i class="fas fa-planet-ringed"></i>
@@ -1308,179 +1195,141 @@
     </div>
   </section>
 
-  <!-- SHOES section + LEARN MORE -->
+  <!-- SHOES section 三语 -->
   <section id="shoes" class="page-section">
     <div class="container">
-      <h2 class="section-title"><i class="fas fa-shoe-prints"></i>Our Mars Tech Shoes我们的火星科技鞋</h2>
+      <h2 class="section-title">
+        <i class="fas fa-shoe-prints"></i>Our Mars Tech Shoes<br>
+        <span class="section-sub">我们的火星科技鞋 / 火星技術シューズ</span>
+      </h2>
       <div class="shoe-showcase">
         <div class="shoe-image">
           <i class="fas fa-shoe-prints"></i>
         </div>
         <div class="shoe-specs">
-          <p style="font-size: 1.2rem;">Engineered with Mars-inspired materials for zero-gravity comfort and durability.采用火星灵感材料打造，兼具零重力舒适性和耐用性。</p>
+          <p style="font-size: 1.1rem;">Engineered with Mars-inspired materials for zero-gravity comfort and durability.<br>
+          采用火星灵感材料打造，兼具零重力舒适性和耐用性。<br>
+          火星から着想を得た素材で、無重力の快適さと耐久性を実現。</p>
           <div class="feature-list">
-            <div class="feature-item">
-              <i class="fas fa-wind"></i> Anti-Gravity Cushioning反重力缓冲
-            </div>
-            <div class="feature-item">
-              <i class="fas fa-fire"></i> Heat-Resistant Soles耐热鞋底
-            </div>
-            <div class="feature-item">
-              <i class="fas fa-shield-alt"></i> Extreme cold and extreme heat protection极寒极热防护
-            </div>
-            <div class="feature-item">
-              <i class="fas fa-bolt"></i> Energy-Return Tech能量回报技术
-            </div>
+            <div class="feature-item"><i class="fas fa-wind"></i> Anti-Gravity Cushioning / 反重力缓冲 / 無重力クッション</div>
+            <div class="feature-item"><i class="fas fa-fire"></i> Heat-Resistant Soles / 耐热鞋底 / 耐熱ソール</div>
+            <div class="feature-item"><i class="fas fa-shield-alt"></i> Extreme Protection / 极寒极热防护 / 極限環境保護</div>
+            <div class="feature-item"><i class="fas fa-bolt"></i> Energy-Return Tech / 能量回报技术 / エネルギー還元技術</div>
           </div>
-          <a href="#learn-more" class="btn-outline">Learn More更深层火星技术 <i class="fas fa-chevron-down"></i></a>
+          <a href="#learn-more" class="btn-outline">Learn More / 了解更多 / 詳細を見る <i class="fas fa-chevron-down"></i></a>
         </div>
       </div>
       
-      <!-- LEARN MORE expanded content -->
       <div id="learn-more" class="learn-more-detail">
-        <h3 style="font-size: 2rem; color: #ffa67a; margin-bottom: 15px;"><i class="fas fa-mars"></i> Deeper Mars Technology</h3>
-        <p style="margin-bottom: 30px;">Every pair integrates research from Mars colonization trials. Our shoes adapt to low-gravity and harsh terrain – now available on Earth.每一双鞋都融入了火星殖民试验的研究成果。我们的鞋子能够
-适应低重力和恶劣地形一一现在地球上也能买到了。</p>
+        <h3 style="font-size: 1.8rem; color: #ffa67a;"><i class="fas fa-mars"></i> Deeper Mars Technology<br><span style="font-size:0.9rem;">更深层火星技术 / より深い火星技術</span></h3>
+        <p style="margin-bottom: 20px;">Every pair integrates research from Mars colonization trials. Our shoes adapt to low-gravity and harsh terrain – now available on Earth.<br>
+        每一双鞋都融入了火星殖民试验的研究成果，适应低重力和恶劣地形——现在地球上也能买到了。<br>
+        各靴には火星移住実験の研究成果が組み込まれ、低重力や過酷な地形に適応します。今、地球上で入手可能。</p>
         <div class="learn-grid">
-          <div class="learn-card">
-            <i class="fas fa-microchip"></i>
-            <h4>AI Smart SoleAI智能鞋底</h4>
-            <p>Real-time gait adaptation using Martian AI algorithms.利用火星人工智能算法进行实
-时步态自适应。</p>
-          </div>
-          <div class="learn-card">
-            <i class="fas fa-leaf"></i>
-            <h4>Regolith Fiber风化层纤维</h4>
-            <p>Durable weave inspired by Martian soil, ultra light.采用受火星土境启发的耐用编
-织工艺，超轻</p>
-          </div>
-          <div class="learn-card">
-            <i class="fas fa-temperature-high"></i>
-            <h4>Thermal Buffer热缓冲垫</h4>
-            <p>Withstands -100°C to 70°C, tested at Olympus Mons.经奥林巴斯山测试，可承受-100°C至70°C的温度。</p>
-          </div>
-          <div class="learn-card">
-            <i class="fas fa-satellite"></i>
-            <h4>Orbital Sync轨道同步</h4>
-            <p>Connects to Mars satellites for navigation feedback.与火星卫星连接以获取导航反
-馈。</p>
-          </div>
+          <div class="learn-card"><i class="fas fa-microchip"></i><h4>AI Smart Sole / AI智能鞋底 / AIスマートソール</h4><p>Real-time gait adaptation using Martian AI algorithms. / 利用火星AI算法实时步态自适应 / 火星AIアルゴリズムによるリアルタイム歩行適応</p></div>
+          <div class="learn-card"><i class="fas fa-leaf"></i><h4>Regolith Fiber / 风化层纤维 / レゴリス繊維</h4><p>Ultra light durable weave inspired by Martian soil. / 受火星土壤启发的超轻耐用编织 / 火星の土壌に着想を得た超軽量耐久性素材</p></div>
+          <div class="learn-card"><i class="fas fa-temperature-high"></i><h4>Thermal Buffer / 热缓冲垫 / サーマルバッファ</h4><p>Withstands -100°C to 70°C, tested at Olympus Mons. / 经奥林巴斯山测试，可承受-100°C至70°C / オリンポス山でテスト済み</p></div>
+          <div class="learn-card"><i class="fas fa-satellite"></i><h4>Orbital Sync / 轨道同步 / 軌道同期</h4><p>Connects to Mars satellites for navigation feedback. / 与火星卫星连接获取导航反馈 / 火星衛星と連携しナビゲーション</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PATENTS section —— 重新设计为产品图片展示区 -->
+  <!-- PATENTS section 产品展示 三语 -->
   <section id="patents" class="page-section">
     <div class="container">
-      <h2 class="section-title"><i class="fas fa-file-invoice"></i>Patents & Products专利与产品</h2>
+      <h2 class="section-title">
+        <i class="fas fa-file-invoice"></i>Patents & Products<br>
+        <span class="section-sub">专利与产品 / 特許と製品</span>
+      </h2>
       <div style="text-align: center; margin-bottom: 30px;">
-        <span style="background: #b3492a30; padding: 12px 30px; border-radius: 60px; font-size: 1.3rem; border: 1px solid #d1643b;">
-          <i class="fas fa-award"></i> Seven national patents create a high-quality and comfortable zone七项国家专利打造了高品质舒适的区域
+        <span style="background: #b3492a30; padding: 10px 25px; border-radius: 60px; font-size: 1rem; border: 1px solid #d1643b; display: inline-block;">
+          <i class="fas fa-award"></i> Seven national patents create a high-quality comfort zone<br>
+          七项国家专利打造高品质舒适区域 / 7つの国家特許が高品質な快適ゾーンを実現
         </span>
       </div>
       
       <div class="patent-products">
-        <!-- 医用鞋产品卡片 (图片 p1.jpg) -->
+        <!-- 医用鞋 -->
         <div class="product-card">
-          <div class="product-img">
-            <img src="p1.jpg" alt="Medical Operating Room Shoes">
-          </div>
+          <div class="product-img"><img src="p1.jpg" alt="Medical Shoes" onerror="this.src='https://placehold.co/200x200/2A6F8F/white?text=Medical+Shoes'"></div>
           <div class="product-desc">
-            <h3><i class="fas fa-user-md"></i> Medical Operating Shoes医用手术鞋</h3>
+            <h3><i class="fas fa-user-md"></i> Medical Operating Shoes<br><span style="font-size:0.8rem;">医用手术鞋 / 医療用手術靴</span></h3>
             <ul>
-              <li><i class="fas fa-check-circle"></i> Cool, ventilated, warm & moisture-wicking凉爽、透气、保暖且吸湿排汗</li>
-              <li><i class="fas fa-check-circle"></i> Built-in solar cell heating layer内置太阳能电池加热层</li>
-              <li><i class="fas fa-check-circle"></i> Ventilation and cooling function通风和冷却功能</li>
-              <li><i class="fas fa-check-circle"></i> Extreme cold and heat protection极寒和高温防护</li>
-              <li><i class="fas fa-check-circle"></i> Handmade customization · Source factory手工定制·源工厂</li>
+              <li><i class="fas fa-check-circle"></i> Cool, ventilated, warm & moisture-wicking / 凉爽透气保暖吸湿 / 通気性・保温・吸湿発散</li>
+              <li><i class="fas fa-check-circle"></i> Built-in solar cell heating layer / 内置太阳能电池加热层 / 太陽電池加熱層内蔵</li>
+              <li><i class="fas fa-check-circle"></i> Ventilation and cooling function / 通风冷却功能 / 通気冷却機能</li>
+              <li><i class="fas fa-check-circle"></i> Extreme cold and heat protection / 极寒高温防护 / 極寒・酷暑保護</li>
+              <li><i class="fas fa-check-circle"></i> Handmade customization / 手工定制 / ハンドメイドカスタム</li>
             </ul>
-            <div class="patent-badge-row">
-              <span class="patent-badge-small">7 national patents7项国家专利</span>
-              <span class="patent-badge-small">Multiple functions多种功能</span>
-            </div>
+            <div class="patent-badge-row"><span class="patent-badge-small">7 national patents / 7项国家专利 / 7つの国家特許</span><span class="patent-badge-small">Multi-function / 多功能 / 多機能</span></div>
           </div>
         </div>
-        <!-- 登山鞋产品卡片 (图片 p2.jpg) -->
+        <!-- 登山鞋 -->
         <div class="product-card">
-          <div class="product-img">
-            <img src="p2.jpg" alt="Mountaineering Protective Shoes">
-          </div>
+          <div class="product-img"><img src="p2.jpg" alt="Mountaineering Shoes" onerror="this.src='https://placehold.co/200x200/2A6F8F/white?text=Mountaineering'"></div>
           <div class="product-desc">
-            <h3><i class="fas fa-mountain"></i> Mountaineering Protective Shoes登山防护鞋</h3>
+            <h3><i class="fas fa-mountain"></i> Mountaineering Protective Shoes<br><span style="font-size:0.8rem;">登山防护鞋 / 登山用保護靴</span></h3>
             <ul>
-              <li><i class="fas fa-check-circle"></i> Built-in solar cell heating layer内置太阳能电池加热层</li>
-              <li><i class="fas fa-check-circle"></i> Drying and ventilation functions干燥和通风功能</li>
-              <li><i class="fas fa-check-circle"></i> Protection in extremely cold environments在极寒环境下提供保护</li>
-              <li><i class="fas fa-check-circle"></i> Extreme heat environment protection极端高温环境防护</li>
-              <li><i class="fas fa-check-circle"></i> Handmade customization · Safety shoes手工定制·安全鞋.原工厂</li>
+              <li><i class="fas fa-check-circle"></i> Built-in solar cell heating layer / 内置太阳能电池加热层</li>
+              <li><i class="fas fa-check-circle"></i> Drying and ventilation / 干燥通风 / 乾燥通気</li>
+              <li><i class="fas fa-check-circle"></i> Extreme cold environment protection / 极寒环境防护 / 極寒環境保護</li>
+              <li><i class="fas fa-check-circle"></i> Extreme heat protection / 极端高温防护 / 酷暑環境保護</li>
+              <li><i class="fas fa-check-circle"></i> Handmade customization / 手工定制 / ハンドメイド</li>
             </ul>
-            <div class="patent-badge-row">
-              <span class="patent-badge-small">Sending dad送爸爸</span>
-              <span class="patent-badge-small">Send to husband送丈夫</span>
-              <span class="patent-badge-small">Multiple functions多功能</span>
-            </div>
+            <div class="patent-badge-row"><span class="patent-badge-small">For dad / 送爸爸 / 父へ</span><span class="patent-badge-small">For husband / 送丈夫 / 夫へ</span></div>
           </div>
         </div>
-         <!-- 学习工作户外鞋卡片 (图片 p3.jpg) -->
+        <!-- 商务户外鞋 -->
         <div class="product-card">
-          <div class="product-img">
-            <img src="p3.jpg" alt="Mountaineering Protective Shoes">
-          </div>
+          <div class="product-img"><img src="p3.jpg" alt="Business Outdoor Shoes" onerror="this.src='https://placehold.co/200x200/2A6F8F/white?text=Business+Shoes'"></div>
           <div class="product-desc">
-            <h3><i class="fas fa-mountain"></i> Study, work, outdoor business shoes 学习工作户外商务鞋</h3>
+            <h3><i class="fas fa-briefcase"></i> Study, Work, Outdoor Business Shoes<br><span style="font-size:0.8rem;">学习工作户外商务鞋 / 学習・仕事・アウトドアビジネスシューズ</span></h3>
             <ul>
-              <li><i class="fas fa-check-circle"></i> Built-in solar cell heating layer内置太阳能电池加热层</li>
-              <li><i class="fas fa-check-circle"></i> Drying and ventilation functions干燥和通风功能</li>
-              <li><i class="fas fa-check-circle"></i> Protection in extremely cold environments在极寒环境下提供保护</li>
-              <li><i class="fas fa-check-circle"></i> Extreme heat environment protection极端高温环境防护</li>
-              <li><i class="fas fa-check-circle"></i> Handmade customization · Safety shoes手工定制·安全鞋.原工厂</li>
+              <li><i class="fas fa-check-circle"></i> Built-in solar cell heating layer / 内置太阳能电池加热层</li>
+              <li><i class="fas fa-check-circle"></i> Drying and ventilation / 干燥通风 / 乾燥通気</li>
+              <li><i class="fas fa-check-circle"></i> Extreme cold protection / 极寒防护 / 極寒保護</li>
+              <li><i class="fas fa-check-circle"></i> Extreme heat protection / 高温防护 / 酷暑保護</li>
+              <li><i class="fas fa-check-circle"></i> Handmade customization / 手工定制 / ハンドメイド</li>
             </ul>
-            <div class="patent-badge-row">
-              <span class="patent-badge-small">Sending dad送爸爸</span>
-              <span class="patent-badge-small">Send to husband送丈夫</span>
-              <span class="patent-badge-small">Multiple functions多功能</span>
-            </div>
+            <div class="patent-badge-row"><span class="patent-badge-small">Multi-scene / 多场景 / マルチシーン</span></div>
           </div>
         </div>
-
-         <!-- 军用鞋产品卡片 (图片 p3.jpg) -->
+        <!-- 军用鞋 -->
         <div class="product-card">
-          <div class="product-img">
-            <img src="p4.jpg" alt="Mountaineering Protective Shoes">
-          </div>
+          <div class="product-img"><img src="p4.jpg" alt="Military Outdoor Shoes" onerror="this.src='https://placehold.co/200x200/2A6F8F/white?text=Military+Shoes'"></div>
           <div class="product-desc">
-            <h3><i class="fas fa-mountain"></i> Military outdoor  shoes </h3>
+            <h3><i class="fas fa-shield-hooded"></i> Military Outdoor Shoes<br><span style="font-size:0.8rem;">军用户外鞋 / 軍用アウトドアシューズ</span></h3>
             <ul>
-              <li><i class="fas fa-check-circle"></i> Built-in solar cell heating layer</li>
-              <li><i class="fas fa-check-circle"></i> Drying and ventilation functions</li>
-              <li><i class="fas fa-check-circle"></i> Protection in extremely cold environments</li>
-              <li><i class="fas fa-check-circle"></i> Extreme heat environment protection</li>
-              <li><i class="fas fa-check-circle"></i> Handmade customization · Safety shoes</li>
+              <li><i class="fas fa-check-circle"></i> Built-in solar cell heating layer / 内置太阳能电池加热层</li>
+              <li><i class="fas fa-check-circle"></i> Drying and ventilation / 干燥通风 / 乾燥通気</li>
+              <li><i class="fas fa-check-circle"></i> Extreme environment protection / 极端环境防护 / 極限環境保護</li>
+              <li><i class="fas fa-check-circle"></i> Enhanced survivability / 增强生存能力 / 生存能力向上</li>
+              <li><i class="fas fa-check-circle"></i> Handmade customization / 手工定制 / ハンドメイド</li>
             </ul>
-            <div class="patent-badge-row">
-              <span class="patent-badge-small">A sniper lying prone in snowy fields, grasslands, deserts, or mountainous regions significantly enhances their survivability</span>
-              <span class="patent-badge-small">Soldiers won't expose their positions due to intolerable cold or heat.</span>
-              <span class="patent-badge-small">Multiple functions</span>
-            </div>
+            <div class="patent-badge-row"><span class="patent-badge-small">Sniper field proven / 狙击手战场验证 / 狙撃手実戦検証</span><span class="patent-badge-small">Stealth comfort / 隐形舒适 / ステルス快適性</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT section -->
+  <!-- CONTACT section 三语 -->
   <section id="contact" class="page-section">
     <div class="container">
-      <h2 class="section-title"><i class="fas fa-envelope"></i>Contact Us联系我们</h2>
+      <h2 class="section-title">
+        <i class="fas fa-envelope"></i>Contact Us<br>
+        <span class="section-sub">联系我们 / お問い合わせ</span>
+      </h2>
       <div class="contact-container">
         <div class="contact-info">
-          <h3><i class="fas fa-map-pin"></i> Mars Mission Base火星任务基地</h3>
-          <p><i class="fas fa-location-dot"></i> Patent Health Shoes Factory Address: 101, behind Huangjingge Community, Wuling District, Changde, China专利保健鞋厂地址:中国常德市武陵区黄井阁社区后101号</p>
-          <p><i class="fas fa-phone-alt"></i> Wechat +86 13549606533 Whatsapp +85247435725微信 13549606533</p>
+          <h3><i class="fas fa-map-pin"></i> Mars Mission Base / 火星任务基地 / 火星ミッションベース</h3>
+          <p><i class="fas fa-location-dot"></i> Patent Health Shoes Factory: 101, behind Huangjingge Community, Wuling District, Changde, China<br>
+          专利保健鞋厂地址: 中国常德市武陵区黄井阁社区后101号<br>
+          特許健康靴工場: 中国湖南省常徳市武陵区黄井阁コミュニティ裏101</p>
+          <p><i class="fas fa-phone-alt"></i> WeChat / 微信: +86 13549606533 &nbsp;|&nbsp; WhatsApp: +85247435725</p>
           <p><i class="fas fa-paper-plane"></i> leojim@mqtech1.com</p>
-          <p><i class="fas fa-clock"></i> Mission control: 24/7服务时间:24/7全天候</p>
-        
+          <p><i class="fas fa-clock"></i> Service: 24/7 / 全天候服务 / 年中無休</p>
         </div>
       </div>
     </div>
@@ -1488,7 +1337,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 MQTech1. All rights reserved. | Built for Mars Tech</p>
+      <p>&copy; 2026 MQTech1. All rights reserved. | 中英日三语版 | 火星科技鞋履专利系统</p>
     </div>
   </footer>
 </body>

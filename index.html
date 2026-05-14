@@ -1,260 +1,4 @@
 
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>火星科技 | 弹幕联系信息</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: linear-gradient(145deg, #0a0f1e 0%, #0c1222 100%);
-            font-family: 'Segoe UI', 'Noto Sans', system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-        }
-
-        /* 弹幕卡片容器 - 带科幻感 */
-        .danmaku-container {
-            max-width: 1200px;
-            width: 100%;
-            background: rgba(10, 20, 28, 0.65);
-            backdrop-filter: blur(12px);
-            border-radius: 64px;
-            border: 1px solid rgba(255, 160, 60, 0.4);
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 140, 0, 0.2) inset;
-            padding: 2rem 1.5rem;
-            transition: all 0.3s;
-        }
-
-        /* 火星主题标识 */
-        .mars-badge {
-            text-align: center;
-            margin-bottom: 1.2rem;
-        }
-        .mars-badge span {
-            background: #ff6a1a30;
-            padding: 6px 18px;
-            border-radius: 60px;
-            font-size: 0.85rem;
-            color: #ffb347;
-            border: 1px solid #ff8c42;
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-
-        /* 弹幕轨道区域 */
-        .danmaku-track {
-            background: rgba(0, 0, 0, 0.45);
-            border-radius: 56px;
-            padding: 20px 0;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            border: 1px solid rgba(255, 140, 0, 0.5);
-        }
-
-        /* 滚动条幅 */
-        .danmaku-scroll {
-            display: flex;
-            white-space: nowrap;
-            animation: slideMarquee 28s linear infinite;
-            width: fit-content;
-            will-change: transform;
-        }
-
-        .danmaku-item {
-            display: inline-flex;
-            align-items: baseline;
-            gap: 10px;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(8px);
-            margin-right: 32px;
-            padding: 10px 28px;
-            border-radius: 48px;
-            font-size: 1rem;
-            font-weight: 500;
-            color: #fff5e6;
-            border-left: 4px solid #ffa047;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            transition: transform 0.2s;
-            white-space: nowrap;
-        }
-
-        /* 不同语言区块轻微视觉区分 */
-        .danmaku-item .lang-zh { color: #ffcd94; font-weight: 600; margin-right: 4px; }
-        .danmaku-item .lang-en { color: #b9e6ff; font-size: 0.9rem; margin-right: 4px; }
-        .danmaku-item .lang-ja { color: #ffb7b2; font-size: 0.9rem; }
-        .separator-dot { color: #ffaa55; margin: 0 6px; font-weight: bold; }
-
-        /* 联系方式特殊高亮 */
-        .contact-highlight {
-            color: #ffbc6e;
-            font-weight: 700;
-            background: #2c1a0a;
-            padding: 2px 8px;
-            border-radius: 32px;
-            font-family: monospace;
-            letter-spacing: 0.5px;
-        }
-
-        /* 动画 */
-        @keyframes slideMarquee {
-            0% {
-                transform: translateX(0%);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        /* 鼠标悬停时暂停弹幕，更友好 */
-        .danmaku-track:hover .danmaku-scroll {
-            animation-play-state: paused;
-        }
-
-        /* 响应式 */
-        @media (max-width: 760px) {
-            .danmaku-item {
-                padding: 6px 18px;
-                font-size: 0.75rem;
-                margin-right: 20px;
-            }
-            .danmaku-scroll {
-                animation-duration: 22s;
-            }
-            .contact-highlight {
-                font-size: 0.7rem;
-            }
-        }
-
-        /* 底部门户提示 */
-        .recruit-tip {
-            text-align: center;
-            margin-top: 1.5rem;
-            font-size: 0.75rem;
-            color: #ffbc7a;
-            background: rgba(0,0,0,0.4);
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 5px 18px;
-            border-radius: 60px;
-            backdrop-filter: blur(4px);
-        }
-        .recruit-tip i {
-            font-style: normal;
-            display: inline-block;
-        }
-    </style>
-</head>
-<body>
-<div class="danmaku-container">
-    <div class="mars-badge">
-        <span>🚀 火星科技 · MARS TECH | 创业招募 ⚡</span>
-    </div>
-
-    <div class="danmaku-track">
-        <div class="danmaku-scroll">
-            <!-- 弹幕内容块：中英日完整信息，循环滚动 我们复制两组无缝衔接 -->
-            <!-- 第一组 -->
-            <div class="danmaku-item">
-                <span class="lang-zh">🔥 欢迎来到火星科技！</span>
-                <span class="lang-en">🔥 Welcome to MarsTech!</span>
-                <span class="lang-ja">🔥 マーズテックへようこそ！</span>
-                <span class="separator-dot">✦</span>
-                <span class="lang-zh">如果你是因“创业招募”而来的女孩</span>
-                <span class="lang-en">If you're a girl attracted by "Startup Recruitment"</span>
-                <span class="lang-ja">“起業募集”に惹かれた女性の方</span>
-                <span class="separator-dot">✦</span>
-                <span class="lang-zh">请忽略脚下的鞋子，直接看这里 👇</span>
-                <span class="lang-en">Please ignore the shoes, look directly here 👇</span>
-                <span class="lang-ja">靴は気にしないで、こちらをチェック 👇</span>
-                <span class="separator-dot">📞</span>
-            </div>
-            <!-- 联系方式区块 - 三语混合弹幕 -->
-            <div class="danmaku-item">
-                <span class="lang-zh">📞 电话/Tel:</span>
-                <span class="contact-highlight">+86 13549606533</span>
-                <span class="separator-dot">|</span>
-                <span class="lang-en">WhatsApp:</span>
-                <span class="contact-highlight">+852 47435725</span>
-                <span class="separator-dot">|</span>
-                <span class="lang-ja">📧 メール:</span>
-                <span class="contact-highlight">leojim@mqtech1.com</span>
-            </div>
-            <!-- 重复英文版混合强调 让弹幕更丰富 -->
-            <div class="danmaku-item">
-                <span class="lang-en">📞 Tel:</span>
-                <span class="contact-highlight">+86 13549606533</span>
-                <span class="separator-dot">✧</span>
-                <span class="lang-ja">WhatsApp:</span>
-                <span class="contact-highlight">+85247435725</span>
-                <span class="separator-dot">✧</span>
-                <span class="lang-zh">✉️ 邮箱:</span>
-                <span class="contact-highlight">leojim@mqtech1.com</span>
-                <span class="separator-dot">🌐</span>
-                <span class="lang-zh">创业女性优先</span>
-                <span class="lang-en">Female founders优先</span>
-                <span class="lang-ja">女性起業家歓迎</span>
-            </div>
-            <!-- 再来一组吸引弹幕，让信息更醒目：单独再做完整重复，确保滚动里内容丰富 -->
-            <div class="danmaku-item">
-                <span class="lang-zh">✨ 火星科技 招募梦想家 ✨</span>
-                <span class="lang-en">MarsTech Recruiting Dreamers</span>
-                <span class="lang-ja">夢を追う仲間を募集</span>
-                <span class="separator-dot">⚡</span>
-                <span class="lang-zh">联络我们：</span>
-                <span class="contact-highlight">+86 13549606533</span>
-                <span class="separator-dot">/</span>
-                <span class="contact-highlight">+85247435725</span>
-                <span class="separator-dot">✉</span>
-                <span class="contact-highlight">leojim@mqtech1.com</span>
-            </div>
-
-            <!-- 第二组重复（为了无缝循环）复制上面核心内容，使滚动更平滑 -->
-            <div class="danmaku-item">
-                <span class="lang-zh">🔥 欢迎来到火星科技！</span>
-                <span class="lang-en">🔥 Welcome to MarsTech!</span>
-                <span class="lang-ja">🔥 マーズテックへようこそ！</span>
-                <span class="separator-dot">✦</span>
-                <span class="lang-zh">创业招募 · 女孩优先</span>
-                <span class="lang-en">Startup Recruitment · Girls Priority</span>
-                <span class="lang-ja">起業募集・女性優先</span>
-                <span class="separator-dot">📞</span>
-                <span class="contact-highlight">+86 13549606533</span>
-                <span class="separator-dot">📱</span>
-                <span class="contact-highlight">+85247435725</span>
-                <span class="separator-dot">📧</span>
-                <span class="contact-highlight">leojim@mqtech1.com</span>
-            </div>
-            <div class="danmaku-item">
-                <span class="lang-zh">👠 请忽略脚下的鞋子，我们只聊梦想与创业。</span>
-                <span class="lang-en">👠 Ignore the shoes, just dreams & startup.</span>
-                <span class="lang-ja">👠 靴は無視して、夢と起業を語りましょう。</span>
-                <span class="separator-dot">🌙</span>
-                <span class="lang-zh">电话/WhatsApp/邮件 24h</span>
-                <span class="contact-highlight">+86 13549606533</span>
-                <span class="separator-dot">|</span>
-                <span class="contact-highlight">leojim@mqtech1.com</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="recruit-tip">
-        <i>💡 “火星科技 · 她力量计划” —— 若你心中有火，直接联系我们！  💡</i>
-    </div>
-</div>
-</body>
-</html>
 
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -393,6 +137,54 @@
     </style>
 </head>
 <body>
+
+    
+
+    <!-- 弹幕横幅 - 独立模块，不影响下方布局 -->
+<div style="width: 100%; background: linear-gradient(145deg, #0a0f1e 0%, #0c1222 100%); overflow: hidden; position: relative; z-index: 99;">
+    <div style="max-width: 1400px; margin: 0 auto; padding: 12px 0;">
+        <div style="overflow: hidden; white-space: nowrap;">
+            <div style="display: inline-block; animation: scrollBar 25s linear infinite;">
+                <span style="display: inline-flex; align-items: center; gap: 20px; padding: 0 20px;">
+                    <!-- 中文 -->
+                    <span style="color:#ffcd94;">🔥 欢迎来到火星科技！</span>
+                    <span style="color:#ffcd94;">如果你是被“创业招募”文案吸引来的女孩，请忽略脚下的鞋子，直接看这里 👉</span>
+                    <span style="color:#ffcd94;">📞 电话: +86 13549606533</span>
+                    <span style="color:#ffcd94;">WhatsApp: +85247435725</span>
+                    <span style="color:#ffcd94;">📧 邮件: leojim@mqtech1.com</span>
+                    
+                    <span style="color:#ffaa55;">✦✦✦</span>
+                    
+                    <!-- 英文 -->
+                    <span style="color:#b9e6ff;">🔥 Welcome to MarsTech!</span>
+                    <span style="color:#b9e6ff;">If you're a girl attracted by the "Startup Recruitment"文案, please ignore the shoes and look directly here 👉</span>
+                    <span style="color:#b9e6ff;">📞 Tel: +86 13549606533</span>
+                    <span style="color:#b9e6ff;">WhatsApp: +85247435725</span>
+                    <span style="color:#b9e6ff;">📧 Email: leojim@mqtech1.com</span>
+                    
+                    <span style="color:#ffaa55;">✦✦✦</span>
+                    
+                    <!-- 日文 -->
+                    <span style="color:#ffb7b2;">🔥 マーズテックへようこそ！</span>
+                    <span style="color:#ffb7b2;">「起業募集」のコピーに惹かれた女性の方、靴は気にしないで、こちらをチェック 👉</span>
+                    <span style="color:#ffb7b2;">📞 電話: +86 13549606533</span>
+                    <span style="color:#ffb7b2;">WhatsApp: +85247435725</span>
+                    <span style="color:#ffb7b2;">📧 メール: leojim@mqtech1.com</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @keyframes scrollBar {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+</style>
+
+
+    
     <div class="hero">
         <!-- 全屏背景视频 -->
         <video class="bg-video" autoplay muted loop playsinline>

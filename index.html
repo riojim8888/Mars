@@ -1152,631 +1152,741 @@ window.addEventListener('beforeunload', ()=>{
 </script>
 </body>
 </html>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>MQtech1 · 五维健康温控 | 中英日三语专利鞋履系统</title>
-  <!-- Font Awesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Google Fonts: Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
-      background: linear-gradient(135deg, #1A3C4A 0%, #0F2C38 100%);
-      min-height: 100vh;
-      color: #e0e9f0;
-      line-height: 1.6;
-      overflow-x: hidden;
-      position: relative;
-    }
-    /* 火星星光背景点缀 */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: 
-        radial-gradient(2px 2px at 15% 30%, #f9b872, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 72% 45%, #e66b4b, rgba(0,0,0,0)),
-        radial-gradient(3px 3px at 8% 82%, #d94f3e, rgba(0,0,0,0)),
-        radial-gradient(4px 4px at 55% 17%, #c4492e, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 91% 68%, #f09c5a, rgba(0,0,0,0)),
-        radial-gradient(6px 6px at 23% 91%, #b33e28, rgba(0,0,0,0));
-      background-size: 200% 200%;
-      opacity: 0.4;
-      pointer-events: none;
-      z-index: -1;
-    }
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 30px;
-      position: relative;
-      z-index: 2;
-    }
-    /* navigation */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 0;
-      border-bottom: 1px solid rgba(230, 120, 80, 0.35);
-      flex-wrap: wrap;
-      position: sticky;
-      top: 0;
-      background: linear-gradient(135deg, #1A3C4A 0%, #0F2C38 100%);
-      backdrop-filter: blur(10px);
-      z-index: 100;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
-    .logo i {
-      color: #ff8a5c;
-      font-size: 2rem;
-      filter: drop-shadow(0 0 8px #d95b3a);
-      animation: pulse 2s infinite;
-    }
-    .logo span {
-      background: linear-gradient(135deg, #ffb48a, #ff6b4a);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .nav-links {
-      display: flex;
-      gap: 35px;
-      font-weight: 400;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: #e3c9b5;
-      font-size: 1.05rem;
-      transition: 0.3s;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 4px;
-    }
-    .nav-links a:hover {
-      color: #ffa067;
-      border-bottom-color: #ff7f4f;
-    }
-    .page-section {
-      padding: 70px 0 80px;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      scroll-margin-top: 80px;
-    }
-    .section-title {
-      font-size: 2.6rem;
-      font-weight: 600;
-      margin-bottom: 30px;
-      border-bottom: 3px solid #b3492a;
-      display: inline-block;
-      padding-bottom: 10px;
-    }
-    .section-title i {
-      color: #ff784f;
-      margin-right: 15px;
-    }
-    .section-sub {
-      font-size: 12px;
-      opacity: 0.8;
-      margin-top: 5px;
-      display: block;
-    }
-    .btn {
-      display: inline-block;
-      background: linear-gradient(145deg, #d75a38, #b33e22);
-      border: none;
-      color: white;
-      font-weight: 600;
-      padding: 14px 38px;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: 0.25s;
-      text-decoration: none;
-      letter-spacing: 0.8px;
-      box-shadow: 0 8px 22px rgba(200, 70, 20, 0.4);
-      border: 1px solid rgba(255, 150, 100, 0.5);
-    }
-    .btn i {
-      margin-left: 10px;
-    }
-    .btn:hover {
-      background: linear-gradient(145deg, #e57a58, #c24d2e);
-      transform: translateY(-3px);
-    }
-    .btn-outline {
-      background: transparent;
-      border: 2px solid #d96a42;
-      color: #fcdac8;
-      box-shadow: none;
-      padding: 12px 30px;
-    }
-    .btn-outline:hover {
-      background: rgba(230, 100, 60, 0.15);
-      border-color: #ff9066;
-    }
-    .mars-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      align-items: center;
-    }
-    .mars-text {
-      flex: 1 1 350px;
-    }
-    .mars-stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-      margin-top: 40px;
-    }
-    .stat-card {
-      background: rgba(20, 12, 8, 0.5);
-      backdrop-filter: blur(5px);
-      border-radius: 25px;
-      padding: 25px;
-      border: 1px solid #d1643b60;
-      transition: transform 0.3s;
-    }
-    .stat-card:hover {
-      transform: scale(1.02);
-    }
-    .stat-card i {
-      font-size: 2.5rem;
-      color: #ff8a5c;
-    }
-    .stat-card h3 {
-      font-size: 1.5rem;
-      color: #ffc49c;
-    }
-    .mars-visual {
-      flex: 1 1 300px;
-      text-align: center;
-    }
-    .mars-visual i {
-      font-size: 15rem;
-      color: #c9734b;
-      filter: drop-shadow(0 0 30px #ff7f4f);
-      animation: float 3s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    .shoe-showcase {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 50px;
-      align-items: center;
-      margin-bottom: 40px;
-    }
-    .shoe-image {
-      flex: 1 1 280px;
-      text-align: center;
-      background: rgba(0,0,0,0.3);
-      border-radius: 60px;
-      padding: 40px;
-      border: 1px solid #d27a4e;
-    }
-    .shoe-image i {
-      font-size: 12rem;
-      color: #ce7a52;
-      filter: drop-shadow(0 0 25px #ff9f6e);
-    }
-    .shoe-specs {
-      flex: 2 1 400px;
-    }
-    .feature-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      margin: 30px 0;
-    }
-    .feature-item {
-      background: rgba(0,0,0,0.4);
-      padding: 20px;
-      border-radius: 30px;
-      border: 1px solid rgba(210, 122, 78, 0.3);
-    }
-    .learn-more-detail {
-      background: rgba(20, 12, 8, 0.5);
-      backdrop-filter: blur(4px);
-      border-radius: 40px;
-      padding: 40px;
-      margin-top: 50px;
-      border: 1px solid rgba(209, 99, 51, 0.5);
-    }
-    .learn-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: space-between;
-      margin-top: 20px;
-    }
-    .learn-card {
-      flex: 1 1 200px;
-      text-align: center;
-      background: rgba(0,0,0,0.25);
-      border-radius: 30px;
-      padding: 25px;
-      border: 1px solid rgba(255, 140, 80, 0.4);
-    }
-    .learn-card i {
-      font-size: 3rem;
-      color: #ffa067;
-      margin-bottom: 15px;
-    }
-    .learn-card h4 {
-      font-size: 1.2rem;
-      color: #ffcfaa;
-    }
-    .learn-card p {
-      font-size: 0.85rem;
-    }
-    .patent-products {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin-top: 40px;
-    }
-    .product-card {
-      flex: 1 1 380px;
-      background: rgba(15, 10, 8, 0.6);
-      backdrop-filter: blur(5px);
-      border-radius: 40px;
-      padding: 25px;
-      border: 1px solid #d1643b60;
-      transition: transform 0.3s, border-color 0.3s;
-    }
-    .product-card:hover {
-      transform: translateY(-5px);
-      border-color: #ff9066;
-    }
-    .product-img {
-      text-align: center;
-      margin-bottom: 15px;
-    }
-    .product-img img {
-      width: 100%;
-      max-width: 200px;
-      border-radius: 30px;
-      border: 2px solid #c96f46;
-      box-shadow: 0 10px 25px #701e0a;
-    }
-    .product-desc h3 {
-      font-size: 1.5rem;
-      color: #ffb48a;
-      margin-bottom: 10px;
-    }
-    .product-desc ul {
-      list-style: none;
-      margin: 15px 0;
-    }
-    .product-desc li {
-      margin-bottom: 8px;
-      font-size: 0.85rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .product-desc li i {
-      color: #ff784f;
-      width: 20px;
-    }
-    .patent-badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 12px 0 5px;
-    }
-    .patent-badge-small {
-      background: #b3492a60;
-      border-radius: 40px;
-      padding: 4px 12px;
-      font-size: 0.7rem;
-      border: 1px solid #d9643a;
-      color: #ffd4b0;
-    }
-    .contact-container {
-      background: rgba(8, 6, 5, 0.5);
-      backdrop-filter: blur(5px);
-      border-radius: 60px;
-      padding: 40px;
-      border: 1px solid #ce6e42;
-      margin-top: 20px;
-    }
-    .contact-info h3 {
-      font-size: 1.8rem;
-      color: #fca975;
-      margin-bottom: 20px;
-    }
-    .contact-info p {
-      margin: 15px 0;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-    .contact-info i {
-      color: #ff784f;
-      width: 30px;
-      font-size: 1.3rem;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(3,5,10,0.7);
-      color: #e0e9f0;
-      border-top: 1px solid rgba(230, 120, 80, 0.25);
-    }
-    .lang-hint-sm {
-      font-size: 9px;
-      opacity: 0.7;
-      display: block;
-    }
-    .two-line {
-      line-height: 1.3;
-    }
-    @media (max-width: 768px) {
-      .navbar { flex-direction: column; gap: 15px; }
-      .nav-links { gap: 20px; flex-wrap: wrap; justify-content: center; }
-      .section-title { font-size: 1.8rem; }
-      .container { padding: 0 20px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>MQtech1 · Mars Health Shoes · 火星健康鞋履</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --mars-red: #c1440e;
+  --mars-lava: #ff5722;
+  --mars-glow: #ff8c42;
+  --mars-bright: #ffb347;
+  --mars-dust: #d4956a;
+  --deep-space: #020408;
+  --space-dark: #050c14;
+  --space-mid: #0a1628;
+  --space-blue: #0d2137;
+  --ice-blue: #00d4ff;
+  --holo-cyan: #00ffcc;
+  --text-primary: #f5e6d8;
+  --text-muted: rgba(245,230,216,0.5);
+  --text-faint: rgba(245,230,216,0.25);
+  --scan-line: rgba(255,140,66,0.06);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:smooth;}
+
+body {
+  font-family: 'Rajdhani', 'Noto Sans SC', sans-serif;
+  background: var(--deep-space);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  position: relative;
+  cursor: none;
+}
+
+/* ===== CUSTOM CURSOR ===== */
+.cursor {
+  position: fixed; pointer-events: none; z-index: 9999;
+  width: 12px; height: 12px;
+  background: var(--mars-glow);
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+  box-shadow: 0 0 14px var(--mars-lava), 0 0 28px rgba(255,87,34,0.5);
+  transition: width 0.15s, height 0.15s, background 0.15s;
+}
+.cursor-ring {
+  position: fixed; pointer-events: none; z-index: 9998;
+  width: 36px; height: 36px;
+  border: 1.5px solid rgba(255,140,66,0.6);
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+  transition: all 0.1s;
+}
+
+/* ===== DEEP SPACE BACKGROUND ===== */
+.space-bg {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  overflow: hidden;
+}
+.stars {
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 5% 8%, rgba(255,200,150,0.9), transparent),
+    radial-gradient(1px 1px at 18% 22%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1.5px 1.5px at 32% 5%, rgba(200,220,255,0.8), transparent),
+    radial-gradient(1px 1px at 47% 15%, rgba(255,180,100,0.6), transparent),
+    radial-gradient(1px 1px at 63% 28%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 78% 7%, rgba(255,150,80,0.7), transparent),
+    radial-gradient(1px 1px at 91% 19%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1px 1px at 12% 45%, rgba(200,230,255,0.6), transparent),
+    radial-gradient(1.5px 1.5px at 29% 58%, rgba(255,200,120,0.8), transparent),
+    radial-gradient(1px 1px at 54% 42%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 71% 55%, rgba(150,200,255,0.5), transparent),
+    radial-gradient(2px 2px at 85% 48%, rgba(255,120,60,0.6), transparent),
+    radial-gradient(1px 1px at 8% 73%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 23% 81%, rgba(200,180,255,0.5), transparent),
+    radial-gradient(1.5px 1.5px at 41% 69%, rgba(255,200,150,0.7), transparent),
+    radial-gradient(1px 1px at 58% 77%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 76% 85%, rgba(150,220,255,0.5), transparent),
+    radial-gradient(2px 2px at 93% 72%, rgba(255,160,80,0.7), transparent),
+    radial-gradient(1px 1px at 15% 92%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 38% 96%, rgba(200,220,255,0.6), transparent),
+    radial-gradient(1.5px 1.5px at 67% 93%, rgba(255,200,130,0.5), transparent),
+    radial-gradient(1px 1px at 87% 98%, rgba(255,255,255,0.7), transparent);
+  background-size: 100% 100%;
+  animation: starTwinkle 8s ease-in-out infinite alternate;
+}
+@keyframes starTwinkle { 0%{opacity:0.7} 50%{opacity:1} 100%{opacity:0.8} }
+.mars-planet {
+  position: absolute; width: 320px; height: 320px; top: -60px; right: -80px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ff8c60 0%, #e05a20 25%, #c1440e 50%, #8b2500 75%, #3d0f00 100%);
+  box-shadow: inset -30px -30px 60px rgba(0,0,0,0.6), inset 20px 10px 40px rgba(255,150,80,0.3), 0 0 80px rgba(193,68,14,0.3), 0 0 160px rgba(193,68,14,0.15);
+  animation: marsFloat 12s ease-in-out infinite; opacity: 0.6;
+}
+.mars-planet::before {
+  content:''; position:absolute; inset:0; border-radius:50%;
+  background: repeating-linear-gradient(165deg, transparent 0px, transparent 8px, rgba(0,0,0,0.12) 8px, rgba(0,0,0,0.12) 10px);
+  opacity:0.7;
+}
+.mars-planet::after {
+  content:''; position:absolute; width:180%; height:30px; top:50%; left:-40%;
+  background: linear-gradient(90deg, transparent, rgba(255,140,60,0.15), transparent);
+  transform: rotate(-25deg) translateY(-50%); filter: blur(12px);
+}
+@keyframes marsFloat { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(15px) rotate(3deg)} }
+.scanlines {
+  position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(0deg, var(--scan-line) 0px, var(--scan-line) 1px, transparent 1px, transparent 4px);
+  animation: scanMove 20s linear infinite;
+}
+@keyframes scanMove { 0%{background-position:0 0} 100%{background-position:0 200px} }
+.nebula {
+  position: absolute; width: 600px; height: 400px; bottom: 20%; left: -10%;
+  background: radial-gradient(ellipse, rgba(193,68,14,0.08) 0%, transparent 70%);
+  filter: blur(40px);
+  animation: nebulaBreath 10s ease-in-out infinite alternate;
+}
+@keyframes nebulaBreath { 0%{opacity:0.5;transform:scale(1)} 100%{opacity:1;transform:scale(1.1)} }
+
+/* ===== TICKER ===== */
+.ticker-wrap {
+  position: relative; z-index: 10;
+  background: linear-gradient(90deg, var(--deep-space), var(--space-dark), var(--deep-space));
+  border-bottom: 1px solid rgba(255,87,34,0.3);
+  overflow: hidden;
+}
+.ticker-wrap::before {
+  content:'◆ LIVE';
+  position:absolute; left:0; top:0; bottom:0;
+  background: var(--mars-lava);
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 9px; font-weight: 700;
+  padding: 0 12px;
+  display:flex; align-items:center;
+  z-index:2;
+  letter-spacing:2px;
+}
+.ticker-inner {
+  display: inline-block;
+  white-space: nowrap;
+  animation: tickerRoll 35s linear infinite;
+  padding: 10px 0 10px 80px;
+  font-size: 12px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+@keyframes tickerRoll {0%{transform:translateX(0)} 100%{transform:translateX(-50%)}}
+.tick-zh{color:#ffb347;} .tick-en{color:#7de8ff;} .tick-ja{color:#ffaaa0;}
+.tick-sep{color:rgba(255,140,66,0.4); margin:0 20px;}
+
+/* ===== NAV ===== */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 40px;
+  background: rgba(2,4,8,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,87,34,0.2);
+}
+nav::after {
+  content:''; position:absolute; bottom:0; left:0; right:0;
+  height:1px; background: linear-gradient(90deg, transparent, var(--mars-lava), transparent);
+  opacity:0.6;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 12px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem; font-weight: 700;
+  color: var(--mars-glow);
+  text-shadow: 0 0 20px rgba(255,140,66,0.6);
+  letter-spacing: 3px;
+}
+.nav-logo-icon {
+  width: 42px; height: 42px;
+  border: 1.5px solid var(--mars-lava);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 0 16px rgba(255,87,34,0.4);
+  background: #1a1a2e;
+}
+.nav-logo-icon img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.nav-links {
+  display: flex; gap: 28px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.nav-links a {
+  color: var(--text-muted); text-decoration: none;
+  position: relative; padding-bottom: 4px;
+  transition: color 0.2s;
+}
+.nav-links a::after {
+  content:''; position:absolute; bottom:0; left:0; width:0; height:1px;
+  background: var(--mars-glow);
+  box-shadow: 0 0 6px var(--mars-glow);
+  transition: width 0.3s;
+}
+.nav-links a:hover{color:var(--mars-glow);}
+.nav-links a:hover::after{width:100%;}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  position: relative; z-index: 5;
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 80px 40px;
+  overflow: hidden;
+}
+.hero-bg-video {
+  position: absolute; inset: 0;
+  object-fit: cover; width: 100%; height: 100%;
+  opacity: 0.2; z-index: 0;
+}
+.hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(135deg, rgba(2,4,8,0.95) 0%, rgba(5,12,20,0.8) 50%, rgba(2,4,8,0.9) 100%);
+}
+.hero-grid-lines {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background-image: linear-gradient(rgba(255,87,34,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,87,34,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+}
+.hero-content {
+  position: relative; z-index: 5;
+  max-width: 1280px; margin: 0 auto; width: 100%;
+  display: flex; gap: 60px; align-items: center;
+}
+.hero-text { flex: 1; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10px; font-weight: 600; letter-spacing: 4px;
+  color: var(--mars-glow);
+  text-transform: uppercase;
+  border: 1px solid rgba(255,140,66,0.3);
+  padding: 6px 14px; border-radius: 2px;
+  margin-bottom: 20px;
+  background: rgba(255,87,34,0.05);
+}
+.hero-eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--mars-lava); border-radius: 50%; animation: blinkDot 1.5s ease-in-out infinite; }
+@keyframes blinkDot { 0%,100%{opacity:1} 50%{opacity:0.2} }
+.hero-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #ffb347 0%, #ff5722 40%, #c1440e 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 0 30px rgba(255,87,34,0.4));
+}
+.hero-title-sub {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: var(--ice-blue);
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+  opacity: 0.9;
+}
+.hero-title-ja {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.95rem; color: var(--text-muted); letter-spacing: 1px; margin-bottom: 30px;
+}
+.hero-tagline {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--text-primary);
+  max-width: 580px;
+  margin-bottom: 10px;
+}
+.hero-tagline span { color: var(--mars-bright); font-weight: 600; }
+.hero-tagline-en { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px; line-height: 1.6; }
+.hero-tagline-ja { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 36px; line-height: 1.6; }
+.season-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; }
+.season-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px; border-radius: 2px;
+  font-size: 11px; font-weight: 600; letter-spacing: 1px;
+  border: 1px solid;
+  font-family: 'Rajdhani', sans-serif;
+}
+.season-spring { border-color: rgba(100,200,100,0.4); color: #90ee90; background: rgba(100,200,100,0.06); }
+.season-summer { border-color: rgba(255,200,0,0.4); color: #ffd700; background: rgba(255,200,0,0.06); }
+.season-autumn { border-color: rgba(255,140,0,0.4); color: #ffa500; background: rgba(255,140,0,0.06); }
+.season-winter { border-color: rgba(0,200,255,0.4); color: #00d4ff; background: rgba(0,200,255,0.06); }
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-mars {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 32px; border-radius: 2px;
+  font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase; text-decoration: none;
+  cursor: pointer; border: none; transition: all 0.25s;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--mars-lava), var(--mars-red));
+  color: white;
+  box-shadow: 0 8px 30px rgba(255,87,34,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+  position: relative; overflow: hidden;
+}
+.btn-primary::before { content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent); transition: left 0.4s; }
+.btn-primary:hover::before{left:100%;}
+.btn-primary:hover{transform:translateY(-2px); box-shadow:0 14px 40px rgba(255,87,34,0.6);}
+.btn-outline-mars {
+  background: transparent;
+  color: var(--mars-glow);
+  border: 1px solid rgba(255,140,66,0.5);
+  box-shadow: 0 0 16px rgba(255,140,66,0.1), inset 0 0 16px rgba(255,140,66,0.05);
+}
+.btn-outline-mars:hover { background: rgba(255,140,66,0.1); border-color: var(--mars-glow); box-shadow: 0 0 24px rgba(255,140,66,0.3); }
+.hero-visual { flex: 0 0 340px; position: relative; }
+.orbit-ring { position: absolute; border: 1px solid rgba(255,140,66,0.15); border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+.orbit-1 { width: 280px; height: 280px; animation: orbitSpin 20s linear infinite; }
+.orbit-2 { width: 340px; height: 340px; animation: orbitSpin 30s linear infinite reverse; border-style: dashed; border-color: rgba(0,212,255,0.1); }
+.orbit-3 { width: 400px; height: 400px; animation: orbitSpin 45s linear infinite; border-color: rgba(255,87,34,0.07); }
+@keyframes orbitSpin { 100%{transform:translate(-50%,-50%) rotate(360deg)} }
+.orbit-dot { position: absolute; top: 0; left: 50%; width: 8px; height: 8px; background: var(--mars-glow); border-radius: 50%; transform: translate(-50%, -50%); box-shadow: 0 0 12px var(--mars-glow); }
+.orbit-dot-2 { background: var(--ice-blue); box-shadow: 0 0 12px var(--ice-blue); top: auto; bottom: 0; }
+.shoe-icon-wrap { position: relative; z-index: 5; width: 200px; height: 200px; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(193,68,14,0.15) 0%, transparent 70%); }
+.shoe-icon-wrap i { font-size: 6rem; color: var(--mars-dust); filter: drop-shadow(0 0 20px rgba(255,140,66,0.6)); animation: shoeFloat 4s ease-in-out infinite; }
+@keyframes shoeFloat { 0%,100%{transform:translateY(0) rotate(-5deg)} 50%{transform:translateY(-12px) rotate(2deg)} }
+.stats-strip {
+  position: relative; z-index: 5;
+  background: rgba(2,4,8,0.7);
+  border-top: 1px solid rgba(255,87,34,0.2);
+  border-bottom: 1px solid rgba(255,87,34,0.2);
+  padding: 24px 40px;
+  display: flex; justify-content: center; gap: 0;
+}
+.stat-block { flex: 1; max-width: 200px; text-align: center; padding: 0 30px; position: relative; }
+.stat-block+.stat-block::before { content:''; position:absolute; left:0; top:10%; bottom:10%; width:1px; background: linear-gradient(180deg, transparent, rgba(255,87,34,0.3), transparent); }
+.stat-num { font-family: 'Orbitron', sans-serif; font-size: 2.2rem; font-weight: 900; color: var(--mars-bright); text-shadow: 0 0 20px rgba(255,179,71,0.5); line-height: 1; }
+.stat-label { font-size: 11px; color: var(--text-muted); letter-spacing: 2px; margin-top: 6px; text-transform: uppercase; }
+.section { position: relative; z-index: 5; padding: 90px 40px; }
+.section-inner { max-width: 1280px; margin: 0 auto; }
+.section-header { margin-bottom: 50px; }
+.section-tag {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--mars-lava);
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 14px;
+}
+.section-tag::before, .section-tag::after { content:''; height:1px; flex:1; max-width:40px; background: linear-gradient(90deg, var(--mars-lava), transparent); }
+.section-tag::after { background: linear-gradient(270deg, var(--mars-lava), transparent); }
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--mars-glow) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  margin-bottom: 8px;
+}
+.section-sub { font-size: 13px; color: var(--text-muted); letter-spacing: 1px; line-height: 1.6; }
+.shoes-layout { display: flex; gap: 50px; align-items: flex-start; flex-wrap: wrap; }
+.shoe-showcase { flex: 0 0 320px; position: relative; }
+.shoe-frame {
+  background: linear-gradient(145deg, rgba(10,22,40,0.8), rgba(2,4,8,0.9));
+  border: 1px solid rgba(255,87,34,0.2);
+  border-radius: 4px;
+  padding: 50px 30px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.shoe-frame::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background: linear-gradient(90deg, transparent, var(--mars-lava), transparent); }
+.shoe-frame::after { content:''; position:absolute; inset:0; background: radial-gradient(ellipse at 50% 80%, rgba(193,68,14,0.1) 0%, transparent 65%); }
+.shoe-frame i { font-size: 8rem; color: #c4785a; filter: drop-shadow(0 10px 30px rgba(255,87,34,0.5)); position: relative; z-index: 1; }
+.corner-bracket { position: absolute; width: 14px; height: 14px; border-color: var(--mars-lava); border-style: solid; }
+.corner-bracket.tl { top: 8px; left: 8px; border-width: 2px 0 0 2px; }
+.corner-bracket.tr { top: 8px; right: 8px; border-width: 2px 2px 0 0; }
+.corner-bracket.bl { bottom: 8px; left: 8px; border-width: 0 0 2px 2px; }
+.corner-bracket.br { bottom: 8px; right: 8px; border-width: 0 2px 2px 0; }
+.shoe-specs { flex: 1; min-width: 300px; }
+.spec-headline { font-size: clamp(1rem, 2vw, 1.4rem); line-height: 1.6; margin-bottom: 28px; color: var(--text-primary); }
+.spec-headline em { color: var(--mars-bright); font-style: normal; }
+.features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 28px; }
+.feature-card {
+  background: rgba(5,12,20,0.8);
+  border: 1px solid rgba(255,87,34,0.15);
+  border-radius: 3px;
+  padding: 14px;
+  transition: all 0.25s;
+  position: relative; overflow: hidden;
+}
+.feature-card::before { content:''; position:absolute; top:0; left:0; width:3px; height:0; background: var(--mars-lava); transition: height 0.3s; }
+.feature-card:hover { border-color: rgba(255,87,34,0.4); background: rgba(10,22,40,0.9); }
+.feature-card:hover::before { height: 100%; }
+.feature-card i { color: var(--mars-glow); font-size: 1.1rem; margin-bottom: 8px; display: block; }
+.feature-card h4 { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--mars-dust); margin-bottom: 4px; }
+.feature-card p { font-size: 11px; color: var(--text-muted); line-height: 1.5; }
+.deep-tech {
+  background: rgba(5,12,20,0.6);
+  border: 1px solid rgba(0,212,255,0.15);
+  border-radius: 4px;
+  padding: 36px;
+  margin-top: 60px;
+  position: relative; overflow: hidden;
+}
+.deep-tech::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background: linear-gradient(90deg, transparent, var(--ice-blue), transparent); }
+.deep-tech-title { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; color: var(--ice-blue); margin-bottom: 6px; text-shadow: 0 0 20px rgba(0,212,255,0.4); }
+.deep-tech-sub { font-size: 12px; color: var(--text-muted); margin-bottom: 28px; }
+.tech-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media(max-width:900px){.tech-cards{grid-template-columns:repeat(2,1fr);}}
+.tech-card {
+  background: rgba(2,4,8,0.7);
+  border: 1px solid rgba(0,212,255,0.1);
+  border-radius: 3px; padding: 20px; text-align: center;
+  transition: 0.25s;
+}
+.tech-card:hover { border-color: rgba(0,212,255,0.35); background: rgba(0,50,80,0.3); }
+.tech-card i { font-size: 1.8rem; color: var(--ice-blue); margin-bottom: 10px; opacity: 0.85; }
+.tech-card h4 { font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #7de8ff; margin-bottom: 6px; text-transform: uppercase; }
+.tech-card p { font-size: 10px; color: var(--text-muted); line-height: 1.5; }
+.products-section { background: rgba(5,12,20,0.4); }
+.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
+.product-card {
+  background: rgba(5,12,20,0.8);
+  border: 1px solid rgba(255,87,34,0.15);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s;
+  position: relative;
+}
+.product-card::after { content:''; position:absolute; inset:0; background: linear-gradient(135deg, rgba(255,87,34,0.04) 0%, transparent 60%); pointer-events: none; transition: opacity 0.3s; opacity:0; }
+.product-card:hover { transform: translateY(-6px); border-color: rgba(255,140,66,0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 40px rgba(193,68,14,0.15); }
+.product-card:hover::after { opacity:1; }
+.product-card-img {
+  height: 180px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgba(10,22,40,0.9), rgba(5,12,20,0.95));
+}
+.product-card-img::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse at 50% 100%, rgba(193,68,14,0.2) 0%, transparent 70%); }
+.product-card-img img {
+  width: auto; height: auto; max-width: 140px; max-height: 140px;
+  object-fit: contain;
+  position: relative; z-index: 1;
+  filter: drop-shadow(0 10px 20px rgba(255,87,34,0.3));
+}
+.product-card-img i { font-size: 5rem; position: relative; z-index: 1; filter: drop-shadow(0 10px 20px rgba(255,87,34,0.4)); }
+.product-card-img i.color-medical { color: #5cc8ff; }
+.product-card-img i.color-mountain { color: #90ee90; }
+.product-card-img i.color-desert { color: #ffd700; }
+.product-card-img i.color-business { color: var(--mars-dust); }
+.product-card-body { padding: 20px 22px; }
+.product-card-tag {
+  display: inline-block;
+  font-family: 'Orbitron', sans-serif; font-size: 9px;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 1px;
+  margin-bottom: 10px;
+}
+.tag-blue { background: rgba(0,212,255,0.1); color: var(--ice-blue); border: 1px solid rgba(0,212,255,0.2); }
+.tag-green { background: rgba(100,200,100,0.1); color: #90ee90; border: 1px solid rgba(100,200,100,0.2); }
+.tag-amber { background: rgba(255,200,0,0.1); color: #ffd700; border: 1px solid rgba(255,200,0,0.2); }
+.tag-mars { background: rgba(255,87,34,0.1); color: var(--mars-glow); border: 1px solid rgba(255,87,34,0.2); }
+.product-card-name { font-family: 'Rajdhani', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--mars-dust); margin-bottom: 4px; line-height: 1.3; }
+.product-card-name-en { font-size: 11px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.4; }
+.product-specs { list-style: none; }
+.product-specs li { font-size: 12px; color: var(--text-muted); padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
+.product-specs li i { color: var(--mars-glow); flex-shrink: 0; margin-top: 2px; width: 14px; font-size: 10px; }
+.badge-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.badge-small {
+  font-size: 9px; letter-spacing: 1px; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 1px;
+  background: rgba(193,68,14,0.15); color: #ffb347;
+  border: 1px solid rgba(193,68,14,0.3);
+  font-family: 'Orbitron', sans-serif;
+}
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; flex-wrap: wrap; }
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr;}}
+.contact-panel {
+  background: rgba(5,12,20,0.8);
+  border: 1px solid rgba(255,87,34,0.2);
+  border-radius: 4px;
+  padding: 36px;
+  position: relative; overflow: hidden;
+}
+.contact-panel::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background: linear-gradient(90deg, var(--mars-lava), var(--mars-glow), var(--mars-lava)); background-size: 200%; animation: shimmerLine 3s linear infinite; }
+@keyframes shimmerLine { 0%{background-position:0%} 100%{background-position:200%} }
+.contact-panel-title { font-family: 'Orbitron', sans-serif; font-size: 1rem; color: var(--mars-glow); margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+.contact-item { display: flex; gap: 14px; margin-bottom: 18px; align-items: flex-start; }
+.contact-item-icon { width: 38px; height: 38px; flex-shrink: 0; border: 1px solid rgba(255,87,34,0.3); border-radius: 2px; display: flex; align-items: center; justify-content: center; color: var(--mars-glow); font-size: 0.95rem; background: rgba(255,87,34,0.05); }
+.contact-item-text { font-size: 13px; line-height: 1.7; }
+.contact-item-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--mars-lava); font-family: 'Orbitron', sans-serif; margin-bottom: 2px; }
+.map-panel {
+  background: rgba(2,4,8,0.9);
+  border: 1px solid rgba(0,212,255,0.15);
+  border-radius: 4px;
+  padding: 30px;
+  min-height: 300px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 16px;
+  position: relative; overflow: hidden;
+}
+.map-panel::before { content:''; position:absolute; inset:0; background: linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px); background-size: 30px 30px; }
+.map-pin { width: 60px; height: 60px; border: 2px solid var(--mars-lava); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; color: var(--mars-glow); position: relative; z-index: 1; box-shadow: 0 0 20px rgba(255,87,34,0.3); animation: pinPulse 2s ease-in-out infinite; }
+@keyframes pinPulse { 0%,100%{box-shadow:0 0 20px rgba(255,87,34,0.3), 0 0 0 0 rgba(255,87,34,0.2)} 50%{box-shadow:0 0 30px rgba(255,87,34,0.5), 0 0 0 20px rgba(255,87,34,0)} }
+.map-coords { font-family: 'Orbitron', sans-serif; font-size: 11px; letter-spacing: 2px; color: var(--ice-blue); position: relative; z-index: 1; }
+.map-address { font-size: 13px; color: var(--text-muted); text-align: center; position: relative; z-index: 1; line-height: 1.8; }
+footer {
+  position: relative; z-index: 5;
+  background: rgba(2,4,8,0.95);
+  border-top: 1px solid rgba(255,87,34,0.15);
+  padding: 24px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+.footer-brand { font-family: 'Orbitron', sans-serif; font-size: 11px; letter-spacing: 3px; color: var(--mars-glow); text-transform: uppercase; }
+.footer-legal { font-size: 11px; color: var(--text-faint); }
+.section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(255,87,34,0.3), transparent); position: relative; z-index: 5; }
+@keyframes fadeInUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+.reveal { animation: fadeInUp 0.8s ease forwards; }
+@media(max-width:900px){
+  nav{padding:12px 20px;} .nav-links{gap:16px; font-size:0.8rem;}
+  .hero{padding:60px 20px;} .hero-content{flex-direction:column;} .hero-visual{display:none;}
+  .stats-strip{padding:20px; flex-wrap:wrap;} .stat-block{min-width:120px;}
+  .section{padding:60px 20px;} .shoes-layout{flex-direction:column;} .shoe-showcase{flex:none; width:100%;}
+  .features-grid{grid-template-columns:1fr;} .tech-cards{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:480px){ .nav-links{display:none;} .products-grid{grid-template-columns:1fr;} footer{flex-direction:column; text-align:center;} }
+</style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">
-      <i class="fas fa-rocket"></i>
-      <span>MQTech1</span>
-    </div>
-    <div class="nav-links">
-      <a href="#home">Home / 首页 / ホーム</a>
-      <a href="#shoes">Shoes / 鞋履 / シューズ</a>
-      <a href="#patents">Patents / 专利 / 特許</a>
-      <a href="#contact">Contact / 联系 / 連絡</a>
-    </div>
-  </nav>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="space-bg"><div class="stars"></div><div class="mars-planet"></div><div class="nebula"></div><div class="scanlines"></div></div>
 
-  <!-- HOME section 三语 -->
-  <section id="home" class="page-section">
-    <div class="container">
-      <div class="mars-grid">
-        <div class="mars-text">
-          <h1 class="section-title">
-            <i class="fas fa-globe"></i>Mars Health Shoes & Patents<br>
-            <span class="section-sub">火星健康鞋及专利 / 火星健康靴と特許</span>
-          </h1>
-          <p style="font-size: 1.2rem;">Revolutionizing footwear with Martian technology for unparalleled comfort and innovation.<br>
-          运用火星科技革新鞋履，带来无与伦比的舒适度和创新性。<br>
-          火星技術で靴を革新、比類なき快適さと革新性を実現。</p>
-          <div class="mars-stats">
-            <div class="stat-card">
-              <i class="fas fa-shoe-prints"></i>
-              <h3>10K+ Shoes Sold<br><span style="font-size:0.9rem;">售出超过1万双鞋 / 10,000足以上販売</span></h3>
-            </div>
-            <div class="stat-card">
-              <i class="fas fa-lightbulb"></i>
-              <h3>50+ Patents<br><span style="font-size:0.9rem;">50多项专利 / 50以上の特許</span></h3>
-            </div>
-          </div>
-          <a href="#shoes" class="btn">Explore Shoes / 探索鞋履 / 靴を探す <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="mars-visual">
-          <i class="fas fa-planet-ringed"></i>
-        </div>
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span class="tick-zh">🔥 欢迎来到火星科技 · 七项国家专利 · 足部微气候革命</span><span class="tick-sep">◆</span>
+    <span class="tick-zh">📞 +86 13549606533</span><span class="tick-sep">|</span>
+    <span class="tick-zh">WhatsApp: +85247435725</span><span class="tick-sep">|</span>
+    <span class="tick-zh">📧 leojim@mqtech1.com</span><span class="tick-sep">◆◆◆</span>
+    <span class="tick-en">🚀 WELCOME TO MQTECH1 · MARS HEALTH SHOES · 7 NATIONAL PATENTS</span><span class="tick-sep">◆</span>
+    <span class="tick-en">📞 +86 13549606533 · WhatsApp: +85247435725 · leojim@mqtech1.com</span><span class="tick-sep">◆◆◆</span>
+    <span class="tick-ja">🔥 マーズテックへようこそ · 7つの国家特許 · 足部微気候テクノロジー</span><span class="tick-sep">◆</span>
+    <span class="tick-ja">📞 +86 13549606533 · leojim@mqtech1.com</span><span class="tick-sep">◆◆◆</span>
+    <span class="tick-zh">🔥 欢迎来到火星科技 · 七项国家专利 · 足部微气候革命</span><span class="tick-sep">◆</span>
+    <span class="tick-zh">📞 +86 13549606533</span><span class="tick-sep">|</span>
+    <span class="tick-zh">WhatsApp: +85247435725</span><span class="tick-sep">|</span>
+    <span class="tick-zh">📧 leojim@mqtech1.com</span><span class="tick-sep">◆◆◆</span>
+    <span class="tick-en">🚀 WELCOME TO MQTECH1 · MARS HEALTH SHOES · 7 NATIONAL PATENTS</span><span class="tick-sep">◆</span>
+    <span class="tick-en">📞 +86 13549606533 · WhatsApp: +85247435725 · leojim@mqtech1.com</span><span class="tick-sep">◆◆◆</span>
+    <span class="tick-ja">🔥 マーズテックへようこそ · 7つの国家特許 · 足部微気候テクノロジー</span><span class="tick-sep">◆</span>
+    <span class="tick-ja">📞 +86 13549606533 · leojim@mqtech1.com</span><span class="tick-sep">◆◆◆</span>
+  </div>
+</div>
+
+<!-- NAV with p6.jpg logo -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-icon"><img src="p6.jpg" alt="MQtech1" onerror="this.src='https://placehold.co/42x42/c1440e/white?text=M'"></div>
+    MQTECH1
+  </div>
+  <div class="nav-links">
+    <a href="#home">Home · 首页</a>
+    <a href="#shoes">Shoes · 鞋履</a>
+    <a href="#patents">Patents · 专利</a>
+    <a href="#contact">Contact · 联系</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <video class="hero-bg-video" autoplay muted loop playsinline><source src="warm-shoe-promo.mp4" type="video/mp4"></video>
+  <div class="hero-overlay"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-content">
+    <div class="hero-text reveal">
+      <div class="hero-eyebrow">MQtech1 · Mars Technology · 火星科技</div>
+      <h1 class="hero-title">MARS HEALTH<br>SHOES</h1>
+      <div class="hero-title-sub">火星健康鞋 · 七项国家专利</div>
+      <div class="hero-title-ja">火星健康靴 · 7つの国家特許</div>
+      <div class="season-row">
+        <span class="season-tag season-spring">🌸 春 — 干爽通风</span>
+        <span class="season-tag season-summer">☀️ 夏 — 沙漠空调</span>
+        <span class="season-tag season-autumn">🍂 秋 — 透气排汗</span>
+        <span class="season-tag season-winter">❄️ 冬 — 锁温保暖</span>
+      </div>
+      <p class="hero-tagline"><span>足部是人体第一大心脏</span>，承载 60% 血液循环。<br>让鞋替你工作，免疫力永不透支。</p>
+      <p class="hero-tagline-en">The foot is the body's primary circulatory hub — carrying 60% of blood flow. Our patented microclimate technology keeps you performing at peak, every season.</p>
+      <p class="hero-tagline-ja">足は体の循環の中枢。7つの特許を持つ微気候技術で、四季を通じて最高のパフォーマンスを。</p>
+      <div class="hero-actions">
+        <a href="https://item.taobao.com/item.htm?ft=t&id=1020693156750" target="_blank" class="btn-mars btn-primary"><i class="fas fa-rocket"></i> 立即体验 · SHOP NOW</a>
+        <a href="#shoes" class="btn-mars btn-outline-mars"><i class="fas fa-chevron-down"></i> 了解更多 · EXPLORE</a>
       </div>
     </div>
-  </section>
-
-  <!-- SHOES section 三语 -->
-  <section id="shoes" class="page-section">
-    <div class="container">
-      <h2 class="section-title">
-        <i class="fas fa-shoe-prints"></i>Our Mars Tech Shoes<br>
-        <span class="section-sub">我们的火星科技鞋 / 火星技術シューズ</span>
-      </h2>
-      <div class="shoe-showcase">
-        <div class="shoe-image">
-          <i class="fas fa-shoe-prints"></i>
-        </div>
-        <div class="shoe-specs">
-          <p style="font-size: 1.1rem;">Engineered with Mars-inspired materials for zero-gravity comfort and durability.<br>
-          采用火星灵感材料打造，兼具零重力舒适性和耐用性。<br>
-          火星から着想を得た素材で、無重力の快適さと耐久性を実現。</p>
-          <div class="feature-list">
-            <div class="feature-item"><i class="fas fa-wind"></i> Anti-Gravity Cushioning / 反重力缓冲 / 無重力クッション</div>
-            <div class="feature-item"><i class="fas fa-fire"></i> Heat-Resistant Soles / 耐热鞋底 / 耐熱ソール</div>
-            <div class="feature-item"><i class="fas fa-shield-alt"></i> Extreme Protection / 极寒极热防护 / 極限環境保護</div>
-            <div class="feature-item"><i class="fas fa-bolt"></i> Energy-Return Tech / 能量回报技术 / エネルギー還元技術</div>
-          </div>
-          <a href="#learn-more" class="btn-outline">Learn More / 了解更多 / 詳細を見る <i class="fas fa-chevron-down"></i></a>
-        </div>
-      </div>
-      
-      <div id="learn-more" class="learn-more-detail">
-        <h3 style="font-size: 1.8rem; color: #ffa67a;"><i class="fas fa-mars"></i> Deeper Mars Technology<br><span style="font-size:0.9rem;">更深层火星技术 / より深い火星技術</span></h3>
-        <p style="margin-bottom: 20px;">Every pair integrates research from Mars colonization trials. Our shoes adapt to low-gravity and harsh terrain – now available on Earth.<br>
-        每一双鞋都融入了火星殖民试验的研究成果，适应低重力和恶劣地形——现在地球上也能买到了。<br>
-        各靴には火星移住実験の研究成果が組み込まれ、低重力や過酷な地形に適応します。今、地球上で入手可能。</p>
-        <div class="learn-grid">
-          <div class="learn-card"><i class="fas fa-microchip"></i><h4>AI Smart Sole / AI智能鞋底 / AIスマートソール</h4><p>Real-time gait adaptation using Martian AI algorithms. / 利用火星AI算法实时步态自适应 / 火星AIアルゴリズムによるリアルタイム歩行適応</p></div>
-          <div class="learn-card"><i class="fas fa-leaf"></i><h4>Regolith Fiber / 风化层纤维 / レゴリス繊維</h4><p>Ultra light durable weave inspired by Martian soil. / 受火星土壤启发的超轻耐用编织 / 火星の土壌に着想を得た超軽量耐久性素材</p></div>
-          <div class="learn-card"><i class="fas fa-temperature-high"></i><h4>Thermal Buffer / 热缓冲垫 / サーマルバッファ</h4><p>Withstands -100°C to 70°C, tested at Olympus Mons. / 经奥林巴斯山测试，可承受-100°C至70°C / オリンポス山でテスト済み</p></div>
-          <div class="learn-card"><i class="fas fa-satellite"></i><h4>Orbital Sync / 轨道同步 / 軌道同期</h4><p>Connects to Mars satellites for navigation feedback. / 与火星卫星连接获取导航反馈 / 火星衛星と連携しナビゲーション</p></div>
-        </div>
-      </div>
+    <div class="hero-visual reveal reveal-d2">
+      <div class="orbit-ring orbit-1"><div class="orbit-dot"></div></div>
+      <div class="orbit-ring orbit-2"><div class="orbit-dot orbit-dot-2"></div></div>
+      <div class="orbit-ring orbit-3"></div>
+      <div class="shoe-icon-wrap"><i class="fas fa-shoe-prints"></i></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PATENTS section 产品展示 三语 -->
-  <section id="patents" class="page-section">
-    <div class="container">
-      <h2 class="section-title">
-        <i class="fas fa-file-invoice"></i>Patents & Products<br>
-        <span class="section-sub">专利与产品 / 特許と製品</span>
-      </h2>
-      <div style="text-align: center; margin-bottom: 30px;">
-        <span style="background: #b3492a30; padding: 10px 25px; border-radius: 60px; font-size: 1rem; border: 1px solid #d1643b; display: inline-block;">
-          <i class="fas fa-award"></i> Seven national patents create a high-quality comfort zone<br>
-          七项国家专利打造高品质舒适区域 / 7つの国家特許が高品質な快適ゾーンを実現
-        </span>
-      </div>
-      
-      <div class="patent-products">
-         <!-- ========================= 1. 医用手术鞋 ========================= -->
-        <div class="product-card">
-            <div class="product-img">
-                <img src="p1.jpg" alt="Medical Shoes" onerror="this.src='https://placehold.co/400x400/2A6F8F/white?text=Medical+Shoes'">
-            </div>
-            <div class="product-desc">
-                <h3>
-                    <i class="fas fa-user-md"></i> Medical Operating Shoes<br>
-                    <span>医用手术鞋 / 医療用手術靴</span>
-                </h3>
-                <ul>
-                    <li><i class="fas fa-check-circle"></i> Cool, ventilated, warm & moisture-wicking / 凉爽透气保暖吸湿 / 通気性・保温・吸湿発散</li>
-                    <li><i class="fas fa-check-circle"></i> Built-in solar cell heating layer / 内置太阳能电池加热层 / 太陽電池加熱層内蔵</li>
-                    <li><i class="fas fa-check-circle"></i> Ventilation and cooling function / 通风冷却功能 / 通気冷却機能</li>
-                    <li><i class="fas fa-check-circle"></i> Extreme cold and heat protection / 极寒高温防护 / 極寒・酷暑保護</li>
-                    <li><i class="fas fa-check-circle"></i> Handmade customization / 手工定制 / ハンドメイドカスタム</li>
-                </ul>
-                <div class="patent-badge-row">
-                    <span class="patent-badge-small">7 national patents / 7项国家专利 / 7つの国家特許</span>
-                    <span class="patent-badge-small">Multi-function / 多功能 / 多機能</span>
-                </div>
-            </div>
-        </div>
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stat-block"><div class="stat-num">10K+</div><div class="stat-label">Shoes Sold · 售出鞋履</div></div>
+  <div class="stat-block"><div class="stat-num">7</div><div class="stat-label">National Patents · 国家专利</div></div>
+  <div class="stat-block"><div class="stat-num">4</div><div class="stat-label">Seasons · 四季覆盖</div></div>
+  <div class="stat-block"><div class="stat-num">24/7</div><div class="stat-label">Service · 全天候服务</div></div>
+</div>
+<div class="section-divider"></div>
 
-        <!-- ========================= 2. 登山防护鞋 ========================= -->
-        <div class="product-card">
-            <div class="product-img">
-                <img src="p2.jpg" alt="Mountaineering Shoes" onerror="this.src='https://placehold.co/400x400/2A6F8F/white?text=Mountaineering'">
-            </div>
-            <div class="product-desc">
-                <h3>
-                    <i class="fas fa-mountain"></i> Mountaineering Protective Shoes<br>
-                    <span>登山防护鞋 / 登山用保護靴</span>
-                </h3>
-                <ul>
-                    <li><i class="fas fa-check-circle"></i> Built-in solar cell heating layer / 内置太阳能电池加热层 / 太陽電池加熱層内蔵</li>
-                    <li><i class="fas fa-check-circle"></i> Drying and ventilation / 干燥通风 / 乾燥通気</li>
-                    <li><i class="fas fa-check-circle"></i> Extreme cold environment protection / 极寒环境防护 / 極寒環境保護</li>
-                    <li><i class="fas fa-check-circle"></i> Extreme heat protection / 极端高温防护 / 酷暑環境保護</li>
-                    <li><i class="fas fa-check-circle"></i> Handmade customization / 手工定制 / ハンドメイド</li>
-                </ul>
-                <div class="patent-badge-row">
-                    <span class="patent-badge-small">For dad / 送爸爸 / 父へ</span>
-                    <span class="patent-badge-small">For husband / 送丈夫 / 夫へ</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- ========================= 3. 夏季沙漠户外通风降温空调鞋 (核心空调鞋排版) ========================= -->
-        <div class="product-card">
-            <div class="product-img" style="background: #f9e0a8;">   <!-- 沙漠主题暖色背景，保持结构一致 -->
-                <img src="desert-shoe.png" alt="Summer Desert Outdoor Cooling Shoes" onerror="this.src='https://placehold.co/400x400/D4A11E/white?text=Desert+Cooling+Shoes'">
-            </div>
-            <div class="product-desc">
-                <h3 style="color: #c76e1c;">
-                    <i class="fas fa-sun"></i> Summer Desert Outdoor Ventilation & Air-Conditioning Shoes<br>
-                    <span>夏季沙漠户外通风降温空调鞋 / 夏季砂漠アウトドア通気・冷房シューズ</span>
-                </h3>
-                <ul>
-                    <li><i class="fas fa-check-circle" style="color:#2a9d8f;"></i> Solar-powered micro air conditioner / 太阳能微型空调 / ソーラー式マイクロエアコン</li>
-                    <li><i class="fas fa-check-circle" style="color:#2a9d8f;"></i> Rapid ventilation & sweat wicking / 快速通风排汗 / 急速通気・汗吸収</li>
-                    <li><i class="fas fa-check-circle" style="color:#2a9d8f;"></i> Heat-reflective upper / 热反射鞋面 / 熱反射アッパー</li>
-                    <li><i class="fas fa-check-circle" style="color:#2a9d8f;"></i> Sand-proof mesh structure / 防沙网眼结构 / 防砂メッシュ構造</li>
-                    <li><i class="fas fa-check-circle" style="color:#2a9d8f;"></i> Handmade cooling customization / 手工清凉定制 / ハンドメイド冷却カスタム</li>
-                </ul>
-                <div class="patent-badge-row">
-                    <span class="patent-badge-small" style="background: #f4a261; color: white; border: none;">Desert Pro / 沙漠专业版 / 砂漠プロ仕様</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- ========================= 4. 商务户外鞋 (学习工作户外商务鞋) ========================= -->
-        <div class="product-card">
-            <div class="product-img">
-                <img src="p3.jpg" alt="Business Outdoor Shoes" onerror="this.src='https://placehold.co/400x400/2A6F8F/white?text=Business+Shoes'">
-            </div>
-            <div class="product-desc">
-                <h3>
-                    <i class="fas fa-briefcase"></i> Study, Work, Outdoor Business Shoes<br>
-                    <span>学习工作户外商务鞋 / 学習・仕事・アウトドアビジネスシューズ</span>
-                </h3>
-                <ul>
-                    <li><i class="fas fa-check-circle"></i> Built-in solar cell heating layer / 内置太阳能电池加热层 / 太陽電池加熱層内蔵</li>
-                    <li><i class="fas fa-check-circle"></i> Drying and ventilation / 干燥通风 / 乾燥通気</li>
-                    <li><i class="fas fa-check-circle"></i> Extreme cold protection / 极寒防护 / 極寒保護</li>
-                    <li><i class="fas fa-check-circle"></i> Extreme heat protection / 高温防护 / 酷暑保護</li>
-                    <li><i class="fas fa-check-circle"></i> Handmade customization / 手工定制 / ハンドメイド</li>
-                </ul>
-                <div class="patent-badge-row">
-                    <span class="patent-badge-small">Multi-scene / 多场景 / マルチシーン</span>
-                </div>
-            </div>
-        </div>
+<!-- SHOES SECTION -->
+<section id="shoes" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Technology · 技术 · テクノロジー</div>
+      <h2 class="section-title">MARS TECH SHOES<br><span style="font-size:0.6em;color:var(--text-muted);">火星科技鞋履 · 火星技術シューズ</span></h2>
+      <p class="section-sub">春暖夏凉 · 四季舒爽 — All-Season Comfort &amp; Climate Control — 春の暖かさ・夏の涼しさ</p>
     </div>
-  </section>
-    
-
-  <!-- CONTACT section 三语 -->
-  <section id="contact" class="page-section">
-    <div class="container">
-      <h2 class="section-title">
-        <i class="fas fa-envelope"></i>Contact Us<br>
-        <span class="section-sub">联系我们 / お問い合わせ</span>
-      </h2>
-      <div class="contact-container">
-        <div class="contact-info">
-          <h3><i class="fas fa-map-pin"></i> Mars Mission Base / 火星任务基地 / 火星ミッションベース</h3>
-          <p><i class="fas fa-location-dot"></i> Patent Health Shoes Factory: 101, behind Huangjingge Community, Wuling District, Changde, China<br>
-          专利保健鞋厂地址: 中国常德市武陵区皇经阁小区后101号<br>
-          特許健康靴工場: 中国湖南省常徳市武陵区黄井阁コミュニティ裏101</p>
-          <p><i class="fas fa-phone-alt"></i> Tel/ 电话: +86 13549606533 &nbsp;|&nbsp; WhatsApp: +85247435725</p>
-          <p><i class="fas fa-paper-plane"></i> leojim@mqtech1.com</p>
-          <p><i class="fas fa-clock"></i> Service: 24/7 / 全天候服务 / 年中無休</p>
+    <div class="shoes-layout">
+      <div class="shoe-showcase"><div class="shoe-frame"><div class="corner-bracket tl"></div><div class="corner-bracket tr"></div><div class="corner-bracket bl"></div><div class="corner-bracket br"></div><i class="fas fa-shoe-prints"></i></div></div>
+      <div class="shoe-specs">
+        <p class="spec-headline">采用<em>火星灵感材料</em>打造，兼具零重力舒适性和耐用性。<br><span style="font-size:0.85em;color:var(--text-muted);">Engineered with Mars-inspired materials for zero-gravity comfort and durability.<br>火星から着想を得た素材で、無重力の快適さと耐久性を実現。</span></p>
+        <div class="features-grid">
+          <div class="feature-card"><i class="fas fa-wind"></i><h4>Anti-Gravity Cushion · 反重力缓冲</h4><p>无重力クッション · Zero-G foot support system</p></div>
+          <div class="feature-card"><i class="fas fa-fire"></i><h4>Heat-Resistant Soles · 耐热鞋底</h4><p>耐熱ソール · Tested at extreme temperatures</p></div>
+          <div class="feature-card"><i class="fas fa-shield-alt"></i><h4>Extreme Protection · 极寒极热防护</h4><p>極限環境保護 · −100°C to +70°C range</p></div>
+          <div class="feature-card"><i class="fas fa-bolt"></i><h4>Energy Return · 能量回报技术</h4><p>エネルギー還元 · Propulsion-feedback sole</p></div>
         </div>
+        <a href="https://item.taobao.com/item.htm?ft=t&id=1020693156750" target="_blank" class="btn-mars btn-primary" style="text-decoration:none;"><i class="fas fa-shopping-cart"></i> 立即购买 · BUY NOW · 今すぐ購入</a>
       </div>
     </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 MQTech1. All rights reserved. | 中英日三语版 | 火星科技鞋履专利系统</p>
+    <div class="deep-tech">
+      <div class="deep-tech-title"><i class="fas fa-satellite" style="margin-right:10px;"></i>DEEPER MARS TECHNOLOGY · 深层火星技术</div>
+      <div class="deep-tech-sub">更深层火星技术 / より深い火星技術 — Research from Mars colonization trials</div>
+      <div class="tech-cards">
+        <div class="tech-card"><i class="fas fa-microchip"></i><h4>AI Smart Sole · AI智能鞋底</h4><p>Real-time gait adaptation · 火星AIアルゴリズム</p></div>
+        <div class="tech-card"><i class="fas fa-leaf"></i><h4>Regolith Fiber · 风化层纤维</h4><p>Ultra-light durable weave · レゴリス繊維素材</p></div>
+        <div class="tech-card"><i class="fas fa-temperature-high"></i><h4>Thermal Buffer · 热缓冲垫</h4><p>-100°C to 70°C · オリンポス山テスト済み</p></div>
+        <div class="tech-card"><i class="fas fa-satellite"></i><h4>Orbital Sync · 轨道同步</h4><p>Satellite navigation feedback · 火星衛星と連携</p></div>
+      </div>
     </div>
-  </footer>
-   
+  </div>
+</section>
+<div class="section-divider"></div>
+
+<!-- PATENTS / PRODUCTS with p1.jpg, p2.jpg, desert-shoe.png, p3.jpg -->
+<section id="patents" class="section products-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Products · 产品 · 製品</div>
+      <h2 class="section-title">PATENTS &amp; PRODUCTS<br><span style="font-size:0.6em;color:var(--text-muted);">专利与产品 · 特許と製品</span></h2>
+      <p class="section-sub">七项国家专利打造高品质舒适区域 · Seven national patents create a high-quality comfort zone · 7つの国家特許が快適ゾーンを実現</p>
+    </div>
+    <div class="products-grid">
+      <!-- 1 医用手术鞋 p1.jpg -->
+      <div class="product-card">
+        <div class="product-card-img"><img src="p1.jpg" alt="Medical Shoes" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"><i class="fas fa-user-md color-medical" style="display:none;"></i></div>
+        <div class="product-card-body"><span class="product-card-tag tag-blue">Medical · 医用 · 医療</span><div class="product-card-name">医用手术鞋</div><div class="product-card-name-en">Medical Operating Shoes · 医療用手術靴</div>
+        <ul class="product-specs"><li><i class="fas fa-check"></i>凉爽透气保暖吸湿 · Cool, ventilated, warm &amp; moisture-wicking</li><li><i class="fas fa-check"></i>内置太阳能电池加热层 · Built-in solar cell heating layer</li><li><i class="fas fa-check"></i>通风冷却功能 · Ventilation and cooling</li><li><i class="fas fa-check"></i>极寒高温双重防护 · Extreme cold &amp; heat protection</li><li><i class="fas fa-check"></i>手工定制 · Handmade customization</li></ul>
+        <div class="badge-row"><span class="badge-small">7 Patents · 7项专利</span><span class="badge-small">Multi-Function</span></div></div>
+      </div>
+      <!-- 2 登山防护鞋 p2.jpg -->
+      <div class="product-card">
+        <div class="product-card-img"><img src="p2.jpg" alt="Mountaineering" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"><i class="fas fa-mountain color-mountain" style="display:none;"></i></div>
+        <div class="product-card-body"><span class="product-card-tag tag-green">Outdoor · 户外 · アウトドア</span><div class="product-card-name">登山防护鞋</div><div class="product-card-name-en">Mountaineering Protective Shoes · 登山用保護靴</div>
+        <ul class="product-specs"><li><i class="fas fa-check"></i>内置太阳能电池加热层 · Solar cell heating layer</li><li><i class="fas fa-check"></i>干燥通风 · Drying and ventilation</li><li><i class="fas fa-check"></i>极寒环境防护 · Extreme cold protection</li><li><i class="fas fa-check"></i>极端高温防护 · Extreme heat protection</li><li><i class="fas fa-check"></i>手工定制 · Handmade customization</li></ul>
+        <div class="badge-row"><span class="badge-small">送爸爸 · For Dad</span><span class="badge-small">送丈夫 · For Husband</span></div></div>
+      </div>
+      <!-- 3 夏季空调鞋 desert-shoe.png -->
+      <div class="product-card">
+        <div class="product-card-img" style="background: linear-gradient(145deg, rgba(80,40,5,0.6), rgba(5,12,20,0.9));"><img src="desert-shoe.png" alt="Desert Cooling Shoes" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"><i class="fas fa-sun color-desert" style="display:none;"></i></div>
+        <div class="product-card-body"><span class="product-card-tag tag-amber">Desert Pro · 沙漠专业 · 砂漠プロ</span><div class="product-card-name" style="color:#ffd700;">夏季沙漠空调鞋</div><div class="product-card-name-en">Summer Desert Ventilation &amp; Air-Conditioning Shoes · 夏季砂漠通気・冷房シューズ</div>
+        <ul class="product-specs"><li><i class="fas fa-check" style="color:#ffd700;"></i>太阳能微型空调 · Solar-powered micro air conditioner</li><li><i class="fas fa-check" style="color:#ffd700;"></i>快速通风排汗 · Rapid ventilation &amp; sweat wicking</li><li><i class="fas fa-check" style="color:#ffd700;"></i>热反射鞋面 · Heat-reflective upper</li><li><i class="fas fa-check" style="color:#ffd700;"></i>防沙网眼结构 · Sand-proof mesh</li><li><i class="fas fa-check" style="color:#ffd700;"></i>手工清凉定制 · Handmade cooling custom</li></ul>
+        <div class="badge-row"><span class="badge-small" style="background:rgba(255,200,0,0.12);color:#ffd700;border-color:rgba(255,200,0,0.25);">Desert Exclusive</span></div></div>
+      </div>
+      <!-- 4 商务户外鞋 p3.jpg -->
+      <div class="product-card">
+        <div class="product-card-img"><img src="p3.jpg" alt="Business Shoes" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"><i class="fas fa-briefcase color-business" style="display:none;"></i></div>
+        <div class="product-card-body"><span class="product-card-tag tag-mars">Business · 商务 · ビジネス</span><div class="product-card-name">学习工作户外商务鞋</div><div class="product-card-name-en">Study, Work &amp; Outdoor Business Shoes · 学習・仕事・アウトドアビジネスシューズ</div>
+        <ul class="product-specs"><li><i class="fas fa-check"></i>内置太阳能电池加热层 · Solar cell heating layer</li><li><i class="fas fa-check"></i>干燥通风 · Drying and ventilation</li><li><i class="fas fa-check"></i>极寒极热双重防护 · Extreme cold &amp; heat protection</li><li><i class="fas fa-check"></i>手工定制 · Handmade customization</li></ul>
+        <div class="badge-row"><span class="badge-small">Multi-Scene · 多场景</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="section-divider"></div>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="section-inner">
+    <div class="section-header"><div class="section-tag">Contact · 联系 · 連絡</div><h2 class="section-title">MISSION BASE<br><span style="font-size:0.6em;color:var(--text-muted);">火星任务基地 · 火星ミッションベース</span></h2></div>
+    <div class="contact-grid">
+      <div class="contact-panel">
+        <div class="contact-panel-title"><i class="fas fa-broadcast-tower"></i> CONTACT COORDINATES · 联系坐标</div>
+        <div class="contact-item"><div class="contact-item-icon"><i class="fas fa-location-dot"></i></div><div class="contact-item-text"><div class="contact-item-label">Address · 地址 · 住所</div><div>专利保健鞋厂 · 中国常德市武陵区皇经阁小区后101号<br>Patent Health Shoes Factory, 101 behind Huangjingge Community, Wuling District, Changde, China<br>中国湖南省常徳市武陵区黄井阁コミュニティ裏101</div></div></div>
+        <div class="contact-item"><div class="contact-item-icon"><i class="fas fa-phone"></i></div><div class="contact-item-text"><div class="contact-item-label">Phone · 电话 · 電話</div><div>+86 13549606533</div></div></div>
+        <div class="contact-item"><div class="contact-item-icon"><i class="fab fa-whatsapp"></i></div><div class="contact-item-text"><div class="contact-item-label">WhatsApp</div><div>+85247435725</div></div></div>
+        <div class="contact-item"><div class="contact-item-icon"><i class="fas fa-envelope"></i></div><div class="contact-item-text"><div class="contact-item-label">Email · 邮件 · メール</div><div>leojim@mqtech1.com</div></div></div>
+        <div class="contact-item"><div class="contact-item-icon"><i class="fas fa-clock"></i></div><div class="contact-item-text"><div class="contact-item-label">Service · 服务 · サービス</div><div>24/7 · 全天候服务 · 年中無休</div></div></div>
+      </div>
+      <div class="map-panel"><div class="map-pin"><i class="fas fa-map-marker-alt"></i></div><div class="map-coords">29.0506° N · 111.6916° E</div><div class="map-address">常德市武陵区 · Wuling District, Changde<br>Hunan Province, China 湖南省<br><span style="color:var(--mars-glow);font-size:11px;font-family:'Orbitron',sans-serif;letter-spacing:2px;">MARS BASE EARTH-1</span></div><a href="https://maps.google.com/?q=29.0506,111.6916" target="_blank" class="btn-mars btn-outline-mars" style="font-size:10px;padding:10px 20px;text-decoration:none;"><i class="fas fa-external-link-alt"></i> OPEN MAP · 打开地图</a></div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="footer-brand">© 2026 MQTECH1 · MARS HEALTH SHOES · ALL SYSTEMS OPERATIONAL</div><div class="footer-legal">中英日三语版 · 火星科技鞋履专利系统 · 7 National Patents · 7つの国家特許</div></footer>
+
+<script>
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; cursor.style.left=mx+'px'; cursor.style.top=my+'px'; });
+function animRing(){ rx+=(mx-rx)*0.12; ry+=(my-ry)*0.12; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(animRing); }
+animRing();
+document.querySelectorAll('a,button,.feature-card,.product-card,.tech-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ cursor.style.width='20px'; cursor.style.height='20px'; cursor.style.background='rgba(255,140,66,0.5)'; ring.style.width='50px'; ring.style.height='50px'; });
+  el.addEventListener('mouseleave',()=>{ cursor.style.width='12px'; cursor.style.height='12px'; cursor.style.background='var(--mars-glow)'; ring.style.width='36px'; ring.style.height='36px'; });
+});
+const obs = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.style.opacity='1'; e.target.style.transform='none'; } }); },{threshold:0.1});
+document.querySelectorAll('.feature-card,.product-card,.tech-card,.stat-block,.contact-item').forEach(el=>{ if(el){ el.style.opacity='0'; el.style.transform='translateY(20px)'; el.style.transition='opacity 0.6s ease, transform 0.6s ease'; obs.observe(el); } });
+</script>
 </body>
 </html>
+

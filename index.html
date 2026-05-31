@@ -157,7 +157,7 @@
                     
                     <!-- 英文 -->
                     <span style="color:#b9e6ff;">🔥 Welcome to MarsTech!</span>
-                    <span style="color:#b9e6ff;">If you're a girl attracted by the "Startup Recruitment"文案, please ignore the shoes and look directly here 👉</span>
+                    <span style="color:#b9e6ff;">If you're a girl attracted by the "Startup Recruitment ads, please ignore the shoes and look directly here 👉</span>
                     <span style="color:#b9e6ff;">📞 Tel: +86 13549606533</span>
                     <span style="color:#b9e6ff;">WhatsApp: +85247435725</span>
                     <span style="color:#b9e6ff;">📧 Email: leojim@mqtech1.com</span>
@@ -248,754 +248,911 @@
 </html>
 
     
-    <link rel="manifest" href="/manifest.json">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>MQtech1 · 五维健康温控 | 中英日三语职业打卡系统</title>
-    <!-- html2canvas 用于生成海报 -->
-    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
+   <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>MQtech1 · 足部修炼大作战 🔥❄️</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --fire: #ff4d00;
+  --ice: #00c6ff;
+  --dark: #0d0d1a;
+  --card: #161628;
+  --gold: #ffd700;
+  --green: #00e676;
+  --text: #f0f0ff;
+  --muted: rgba(240,240,255,0.5);
+}
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
 
-        body {
-            background: linear-gradient(135deg, #1A3C4A 0%, #0F2C38 100%);
-            min-height: 100vh;
-            font-family: system-ui, -apple-system, 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
-            padding: 20px 16px 40px;
-        }
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--dark);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-        }
+/* ===== SCROLLING TICKER ===== */
+.ticker {
+  background: linear-gradient(90deg, #ff4d00, #ff8800, #ff4d00);
+  background-size: 200%;
+  animation: tickerShift 3s linear infinite;
+  padding: 8px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.ticker-inner { display:inline-block; animation: tickerScroll 30s linear infinite; }
+@keyframes tickerShift { 0%{background-position:0%} 100%{background-position:200%} }
+@keyframes tickerScroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
-        .main-card {
-            background: rgba(255,255,255,0.95);
-            border-radius: 48px;
-            overflow: hidden;
-            box-shadow: 0 25px 45px rgba(0,0,0,0.3);
-        }
+/* ===== HERO HEADER ===== */
+.hero {
+  text-align: center;
+  padding: 30px 20px 10px;
+  position: relative;
+}
+.hero-logo {
+  font-family: 'Fredoka One', cursive;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  background: linear-gradient(135deg, var(--fire), var(--gold), var(--ice));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  line-height: 1.1;
+}
+.hero-sub {
+  font-size: 13px; color: var(--muted); margin-top: 6px; letter-spacing: 1px;
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,77,0,0.15);
+  border: 1px solid rgba(255,77,0,0.5);
+  border-radius: 40px;
+  padding: 5px 16px;
+  font-size: 11px;
+  margin-top: 10px;
+  color: #ffaa66;
+}
 
-        .career-header {
-            background: linear-gradient(135deg, #2A6F8F, #1A4A62);
-            padding: 24px 20px;
-            color: white;
-            text-align: center;
-        }
-        .career-badge {
-            background: rgba(255,255,255,0.2);
-            display: inline-block;
-            padding: 6px 20px;
-            border-radius: 60px;
-            font-size: 12px;
-            margin-bottom: 12px;
-            line-height: 1.4;
-        }
-        .career-name {
-            font-size: 28px;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-        .change-career {
-            background: none;
-            border: 1px solid rgba(255,255,255,0.5);
-            color: white;
-            padding: 6px 16px;
-            border-radius: 60px;
-            font-size: 12px;
-            cursor: pointer;
-            margin-top: 8px;
-        }
-        .lang-hint {
-            font-size: 9px;
-            opacity: 0.7;
-            margin-top: 4px;
-        }
+/* ===== CHARACTER CARD ===== */
+.char-section {
+  padding: 20px 16px 0;
+  max-width: 420px;
+  margin: 0 auto;
+}
+.char-card {
+  background: linear-gradient(145deg, #1e1e38, #13132a);
+  border-radius: 28px;
+  border: 2px solid rgba(255,77,0,0.3);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.char-card::before {
+  content:'';
+  position:absolute; top:-30px; right:-30px;
+  width:120px; height:120px;
+  background: radial-gradient(circle, rgba(255,77,0,0.15), transparent 70%);
+  border-radius:50%;
+}
+.char-row { display:flex; align-items:center; gap:14px; margin-bottom:14px; }
+.char-avatar {
+  width:64px; height:64px; border-radius:50%;
+  background: linear-gradient(135deg, #ff4d00, #ff8800);
+  display:flex; align-items:center; justify-content:center;
+  font-size:2rem;
+  flex-shrink:0;
+  position:relative;
+  box-shadow: 0 0 20px rgba(255,100,0,0.5);
+  animation: avatarGlow 2s ease-in-out infinite;
+}
+@keyframes avatarGlow {
+  0%,100%{box-shadow:0 0 20px rgba(255,100,0,0.5)}
+  50%{box-shadow:0 0 35px rgba(255,150,0,0.8)}
+}
+.char-name { font-family:'Fredoka One',cursive; font-size:1.5rem; color:#ffcc88; }
+.char-title { font-size:11px; color:var(--muted); margin-top:2px; }
+.char-level {
+  display:inline-block;
+  background: linear-gradient(135deg,#ff4d00,#ff8800);
+  color:white; border-radius:20px;
+  padding:2px 10px; font-size:11px; font-weight:700;
+  margin-top:4px;
+}
+/* XP bar */
+.xp-label { font-size:10px; color:var(--muted); margin-bottom:4px; display:flex; justify-content:space-between; }
+.xp-bar { height:8px; background:rgba(255,255,255,0.1); border-radius:10px; overflow:hidden; }
+.xp-fill {
+  height:100%;
+  background: linear-gradient(90deg, var(--fire), var(--gold));
+  border-radius:10px;
+  transition: width 0.8s cubic-bezier(.34,1.56,.64,1);
+}
+.change-char-btn {
+  background:none; border:1px solid rgba(255,255,255,0.2); color:var(--muted);
+  padding:4px 12px; border-radius:20px; font-size:11px; cursor:pointer;
+  font-family:'Nunito',sans-serif;
+  transition:0.2s;
+}
+.change-char-btn:hover { border-color:#ff8800; color:#ffcc88; }
 
-        .dual-buttons {
-            display: flex;
-            gap: 16px;
-            padding: 24px 20px 20px;
-        }
-        .btn {
-            flex: 1;
-            border: none;
-            border-radius: 80px;
-            padding: 20px 12px;
-            font-size: 24px;
-            font-weight: 700;
-            color: white;
-            cursor: pointer;
-            transition: all 0.2s;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        .btn-heat { background: linear-gradient(145deg, #E67E22, #D35400); }
-        .btn-heat.active { background: linear-gradient(145deg, #F39C12, #E67E22); transform: scale(0.98); }
-        .btn-cool { background: linear-gradient(145deg, #3498DB, #2980B9); }
-        .btn-cool.active { background: linear-gradient(145deg, #5DADE2, #3498DB); transform: scale(0.98); }
-        .btn .main-text { display: block; font-size: 24px; line-height: 1.2; }
-        .btn .sub-text { display: block; font-size: 10px; opacity: 0.9; margin-top: 4px; }
-        .btn .lang-sub {
-            display: block;
-            font-size: 8px;
-            opacity: 0.7;
-            margin-top: 2px;
-        }
+/* ===== BATTLE BUTTONS ===== */
+.battle-section {
+  padding: 16px 16px 0;
+  max-width: 420px;
+  margin: 0 auto;
+}
+.battle-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
 
-        .timer-area {
-            background: #F0F4FA;
-            margin: 0 20px 20px;
-            border-radius: 40px;
-            padding: 16px;
-            text-align: center;
-        }
-        .timer-label { font-size: 12px; color: #5A6E84; margin-bottom: 8px; }
-        .timer-value { font-size: 36px; font-weight: 800; font-family: monospace; color: #1A4A62; line-height: 1.2; }
+.battle-btn {
+  border:none; border-radius:24px; padding:20px 10px;
+  cursor:pointer; position:relative; overflow:hidden;
+  transition: transform 0.15s, box-shadow 0.2s;
+  display:flex; flex-direction:column; align-items:center; gap:6px;
+}
+.battle-btn:active { transform:scale(0.95); }
 
-        .health-card {
-            background: linear-gradient(135deg, #1F5E7E, #143E54);
-            margin: 0 20px 20px;
-            border-radius: 36px;
-            padding: 20px;
-            color: white;
-        }
-        .health-title {
-            font-size: 13px;
-            opacity: 0.9;
-            margin-bottom: 16px;
-            text-align: center;
-            line-height: 1.4;
-        }
-        .health-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-bottom: 16px;
-        }
-        .health-item {
-            background: rgba(255,255,255,0.12);
-            border-radius: 28px;
-            padding: 12px;
-            text-align: center;
-        }
-        .health-value {
-            font-size: 28px;
-            font-weight: 800;
-        }
-        .health-label {
-            font-size: 10px;
-            opacity: 0.8;
-            margin-top: 4px;
-        }
-        .health-label-small {
-            font-size: 8px;
-            opacity: 0.6;
-            margin-top: 2px;
-        }
-        .focus-item {
-            background: rgba(255,255,255,0.2);
-            border-radius: 60px;
-            padding: 12px;
-            text-align: center;
-            margin-top: 8px;
-        }
-        .focus-number { font-size: 28px; font-weight: 800; margin-left: 8px; }
+.btn-fire {
+  background: linear-gradient(145deg, #c73000, #ff6a00);
+  box-shadow: 0 10px 30px rgba(255,80,0,0.4);
+}
+.btn-fire.running {
+  background: linear-gradient(145deg, #ff6a00, #ffb800);
+  box-shadow: 0 10px 40px rgba(255,150,0,0.7);
+  animation: firePulse 0.8s ease-in-out infinite;
+}
+@keyframes firePulse {
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.03)}
+}
+.btn-ice {
+  background: linear-gradient(145deg, #005f8a, #00b4e0);
+  box-shadow: 0 10px 30px rgba(0,180,224,0.3);
+}
+.btn-ice.running {
+  background: linear-gradient(145deg, #00b4e0, #a0eeff);
+  box-shadow: 0 10px 40px rgba(0,220,255,0.7);
+  animation: icePulse 0.8s ease-in-out infinite;
+}
+@keyframes icePulse {
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.03)}
+}
+.btn-emoji { font-size:2.4rem; }
+.btn-label { font-family:'Fredoka One',cursive; font-size:1.3rem; color:white; }
+.btn-sublabel { font-size:10px; color:rgba(255,255,255,0.8); text-align:center; }
+.btn-timer { font-family:'Fredoka One',cursive; font-size:1.8rem; color:white; min-height:36px; }
 
-        .history-card {
-            background: white;
-            margin: 0 20px 20px;
-            border-radius: 32px;
-            padding: 16px;
-        }
-        .history-title { font-weight: 600; margin-bottom: 12px; color: #1A4A62; font-size: 14px; text-align: center; }
-        .record-list { max-height: 200px; overflow-y: auto; }
-        .record-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid #EEF2F8;
-            font-size: 13px;
-            flex-wrap: wrap;
-        }
+/* Ripple */
+.battle-btn::after {
+  content:'';
+  position:absolute; top:50%; left:50%;
+  width:0; height:0;
+  background:rgba(255,255,255,0.3);
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  transition:width 0.4s, height 0.4s, opacity 0.4s;
+  opacity:0;
+}
+.battle-btn:active::after { width:200px; height:200px; opacity:0; }
 
-        .share-card {
-            background: white;
-            margin: 0 20px 24px;
-            border-radius: 32px;
-            padding: 20px;
-            text-align: center;
-        }
-        .share-buttons {
-            display: flex;
-            gap: 12px;
-            margin-top: 16px;
-        }
-        .share-btn {
-            flex: 1;
-            background: #1F5E7E;
-            color: white;
-            border: none;
-            padding: 12px;
-            border-radius: 60px;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 14px;
-        }
-        .share-btn-outline {
-            background: white;
-            color: #1F5E7E;
-            border: 1px solid #BCD3F0;
-        }
-        .share-small {
-            font-size: 9px;
-            margin-top: 4px;
-            opacity: 0.7;
-            display: block;
-        }
+/* ===== COMBO INDICATOR ===== */
+.combo-bar {
+  max-width:420px; margin:12px auto 0;
+  padding:0 16px;
+  text-align:center;
+}
+.combo-text {
+  font-family:'Fredoka One',cursive;
+  font-size:1.1rem;
+  color: var(--gold);
+  min-height:28px;
+  transition:all 0.3s;
+}
 
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            backdrop-filter: blur(5px);
-        }
-        .modal-content {
-            background: white;
-            border-radius: 48px;
-            padding: 28px 24px;
-            width: 340px;
-            max-width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-        .career-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin: 20px 0;
-        }
-        .career-option {
-            background: #F0F4FA;
-            border: none;
-            padding: 12px;
-            border-radius: 40px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-        }
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #2C3E50;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 40px;
-            font-size: 13px;
-            opacity: 0;
-            transition: 0.2s;
-            pointer-events: none;
-            z-index: 1001;
-            text-align: center;
-            max-width: 90%;
-        }
-        .footer {
-            text-align: center;
-            font-size: 9px;
-            color: rgba(255,255,255,0.6);
-            margin-top: 16px;
-            line-height: 1.4;
-        }
-    </style>
+/* ===== STATS ===== */
+.stats-section {
+  max-width:420px; margin:14px auto 0; padding:0 16px;
+}
+.stats-card {
+  background: linear-gradient(145deg, #1a0f2e, #0f1a2e);
+  border-radius:28px;
+  border: 1.5px solid rgba(0,198,255,0.2);
+  padding:18px;
+}
+.stats-title {
+  font-family:'Fredoka One',cursive; font-size:1rem; color:#88ccff;
+  text-align:center; margin-bottom:14px; letter-spacing:1px;
+}
+.stats-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+.stat-item {
+  background:rgba(255,255,255,0.05);
+  border-radius:18px; padding:12px;
+  text-align:center;
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: transform 0.2s;
+}
+.stat-item.glow-fire { border-color:rgba(255,100,0,0.4); background:rgba(255,80,0,0.08); }
+.stat-item.glow-ice { border-color:rgba(0,198,255,0.4); background:rgba(0,180,255,0.08); }
+.stat-val { font-family:'Fredoka One',cursive; font-size:1.8rem; color:white; }
+.stat-name { font-size:9px; color:var(--muted); margin-top:2px; line-height:1.3; }
+.health-total {
+  background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(0,230,118,0.1));
+  border-radius:18px; padding:12px 16px;
+  display:flex; align-items:center; justify-content:space-between;
+  margin-top:10px;
+  border:1px solid rgba(255,215,0,0.3);
+}
+.health-total-label { font-size:11px; color:#ffd700; line-height:1.4; }
+.health-total-val { font-family:'Fredoka One',cursive; font-size:2.2rem; color:var(--gold); }
+
+/* ===== ACHIEVEMENT FEED ===== */
+.feed-section {
+  max-width:420px; margin:14px auto 0; padding:0 16px;
+}
+.feed-title { font-size:11px; color:var(--muted); margin-bottom:8px; text-align:center; letter-spacing:1px; text-transform:uppercase; }
+.feed-list { display:flex; flex-direction:column; gap:6px; max-height:160px; overflow:hidden; }
+.feed-item {
+  background:rgba(255,255,255,0.04);
+  border-radius:14px; padding:8px 12px;
+  font-size:12px;
+  border-left:3px solid transparent;
+  animation: feedIn 0.4s cubic-bezier(.34,1.56,.64,1);
+  display:flex; justify-content:space-between; align-items:center;
+}
+.feed-item.fire { border-color:var(--fire); }
+.feed-item.ice { border-color:var(--ice); }
+.feed-item.special { border-color:var(--gold); background:rgba(255,215,0,0.07); }
+@keyframes feedIn {
+  from{opacity:0;transform:translateY(-10px) scale(0.95)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+.feed-time { font-size:10px; color:var(--muted); }
+
+/* ===== SHARE SECTION ===== */
+.share-section {
+  max-width:420px; margin:14px auto 0; padding:0 16px 40px;
+}
+.share-card {
+  background: linear-gradient(145deg, #1e1428, #0e1020);
+  border-radius:28px; padding:20px;
+  border:1.5px solid rgba(255,215,0,0.2);
+  text-align:center;
+}
+.share-title { font-family:'Fredoka One',cursive; font-size:1.1rem; color:var(--gold); margin-bottom:14px; }
+.share-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.share-btn {
+  border:none; border-radius:50px; padding:12px;
+  font-family:'Nunito',sans-serif; font-weight:700;
+  font-size:13px; cursor:pointer; transition:0.2s;
+}
+.share-btn-main {
+  background: linear-gradient(135deg,#ff4d00,#ff8800);
+  color:white; box-shadow:0 6px 20px rgba(255,80,0,0.4);
+}
+.share-btn-main:hover { transform:translateY(-2px); }
+.share-btn-copy {
+  background:rgba(255,255,255,0.08); color:var(--text);
+  border:1px solid rgba(255,255,255,0.15);
+}
+.share-btn-copy:hover { background:rgba(255,255,255,0.15); }
+.share-sub { font-size:9px; opacity:0.6; margin-top:2px; display:block; }
+
+/* ===== MODAL ===== */
+.modal-overlay {
+  position:fixed; inset:0;
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(8px);
+  z-index:200;
+  display:flex; align-items:center; justify-content:center;
+  padding:20px;
+}
+.modal-box {
+  background: linear-gradient(145deg,#1e1e38,#13132a);
+  border-radius:32px; padding:28px 22px;
+  width:100%; max-width:340px;
+  border:1.5px solid rgba(255,77,0,0.4);
+  max-height:80vh; overflow-y:auto;
+}
+.modal-title { font-family:'Fredoka One',cursive; font-size:1.4rem; text-align:center; margin-bottom:6px; color:#ffcc88; }
+.modal-sub { font-size:11px; color:var(--muted); text-align:center; margin-bottom:20px; }
+.career-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+.career-opt {
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:40px; padding:10px 8px;
+  font-family:'Nunito',sans-serif;
+  font-size:13px; font-weight:600;
+  cursor:pointer; color:var(--text);
+  transition:0.2s; text-align:center;
+}
+.career-opt:hover { background:rgba(255,100,0,0.2); border-color:#ff8800; color:#ffcc88; }
+.modal-close {
+  width:100%; margin-top:14px;
+  background:rgba(255,255,255,0.07); border:none; color:var(--muted);
+  padding:12px; border-radius:40px; cursor:pointer;
+  font-family:'Nunito',sans-serif; font-size:13px;
+}
+/* ===== TOAST ===== */
+.toast {
+  position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px);
+  background:rgba(20,20,40,0.95); color:white;
+  padding:10px 22px; border-radius:40px;
+  font-size:13px; font-weight:600;
+  opacity:0; transition:opacity 0.25s, transform 0.25s;
+  pointer-events:none; z-index:300;
+  border:1px solid rgba(255,255,255,0.15);
+  white-space:nowrap;
+}
+.toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+/* ===== FLOATING PARTICLES ===== */
+.particle {
+  position:fixed; pointer-events:none; z-index:50;
+  font-size:1.4rem;
+  animation: particleFly 1.2s ease-out forwards;
+}
+@keyframes particleFly {
+  0%{opacity:1;transform:translateY(0) scale(1)}
+  100%{opacity:0;transform:translateY(-80px) scale(0.5)}
+}
+
+/* ===== RANK BANNER ===== */
+.rank-bar {
+  max-width:420px; margin:10px auto 0; padding:0 16px;
+}
+.rank-pill {
+  background: linear-gradient(90deg, rgba(255,215,0,0.1), rgba(255,150,0,0.1));
+  border:1px solid rgba(255,215,0,0.3);
+  border-radius:40px; padding:8px 16px;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.rank-label { font-size:10px; color:var(--gold); }
+.rank-val { font-family:'Fredoka One',cursive; font-size:1rem; color:var(--gold); }
+</style>
 </head>
 <body>
-<div class="container">
-    <div class="main-card">
-        <div class="career-header">
-            <div class="career-badge">
-                微气候身份 · 五维健康系统<br>
-                Microclimate ID · 5D Health System<br>
-                微気候ID · 五感健康システム
-            </div>
-            <div class="career-name" id="careerNameDisplay">追梦者</div>
-            <div class="lang-hint">Dream Chaser / 夢追い人</div>
-            <button class="change-career" id="changeCareerBtn">
-                ✎ 切换职业 / Switch Career / 職業切替
-            </button>
-        </div>
 
-        <div class="dual-buttons">
-            <button class="btn btn-heat" id="heatBtn">
-                <span class="main-text">🔥 加热</span>
-                <span class="sub-text">锁温保暖</span>
-                <span class="lang-sub">Heat · Keep Warm</span>
-                <span class="lang-sub">加温 · 保温快適</span>
-            </button>
-            <button class="btn btn-cool" id="coolBtn">
-                <span class="main-text">🌬️ 散热</span>
-                <span class="sub-text">排湿干爽</span>
-                <span class="lang-sub">Cool · Dry & Fresh</span>
-                <span class="lang-sub">冷却 · 除湿爽快</span>
-            </button>
-        </div>
-
-        <div class="timer-area">
-            <div class="timer-label">
-                当前模式 / Current Mode / 現在モード
-            </div>
-            <div class="timer-value" id="currentModeDisplay">⚪ 待机中</div>
-        </div>
-
-        <div class="health-card">
-            <div class="health-title">
-                🌟 五维健康提升报告<br>
-                5D Health Boost Report / 五感健康向上レポート
-            </div>
-            <div class="health-grid">
-                <div class="health-item">
-                    <div class="health-value" id="focusValue">0%</div>
-                    <div class="health-label">🧠 专注力</div>
-                    <div class="health-label-small">Focus / 集中力</div>
-                </div>
-                <div class="health-item">
-                    <div class="health-value" id="appetiteValue">0%</div>
-                    <div class="health-label">🍽️ 食欲</div>
-                    <div class="health-label-small">Appetite / 食欲</div>
-                </div>
-                <div class="health-item">
-                    <div class="health-value" id="sleepValue">0%</div>
-                    <div class="health-label">😴 睡眠质量</div>
-                    <div class="health-label-small">Sleep Quality / 睡眠の質</div>
-                </div>
-                <div class="health-item">
-                    <div class="health-value" id="physioValue">0%</div>
-                    <div class="health-label">💪 生理活力</div>
-                    <div class="health-label-small">Vitality / 身体的活力</div>
-                </div>
-            </div>
-            <div class="focus-item">
-                📊 综合健康指数<br>
-                <span style="font-size:9px;">Overall Health Index / 総合健康指数</span>
-                <span class="focus-number" id="totalHealthValue">0%</span>
-            </div>
-        </div>
-
-        <div class="history-card">
-            <div class="history-title">
-                📋 今日温控记录<br>
-                Today's Thermal Records / 本日の温控記録
-            </div>
-            <div class="record-list" id="recordList">
-                <div style="text-align:center; color:#A6BCCF; padding:16px;">
-                    暂无记录，点击按钮开始<br>
-                    No records yet, tap to start / 記録はありません、開始してください
-                </div>
-            </div>
-        </div>
-
-        <div class="share-card">
-            <div style="font-weight:600; margin-bottom:8px;">
-                ✨ 生成你的五维健康报告 ✨<br>
-                Generate Your 5D Health Report / 五感健康レポートを生成
-            </div>
-            <div class="share-buttons">
-                <button class="share-btn" id="posterBtn">
-                    📸 生成海报<br>
-                    <span class="share-small">Generate Poster / ポスター生成</span>
-                </button>
-                <button class="share-btn share-btn-outline" id="copyBtn">
-                    📋 复制文案<br>
-                    <span class="share-small">Copy Text / テキストコピー</span>
-                </button>
-            </div>
-            <p style="font-size:9px; margin-top:12px; color:#8AA0B5;">
-                分享到微信群，展示你的健康提升数据<br>
-                Share to show your health boost / シェアして健康向上を表示
-            </p>
-        </div>
-    </div>
-    <div class="footer">
-        MQtech1 · 让双脚跑在温度前面 | 温控舒适，五维健康全面提升<br>
-        Run Ahead of Temperature | Thermal Comfort, 5D Health Upgrade<br>
-        温度に先んじる | 快適温控、五感健康向上
-    </div>
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>🔥 足部修炼挑战开始！谁的鞋最懂你？ &nbsp;|&nbsp; 🧊 Cool your feet, boost your brain! &nbsp;|&nbsp; ⚡ 足を鍛えろ！健康レベル上昇中 &nbsp;|&nbsp; 🏆 分享排行榜 加热王 vs 散热王 &nbsp;|&nbsp; MQtech1 · mqtech1.com &nbsp;|&nbsp; 📞 +86 13549606533 &nbsp;|&nbsp; WhatsApp: +85247435725 &nbsp;|&nbsp; 💌 leojim@mqtech1.com &nbsp;|&nbsp; 🔥 足部修炼挑战开始！谁的鞋最懂你？ &nbsp;|&nbsp; 🧊 Cool your feet, boost your brain! &nbsp;|&nbsp; ⚡ 足を鍛えろ！健康レベル上昇中 &nbsp;|&nbsp; 🏆 分享排行榜 加热王 vs 散热王 &nbsp;|&nbsp; MQtech1 · mqtech1.com &nbsp;|&nbsp; 📞 +86 13549606533 &nbsp;|&nbsp;</span>
+  </div>
 </div>
-<div id="toast" class="toast"></div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-logo">🥾 足部修炼大作战</div>
+  <div style="font-family:'Fredoka One',cursive; font-size:1rem; color:#88aaff; margin-top:4px;">
+    Foot Training Battle &nbsp;·&nbsp; フット修行バトル
+  </div>
+  <div class="hero-badge">⚗️ MQtech1 五维健康系统 · 5D Health System · 五感健康システム</div>
+</div>
+
+<!-- CHARACTER CARD -->
+<div class="char-section">
+  <div class="char-card">
+    <div class="char-row">
+      <div class="char-avatar" id="charEmoji">🧑‍💻</div>
+      <div>
+        <div class="char-name" id="charName">追梦者</div>
+        <div class="char-title" id="charTitle">Dream Chaser · 夢追い人</div>
+        <span class="char-level" id="charLevel">Lv.1 初学者</span>
+      </div>
+      <button class="change-char-btn" onclick="showCareerModal()" style="margin-left:auto;">
+        ✏️ 换职业<br><span style="font-size:9px;">Switch / 切替</span>
+      </button>
+    </div>
+    <div class="xp-label"><span>🏅 修炼经验 XP</span><span id="xpText">0 / 100 XP</span></div>
+    <div class="xp-bar"><div class="xp-fill" id="xpFill" style="width:0%"></div></div>
+  </div>
+</div>
+
+<!-- RANK BAR -->
+<div class="rank-bar">
+  <div class="rank-pill">
+    <div>
+      <div class="rank-label">🏆 今日段位 Today's Rank / 本日ランク</div>
+      <div class="rank-val" id="rankVal">🥚 蛋白质脚 · Egg Feet</div>
+    </div>
+    <div style="text-align:right;">
+      <div class="rank-label">累计修炼</div>
+      <div class="rank-val" id="totalMinVal">0 min</div>
+    </div>
+  </div>
+</div>
+
+<!-- BATTLE BUTTONS -->
+<div class="battle-section">
+  <div class="battle-row">
+    <button class="battle-btn btn-fire" id="fireBtn" onclick="toggleMode('fire')">
+      <span class="btn-emoji" id="fireEmoji">🔥</span>
+      <span class="btn-label">加热锁温</span>
+      <span class="btn-sublabel">Heat · 保温 / 保温快適</span>
+      <span class="btn-timer" id="fireTimer">点击开始</span>
+    </button>
+    <button class="battle-btn btn-ice" id="iceBtn" onclick="toggleMode('ice')">
+      <span class="btn-emoji" id="iceEmoji">🌬️</span>
+      <span class="btn-label">散热干爽</span>
+      <span class="btn-sublabel">Cool · 通风 / 冷却爽快</span>
+      <span class="btn-timer" id="iceTimer">点击开始</span>
+    </button>
+  </div>
+</div>
+
+<!-- COMBO BAR -->
+<div class="combo-bar">
+  <div class="combo-text" id="comboText">👟 准备好了吗？开始你的足部修炼！</div>
+</div>
+
+<!-- STATS -->
+<div class="stats-section">
+  <div class="stats-card">
+    <div class="stats-title">⚡ 五维健康指数 · 5D Health · 五感健康</div>
+    <div class="stats-grid">
+      <div class="stat-item" id="statFocus">
+        <div class="stat-val" id="focusVal">0%</div>
+        <div class="stat-name">🧠 专注力<br>Focus / 集中力</div>
+      </div>
+      <div class="stat-item" id="statAppetite">
+        <div class="stat-val" id="appetiteVal">0%</div>
+        <div class="stat-name">🍽️ 食欲<br>Appetite / 食欲</div>
+      </div>
+      <div class="stat-item" id="statSleep">
+        <div class="stat-val" id="sleepVal">0%</div>
+        <div class="stat-name">😴 睡眠<br>Sleep / 睡眠</div>
+      </div>
+      <div class="stat-item" id="statVitality">
+        <div class="stat-val" id="vitalityVal">0%</div>
+        <div class="stat-name">💪 活力<br>Vitality / 活力</div>
+      </div>
+    </div>
+    <div class="health-total">
+      <div>
+        <div class="health-total-label">🌟 综合健康指数<br>Overall Health Index / 総合健康指数</div>
+      </div>
+      <div class="health-total-val" id="totalHealth">0%</div>
+    </div>
+  </div>
+</div>
+
+<!-- ACHIEVEMENT FEED -->
+<div class="feed-section">
+  <div class="feed-title">📡 修炼日志 · Training Log · トレーニングログ</div>
+  <div class="feed-list" id="feedList">
+    <div class="feed-item" style="justify-content:center; color:var(--muted); border-left-color:transparent; font-size:12px;">
+      暂无记录 · No records yet · 記録なし
+    </div>
+  </div>
+</div>
+
+<!-- SHARE -->
+<div class="share-section">
+  <div class="share-card">
+    <div class="share-title">🎮 挑战好友 · Challenge Friends · フレンドに挑戦</div>
+    <div class="share-row">
+      <button class="share-btn share-btn-main" onclick="generateShareCard()">
+        🃏 生成战斗卡<br><span class="share-sub">Battle Card / バトルカード</span>
+      </button>
+      <button class="share-btn share-btn-copy" onclick="copyShareText()">
+        📋 复制文案<br><span class="share-sub">Copy Text / テキストコピー</span>
+      </button>
+    </div>
+    <p style="font-size:9px; color:var(--muted); margin-top:12px; line-height:1.6;">
+      分享到朋友圈，看谁的足部修炼等级更高！<br>
+      Share & compete who has the highest foot training rank!<br>
+      シェアしてフット修行ランキングで競おう！
+    </p>
+  </div>
+</div>
+
+<!-- CAREER MODAL -->
+<div class="modal-overlay" id="careerModal" style="display:none;">
+  <div class="modal-box">
+    <div class="modal-title">🎭 选择你的职业身份</div>
+    <div class="modal-sub">Choose Your Career · 職業を選択してください</div>
+    <div class="career-grid" id="careerGrid"></div>
+    <button class="modal-close" onclick="closeModal()">✕ 取消 / Cancel / キャンセル</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
 
 <script>
-    // ==================== 职业列表 ====================
-    const CAREER_LIST = [
-        "程序员", "设计师", "教师", "学生", "跑者", "自由职业",
-        "电工", "警察", "水利工程师", "建筑工人", "快递员", "消防员",
-        "外卖骑手", "环卫工人", "园艺师", "登山向导", "摄影师", "医生", "护士", "司机"
-    ];
-    
-    function getCareerSlogan(career) {
-        const slogans = {
-            "电工": "高空作业，脚底稳如磐石，健康在线",
-            "警察": "街头执勤，全天候舒适，精力充沛",
-            "水利工程师": "巡堤查险，双脚时刻在线，干劲十足",
-            "建筑工人": "工地奔走，干爽一整天，食欲旺盛",
-            "快递员": "日行万步，不闷不累，睡眠香甜",
-            "消防员": "火场逆行，脚下有支撑，体能满格",
-            "外卖骑手": "风雨兼程，温控护航，活力满满",
-            "程序员": "代码如风，专注力拉满，灵感不断",
-            "设计师": "灵感不降温，创意更流畅，心情愉悦",
-            "教师": "站三尺讲台，舒适全天，精神饱满",
-            "跑者": "每一步都干爽，配速稳，恢复快",
-            "医生": "连轴手术，脚部零负担，精力充沛"
-        };
-        return slogans[career] || "舒适温控，五维健康全面提升";
-    }
-    
-    function calculateHealthMetrics(heatMins, coolMins) {
-        const totalMins = heatMins + coolMins;
-        let baseScore = 0;
-        if (totalMins <= 0) baseScore = 0;
-        else if (totalMins <= 30) baseScore = 15 + totalMins * 1.2;
-        else if (totalMins <= 90) baseScore = 50 + (totalMins - 30) * 0.7;
-        else if (totalMins <= 150) baseScore = 85 + (totalMins - 90) * 0.25;
-        else baseScore = 100;
-        baseScore = Math.min(100, Math.floor(baseScore));
-        
-        const heatRatio = heatMins / (totalMins || 1);
-        const coolRatio = coolMins / (totalMins || 1);
-        
-        let focus = Math.floor(baseScore * (0.7 + coolRatio * 0.3));
-        let appetite = Math.floor(baseScore * (0.65 + coolRatio * 0.35));
-        let sleep = Math.floor(baseScore * (0.6 + heatRatio * 0.4));
-        let physiology = Math.floor(baseScore * (0.55 + heatRatio * 0.45));
-        
-        focus = Math.min(100, Math.max(0, focus));
-        appetite = Math.min(100, Math.max(0, appetite));
-        sleep = Math.min(100, Math.max(0, sleep));
-        physiology = Math.min(100, Math.max(0, physiology));
-        
-        const totalHealth = Math.floor((focus + appetite + sleep + physiology) / 4);
-        return { focus, appetite, sleep, physiology, totalHealth };
-    }
-    
-    let heatActive = false, coolActive = false;
-    let heatStartTime = null, coolStartTime = null;
-    let heatInterval = null, coolInterval = null;
-    let todayRecords = [];
-    let currentCareer = "追梦者";
-    
-    const careerNameDisplay = document.getElementById('careerNameDisplay');
-    const heatBtn = document.getElementById('heatBtn');
-    const coolBtn = document.getElementById('coolBtn');
-    const currentModeDisplay = document.getElementById('currentModeDisplay');
-    const recordListDiv = document.getElementById('recordList');
-    const posterBtn = document.getElementById('posterBtn');
-    const copyBtn = document.getElementById('copyBtn');
-    const changeCareerBtn = document.getElementById('changeCareerBtn');
-    const toastDiv = document.getElementById('toast');
-    const focusValueSpan = document.getElementById('focusValue');
-    const appetiteValueSpan = document.getElementById('appetiteValue');
-    const sleepValueSpan = document.getElementById('sleepValue');
-    const physioValueSpan = document.getElementById('physioValue');
-    const totalHealthValueSpan = document.getElementById('totalHealthValue');
-    
-    function showToast(msg) {
-        toastDiv.innerText = msg;
-        toastDiv.style.opacity = '1';
-        setTimeout(() => toastDiv.style.opacity = '0', 2000);
-    }
-    
-    function getTotalMins() {
-        let heatSec = 0, coolSec = 0;
-        todayRecords.forEach(r => {
-            if (r.type === 'heat') heatSec += r.durationSec;
-            if (r.type === 'cool') coolSec += r.durationSec;
-        });
-        return { heatMins: Math.floor(heatSec / 60), coolMins: Math.floor(coolSec / 60) };
-    }
-    
-    function updateHealthDisplay() {
-        const { heatMins, coolMins } = getTotalMins();
-        const metrics = calculateHealthMetrics(heatMins, coolMins);
-        focusValueSpan.innerText = metrics.focus + '%';
-        appetiteValueSpan.innerText = metrics.appetite + '%';
-        sleepValueSpan.innerText = metrics.sleep + '%';
-        physioValueSpan.innerText = metrics.physiology + '%';
-        totalHealthValueSpan.innerText = metrics.totalHealth + '%';
-        return metrics;
-    }
-    
-    function saveCareer(career) {
-        currentCareer = career;
-        localStorage.setItem('mqtech_career', career);
-        careerNameDisplay.innerText = career;
-        showToast(`职业已切换为「${career}」/ Career switched / 職業切替完了`);
-    }
-    
-    function loadCareer() {
-        const saved = localStorage.getItem('mqtech_career');
-        if (saved && CAREER_LIST.includes(saved)) {
-            currentCareer = saved;
-        } else {
-            currentCareer = "追梦者";
-        }
-        careerNameDisplay.innerText = currentCareer;
-    }
-    
-    function showCareerModal() {
-        const modal = document.createElement('div');
-        modal.className = 'modal';
-        modal.innerHTML = `
-            <div class="modal-content">
-                <h3 style="margin-bottom:8px;">选择你的职业身份<br><span style="font-size:12px;">Choose Your Career / 職業を選択</span></h3>
-                <p style="font-size:11px; color:#6F8AA3;">职业标签将出现在健康报告中</p>
-                <div class="career-grid" id="careerGrid"></div>
-                <button id="closeModalBtn" style="width:100%; padding:12px; background:#EFF2F8; border:none; border-radius:40px; margin-top:12px;">取消 / Cancel / キャンセル</button>
-            </div>
-        `;
-        const grid = modal.querySelector('#careerGrid');
-        CAREER_LIST.forEach(career => {
-            const btn = document.createElement('button');
-            btn.className = 'career-option';
-            btn.innerText = career;
-            btn.onclick = () => {
-                saveCareer(career);
-                document.body.removeChild(modal);
-            };
-            grid.appendChild(btn);
-        });
-        modal.querySelector('#closeModalBtn').onclick = () => document.body.removeChild(modal);
-        document.body.appendChild(modal);
-    }
-    
-    changeCareerBtn.onclick = showCareerModal;
-    
-    function getTodayKey() {
-        return `mqtech_health_records_${new Date().toISOString().slice(0,10)}`;
-    }
-    
-    function loadTodayRecords() {
-        const key = getTodayKey();
-        const stored = localStorage.getItem(key);
-        todayRecords = stored ? JSON.parse(stored) : [];
-        updateHealthDisplay();
-        renderRecords();
-    }
-    
-    function saveTodayRecords() {
-        localStorage.setItem(getTodayKey(), JSON.stringify(todayRecords));
-        updateHealthDisplay();
-        renderRecords();
-    }
-    
-    function addRecord(type, startMs, endMs) {
-        const durationSec = Math.floor((endMs - startMs) / 1000);
-        if (durationSec < 3) return;
-        todayRecords.push({
-            id: Date.now(),
-            type: type,
-            startTime: startMs,
-            endTime: endMs,
-            durationSec: durationSec
-        });
-        saveTodayRecords();
-        const mins = Math.floor(durationSec / 60);
-        const secs = durationSec % 60;
-        showToast(`${type === 'heat' ? '🔥加热' : '🌬️散热'} ${mins}分${secs}秒 / Health updated`);
-    }
-    
-    function renderRecords() {
-        if (!todayRecords.length) {
-            recordListDiv.innerHTML = '<div style="text-align:center; color:#A6BCCF; padding:16px;">暂无记录，点击按钮开始<br><span style="font-size:10px;">No records yet, tap to start / 記録はありません</span></div>';
-            return;
-        }
-        const reversed = [...todayRecords].reverse();
-        recordListDiv.innerHTML = reversed.slice(0, 10).map(r => {
-            const date = new Date(r.startTime);
-            const timeStr = `${date.getHours().toString().padStart(2,'0')}:${date.getMinutes().toString().padStart(2,'0')}`;
-            const mins = Math.floor(r.durationSec / 60);
-            const secs = r.durationSec % 60;
-            const icon = r.type === 'heat' ? '🔥' : '🌬️';
-            const typeName = r.type === 'heat' ? '加热' : '散热';
-            const typeEn = r.type === 'heat' ? 'Heat' : 'Cool';
-            const typeJa = r.type === 'heat' ? '加温' : '冷却';
-            return `<div class="record-item">
-                        <span>${icon} ${typeName} ${timeStr}<br><span style="font-size:9px;">${typeEn} / ${typeJa}</span></span>
-                        <span>${mins}分${secs}秒<br><span style="font-size:9px;">${mins}m${secs}s / ${mins}分${secs}秒</span></span>
-                    </div>`;
-        }).join('');
-        if (todayRecords.length > 10) {
-            recordListDiv.innerHTML += `<div style="text-align:center; font-size:10px; color:#A6BCCF; padding:8px;">共${todayRecords.length}条记录 | Total ${todayRecords.length}</div>`;
-        }
-    }
-    
-    function startHeat() {
-        if (heatActive) return;
-        if (coolActive) stopCool();
-        heatActive = true;
-        heatStartTime = Date.now();
-        currentModeDisplay.innerHTML = '🔥 加热中...<br><span style="font-size:14px;">Heating / 加温中</span>';
-        heatBtn.classList.add('active');
-        if (heatInterval) clearInterval(heatInterval);
-        heatInterval = setInterval(() => {
-            if (heatActive && heatStartTime) {
-                const sec = Math.floor((Date.now() - heatStartTime) / 1000);
-                currentModeDisplay.innerHTML = `🔥 ${Math.floor(sec/60)}:${(sec%60).toString().padStart(2,'0')}<br><span style="font-size:14px;">Heating / 加温中</span>`;
-            }
-        }, 200);
-    }
-    
-    function stopHeat() {
-        if (!heatActive) return;
-        addRecord('heat', heatStartTime, Date.now());
-        heatActive = false;
-        if (heatInterval) clearInterval(heatInterval);
-        heatInterval = null;
-        heatBtn.classList.remove('active');
-        if (!coolActive) currentModeDisplay.innerHTML = '⚪ 待机中<br><span style="font-size:14px;">Standby / 待機中</span>';
-        else currentModeDisplay.innerHTML = '🌬️ 散热中...<br><span style="font-size:14px;">Cooling / 冷却中</span>';
-    }
-    
-    function startCool() {
-        if (coolActive) return;
-        if (heatActive) stopHeat();
-        coolActive = true;
-        coolStartTime = Date.now();
-        currentModeDisplay.innerHTML = '🌬️ 散热中...<br><span style="font-size:14px;">Cooling / 冷却中</span>';
-        coolBtn.classList.add('active');
-        if (coolInterval) clearInterval(coolInterval);
-        coolInterval = setInterval(() => {
-            if (coolActive && coolStartTime) {
-                const sec = Math.floor((Date.now() - coolStartTime) / 1000);
-                currentModeDisplay.innerHTML = `🌬️ ${Math.floor(sec/60)}:${(sec%60).toString().padStart(2,'0')}<br><span style="font-size:14px;">Cooling / 冷却中</span>`;
-            }
-        }, 200);
-    }
-    
-    function stopCool() {
-        if (!coolActive) return;
-        addRecord('cool', coolStartTime, Date.now());
-        coolActive = false;
-        if (coolInterval) clearInterval(coolInterval);
-        coolInterval = null;
-        coolBtn.classList.remove('active');
-        if (!heatActive) currentModeDisplay.innerHTML = '⚪ 待机中<br><span style="font-size:14px;">Standby / 待機中</span>';
-        else currentModeDisplay.innerHTML = '🔥 加热中...<br><span style="font-size:14px;">Heating / 加温中</span>';
-    }
-    
-    heatBtn.onclick = () => heatActive ? stopHeat() : startHeat();
-    coolBtn.onclick = () => coolActive ? stopCool() : startCool();
-    
-    function getShareText() {
-        const { heatMins, coolMins } = getTotalMins();
-        const metrics = calculateHealthMetrics(heatMins, coolMins);
-        const date = new Date().toLocaleDateString('zh-CN');
-        const slogan = getCareerSlogan(currentCareer);
-        return `【${currentCareer}的五维健康报告 / 5D Health Report】\n` +
-               `📅 ${date}\n` +
-               `🔥 加热 ${heatMins}分钟 / Heat ${heatMins}min / 加温 ${heatMins}分 | 散热 ${coolMins}分钟 / Cool ${coolMins}min / 冷却 ${coolMins}分\n` +
-               `🌟 专注力/Focus/集中力 +${metrics.focus}% | 食欲/Appetite/食欲 +${metrics.appetite}% | 睡眠质量/Sleep/睡眠の質 +${metrics.sleep}% | 生理活力/Vitality/身体的活力 +${metrics.physiology}%\n` +
-               `📊 综合健康指数/Overall Health/総合健康指数 +${metrics.totalHealth}%\n` +
-               `“${slogan}”\n#MQtech1 #五维健康 #5DHealth`;
-    }
-    
-    copyBtn.onclick = async () => {
-        const text = getShareText();
-        try {
-            await navigator.clipboard.writeText(text);
-            showToast('✅ 已复制 / Copied / コピー完了');
-        } catch {
-            alert(text);
-        }
+// ============ DATA ============
+const CAREERS = [
+  { name:"程序员", emoji:"🧑‍💻", title:"Code Wizard · コード魔法使い", slogan:"Bug再多，脚暖手快，代码飞起！" },
+  { name:"设计师", emoji:"🎨", title:"Creative Soul · クリエイティブソウル", slogan:"灵感不降温，创意更流畅！" },
+  { name:"教师", emoji:"🧑‍🏫", title:"Knowledge Guru · 知識の師", slogan:"站三尺讲台，舒适教天下！" },
+  { name:"学生", emoji:"📚", title:"Future Star · 未来のスター", slogan:"考试前脚要暖，脑子才灵光！" },
+  { name:"跑者", emoji:"🏃", title:"Road Warrior · ロードウォリアー", slogan:"每一步都干爽，PB唾手可得！" },
+  { name:"快递员", emoji:"📦", title:"Speed Demon · スピードデーモン", slogan:"日行万步，脚爽配送快！" },
+  { name:"医生", emoji:"🩺", title:"Life Saver · ライフセイバー", slogan:"连轴手术，脚底零负担！" },
+  { name:"消防员", emoji:"🧯", title:"Fire Hero · ファイアヒーロー", slogan:"火场逆行，脚下有支撑！" },
+  { name:"建筑工人", emoji:"🏗️", title:"Iron Builder · 鉄の建設者", slogan:"工地奔走，干爽一整天！" },
+  { name:"外卖骑手", emoji:"🛵", title:"Delivery Ace · デリバリーエース", slogan:"风雨兼程，温控护航！" },
+  { name:"登山向导", emoji:"⛰️", title:"Summit Seeker · 山頂探検家", slogan:"再高的山，脚温则行！" },
+  { name:"电工", emoji:"⚡", title:"Voltage King · 電圧キング", slogan:"高空作业，脚底稳如磐石！" },
+];
+
+const RANKS = [
+  {min:0,   name:"🥚 蛋白质脚 · Egg Feet",   en:"Newborn"},
+  {min:10,  name:"🌱 青铜足 · Bronze Foot",   en:"Warming Up"},
+  {min:30,  name:"🔥 热血战士 · Hot Warrior", en:"Fire Mode"},
+  {min:60,  name:"🧊 冰川高手 · Ice Master",  en:"Ice Mode"},
+  {min:90,  name:"⚡ 双属性使者 · Dual Element",en:"Fusion"},
+  {min:150, name:"🏆 五维修炼者 · 5D Master",  en:"Champion"},
+  {min:240, name:"💫 传说足部神 · Legendary",   en:"Legend"},
+];
+
+const FIRE_JOKES = [
+  "🔥 脚在充电中，大脑马上上线！",
+  "🔥 暖脚发动！全身血液开始加速！",
+  "🔥 足部微气候激活！老板今天不开会了吧？",
+  "🔥 暖暖的脚，暖暖的心，暖暖的绩效！",
+  "🔥 足底供暖ing... 请稍候，正在提升智商！",
+  "🔥 脚暖了！今晚睡眠质量+50%！",
+  "🔥 Heating activated! Your feet say 感谢！",
+];
+const ICE_JOKES = [
+  "🌬️ 散热启动！汗水再见！",
+  "🌬️ 足部沙漠空调开启，凉风习习！",
+  "🌬️ 夏天算什么！MQtech1足底26°C永远在线！",
+  "🌬️ 排汗排毒ing... 专注力+1！",
+  "🌬️ Cool down activated! Your feet say ありがとう！",
+  "🌬️ 脚爽了！食欲大开，晚饭加鸡腿！",
+  "🌬️ 通风通透！脑细胞重新充电中！",
+];
+
+// ============ STATE ============
+let fireActive = false, iceActive = false;
+let fireStart = null, iceStart = null;
+let fireInterval = null, iceInterval = null;
+let fireTotalSec = 0, iceTotalSec = 0;
+let records = [];
+let currentCareer = CAREERS[0];
+let xp = 0;
+
+function loadState() {
+  const saved = localStorage.getItem('mqtech_career_v2');
+  if (saved) {
+    const c = CAREERS.find(x => x.name === saved);
+    if (c) currentCareer = c;
+  }
+  const todayKey = 'mqtech_records_' + new Date().toISOString().slice(0,10);
+  const saved2 = localStorage.getItem(todayKey);
+  if (saved2) {
+    records = JSON.parse(saved2);
+    recalcTotals();
+    updateStats();
+    updateXP();
+    renderFeed();
+  }
+  renderCareer();
+}
+
+function recalcTotals() {
+  fireTotalSec = records.filter(r=>r.type==='fire').reduce((a,r)=>a+r.sec,0);
+  iceTotalSec  = records.filter(r=>r.type==='ice').reduce((a,r)=>a+r.sec,0);
+}
+
+function saveState() {
+  const todayKey = 'mqtech_records_' + new Date().toISOString().slice(0,10);
+  localStorage.setItem(todayKey, JSON.stringify(records));
+}
+
+// ============ CAREER ============
+function renderCareer() {
+  document.getElementById('charEmoji').textContent = currentCareer.emoji;
+  document.getElementById('charName').textContent = currentCareer.name;
+  document.getElementById('charTitle').textContent = currentCareer.title;
+}
+
+function showCareerModal() {
+  const grid = document.getElementById('careerGrid');
+  grid.innerHTML = '';
+  CAREERS.forEach(c => {
+    const btn = document.createElement('button');
+    btn.className = 'career-opt';
+    btn.innerHTML = `${c.emoji} ${c.name}`;
+    btn.onclick = () => {
+      currentCareer = c;
+      localStorage.setItem('mqtech_career_v2', c.name);
+      renderCareer();
+      closeModal();
+      showToast(`职业切换: ${c.emoji} ${c.name}`);
+      spawnParticles(c.emoji, document.getElementById('charEmoji'));
     };
-    
-    async function generatePoster() {
-        const { heatMins, coolMins } = getTotalMins();
-        const metrics = calculateHealthMetrics(heatMins, coolMins);
-        const date = new Date().toLocaleDateString('zh-CN');
-        const slogan = getCareerSlogan(currentCareer);
-        
-        const posterContainer = document.createElement('div');
-        posterContainer.style.position = 'fixed';
-        posterContainer.style.left = '-1000px';
-        posterContainer.style.top = '-1000px';
-        posterContainer.style.width = '380px';
-        posterContainer.style.backgroundColor = '#FFFFFF';
-        posterContainer.style.borderRadius = '48px';
-        posterContainer.style.padding = '28px 24px';
-        posterContainer.style.boxShadow = '0 20px 40px rgba(0,0,0,0.2)';
-        posterContainer.style.fontFamily = 'system-ui, -apple-system, "PingFang SC"';
-        
-        posterContainer.innerHTML = `
-            <div style="text-align:center; margin-bottom:16px;">
-                <div style="background:linear-gradient(135deg, #2A6F8F, #1A4A62); color:white; border-radius:40px; display:inline-block; padding:8px 24px; font-size:12px; font-weight:500;">MQtech1 五维健康报告<br><span style="font-size:9px;">5D Health Report / 五感健康レポート</span></div>
-            </div>
-            <div style="text-align:center; margin-bottom:16px;">
-                <div style="font-size:20px; font-weight:700; color:#1F5E7E;">👤 ${currentCareer}</div>
-                <div style="font-size:10px; color:#6F8AA3;">温控打卡 · 五维健康提升 / Thermal Check-in · 5D Health</div>
-            </div>
-            <div style="display:flex; justify-content:space-between; gap:8px; margin:16px 0;">
-                <div style="flex:1; background:#FEF3E8; border-radius:24px; padding:10px; text-align:center;"><div style="font-size:28px; font-weight:800;">${heatMins}</div><div style="font-size:9px;">🔥 加热分钟 / Heat min / 加温分</div></div>
-                <div style="flex:1; background:#E3F2FA; border-radius:24px; padding:10px; text-align:center;"><div style="font-size:28px; font-weight:800;">${coolMins}</div><div style="font-size:9px;">🌬️ 散热分钟 / Cool min / 冷却分</div></div>
-            </div>
-            <div style="background:linear-gradient(135deg, #1F5E7E, #143E54); border-radius:32px; padding:16px; margin:12px 0;">
-                <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px;">
-                    <div style="text-align:center;"><div style="font-size:22px; font-weight:800;">${metrics.focus}%</div><div style="font-size:9px;">🧠 专注力 / Focus / 集中力</div></div>
-                    <div style="text-align:center;"><div style="font-size:22px; font-weight:800;">${metrics.appetite}%</div><div style="font-size:9px;">🍽️ 食欲 / Appetite / 食欲</div></div>
-                    <div style="text-align:center;"><div style="font-size:22px; font-weight:800;">${metrics.sleep}%</div><div style="font-size:9px;">😴 睡眠 / Sleep / 睡眠</div></div>
-                    <div style="text-align:center;"><div style="font-size:22px; font-weight:800;">${metrics.physiology}%</div><div style="font-size:9px;">💪 活力 / Vitality / 活力</div></div>
-                </div>
-                <div style="text-align:center; margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,0.2);">
-                    <span style="font-size:12px;">📊 综合健康指数 / Overall Health / 総合健康指数</span>
-                    <span style="font-size:28px; font-weight:800; margin-left:8px;">${metrics.totalHealth}%</span>
-                </div>
-            </div>
-            <div style="background:#F5F9FF; border-radius:24px; padding:12px; text-align:center; margin:12px 0;">
-                <div style="font-size:13px; font-weight:500; color:#1F5E7E;">“${slogan}”</div>
-            </div>
-            <div style="margin-top:12px; border-top:1px solid #E9EFF5; padding-top:12px; text-align:center; font-size:9px; color:#8AA0B5;">
-                ${date} · MQtech1 · 让双脚跑在温度前面 | Run Ahead of Temperature | 温度に先んじる
-            </div>
-        `;
-        document.body.appendChild(posterContainer);
-        try {
-            const canvas = await html2canvas(posterContainer, { scale: 2, backgroundColor: '#FFFFFF' });
-            const link = document.createElement('a');
-            link.download = `MQtech1_${currentCareer}_健康报告.png`;
-            link.href = canvas.toDataURL('image/png');
-            link.click();
-            showToast('✅ 海报已生成 / Poster generated / ポスター生成完了');
-        } catch(e) {
-            showToast('生成失败，可截图保存 / Failed, try screenshot');
-        } finally {
-            document.body.removeChild(posterContainer);
-        }
-    }
-    
-    posterBtn.onclick = generatePoster;
-    
-    loadCareer();
-    loadTodayRecords();
-    
-    window.addEventListener('beforeunload', () => {
-        if (heatActive) stopHeat();
-        if (coolActive) stopCool();
-    });
+    grid.appendChild(btn);
+  });
+  document.getElementById('careerModal').style.display = 'flex';
+}
+function closeModal() { document.getElementById('careerModal').style.display = 'none'; }
+
+// ============ TIMER HELPERS ============
+function fmtTime(sec) {
+  const m = Math.floor(sec/60).toString().padStart(2,'0');
+  const s = (sec%60).toString().padStart(2,'0');
+  return `${m}:${s}`;
+}
+
+// ============ MODES ============
+function toggleMode(mode) {
+  if (mode === 'fire') {
+    if (fireActive) stopFire(); else startFire();
+  } else {
+    if (iceActive) stopIce(); else startIce();
+  }
+}
+
+function startFire() {
+  if (iceActive) stopIce();
+  fireActive = true;
+  fireStart = Date.now();
+  document.getElementById('fireBtn').classList.add('running');
+  document.getElementById('fireEmoji').textContent = '🔥';
+  document.getElementById('comboText').textContent = FIRE_JOKES[Math.floor(Math.random()*FIRE_JOKES.length)];
+  if (fireInterval) clearInterval(fireInterval);
+  fireInterval = setInterval(() => {
+    const elapsed = Math.floor((Date.now() - fireStart)/1000);
+    document.getElementById('fireTimer').textContent = fmtTime(fireTotalSec + elapsed);
+    updateStats();
+  }, 500);
+}
+function stopFire() {
+  if (!fireActive) return;
+  const elapsed = Math.floor((Date.now() - fireStart)/1000);
+  if (elapsed >= 3) {
+    fireTotalSec += elapsed;
+    addRecord('fire', elapsed);
+  }
+  fireActive = false;
+  clearInterval(fireInterval);
+  document.getElementById('fireBtn').classList.remove('running');
+  document.getElementById('fireTimer').textContent = fmtTime(fireTotalSec);
+  updateStats(); updateXP(); updateRank();
+}
+
+function startIce() {
+  if (fireActive) stopFire();
+  iceActive = true;
+  iceStart = Date.now();
+  document.getElementById('iceBtn').classList.add('running');
+  document.getElementById('iceEmoji').textContent = '❄️';
+  document.getElementById('comboText').textContent = ICE_JOKES[Math.floor(Math.random()*ICE_JOKES.length)];
+  if (iceInterval) clearInterval(iceInterval);
+  iceInterval = setInterval(() => {
+    const elapsed = Math.floor((Date.now() - iceStart)/1000);
+    document.getElementById('iceTimer').textContent = fmtTime(iceTotalSec + elapsed);
+    updateStats();
+  }, 500);
+}
+function stopIce() {
+  if (!iceActive) return;
+  const elapsed = Math.floor((Date.now() - iceStart)/1000);
+  if (elapsed >= 3) {
+    iceTotalSec += elapsed;
+    addRecord('ice', elapsed);
+  }
+  iceActive = false;
+  clearInterval(iceInterval);
+  document.getElementById('iceBtn').classList.remove('running');
+  document.getElementById('iceTimer').textContent = fmtTime(iceTotalSec);
+  updateStats(); updateXP(); updateRank();
+}
+
+function addRecord(type, sec) {
+  const now = new Date();
+  const timeStr = now.getHours().toString().padStart(2,'0')+':'+now.getMinutes().toString().padStart(2,'0');
+  const mins = Math.floor(sec/60), secs = sec%60;
+  const jokes = type==='fire' ? ['🔥 暖起来了！','🔥 血液循环++','🔥 足部充电完成！'] : ['🧊 爽！','🧊 汗水拜拜！','🧊 沙漠空调已就位！'];
+  const joke = jokes[Math.floor(Math.random()*jokes.length)];
+  records.unshift({ type, sec, timeStr, mins, secs, joke });
+  if (records.length > 20) records = records.slice(0,20);
+  saveState();
+  renderFeed();
+  spawnParticlesRandom(type==='fire'?'🔥':'❄️');
+  checkMilestones(type, mins);
+}
+
+function checkMilestones(type, mins) {
+  const total = Math.floor((fireTotalSec+iceTotalSec)/60);
+  if (total === 10) showToast('🏅 解锁成就：足部修炼入门！10分钟达成！');
+  if (total === 30) showToast('⚡ 成就解锁：足部战士！30分钟！');
+  if (total === 60) showToast('🏆 传说成就：足部大师！1小时修炼！');
+  if (mins >= 5 && type==='fire') showToast('🔥 连续加热5分钟！睡眠质量+20%！');
+  if (mins >= 5 && type==='ice') showToast('🧊 连续散热5分钟！专注力+20%！');
+}
+
+function renderFeed() {
+  const list = document.getElementById('feedList');
+  if (!records.length) {
+    list.innerHTML = '<div class="feed-item" style="justify-content:center;color:var(--muted);border-left-color:transparent;font-size:12px;">暂无记录 · No records yet · 記録なし</div>';
+    return;
+  }
+  list.innerHTML = records.slice(0,6).map(r => {
+    const icon = r.type==='fire'?'🔥':'🌬️';
+    const typeLabel = r.type==='fire'?'加热 Heat 加温':'散热 Cool 冷却';
+    return `<div class="feed-item ${r.type}">
+      <span>${icon} ${typeLabel} · ${r.mins}m${r.secs}s &nbsp;<span style="opacity:0.5;font-size:10px;">${r.joke}</span></span>
+      <span class="feed-time">${r.timeStr}</span>
+    </div>`;
+  }).join('');
+}
+
+// ============ STATS ============
+function calcHealth(fireSec, iceSec) {
+  const totalMins = (fireSec+iceSec)/60;
+  let base = 0;
+  if (totalMins <= 0) base = 0;
+  else if (totalMins <= 30) base = 15 + totalMins*1.2;
+  else if (totalMins <= 90) base = 50 + (totalMins-30)*0.7;
+  else if (totalMins <= 150) base = 85 + (totalMins-90)*0.25;
+  else base = 100;
+  base = Math.min(100, Math.floor(base));
+  const hr = iceSec/(fireSec+iceSec||1);
+  const fr = fireSec/(fireSec+iceSec||1);
+  const liveFire = fireActive ? Math.floor((Date.now()-fireStart)/1000) : 0;
+  const liveIce  = iceActive  ? Math.floor((Date.now()-iceStart )/1000) : 0;
+  const bonus = Math.min(20, Math.floor((liveFire+liveIce)/6));
+  return {
+    focus:      Math.min(100, Math.floor(base*(0.7+hr*0.3))+bonus),
+    appetite:   Math.min(100, Math.floor(base*(0.65+hr*0.35))+bonus),
+    sleep:      Math.min(100, Math.floor(base*(0.6+fr*0.4))+bonus),
+    vitality:   Math.min(100, Math.floor(base*(0.55+fr*0.45))+bonus),
+  };
+}
+
+function updateStats() {
+  const liveFire = fireActive ? Math.floor((Date.now()-fireStart)/1000) : 0;
+  const liveIce  = iceActive  ? Math.floor((Date.now()-iceStart )/1000) : 0;
+  const h = calcHealth(fireTotalSec+liveFire, iceTotalSec+liveIce);
+  const total = Math.floor((h.focus+h.appetite+h.sleep+h.vitality)/4);
+  document.getElementById('focusVal').textContent    = h.focus+'%';
+  document.getElementById('appetiteVal').textContent = h.appetite+'%';
+  document.getElementById('sleepVal').textContent    = h.sleep+'%';
+  document.getElementById('vitalityVal').textContent = h.vitality+'%';
+  document.getElementById('totalHealth').textContent = total+'%';
+  // Glow on active
+  document.getElementById('statFocus').className    = 'stat-item' + (iceActive?' glow-ice':'');
+  document.getElementById('statAppetite').className = 'stat-item' + (iceActive?' glow-ice':'');
+  document.getElementById('statSleep').className    = 'stat-item' + (fireActive?' glow-fire':'');
+  document.getElementById('statVitality').className = 'stat-item' + (fireActive?' glow-fire':'');
+}
+
+function updateXP() {
+  const totalMins = Math.floor((fireTotalSec+iceTotalSec)/60);
+  xp = Math.min(100, totalMins % 100);
+  const level = Math.floor((fireTotalSec+iceTotalSec)/6000) + 1;
+  document.getElementById('xpFill').style.width = xp + '%';
+  document.getElementById('xpText').textContent = xp + ' / 100 XP';
+  const labels = ['初学者','修炼者','高手','大师','宗师','传说'];
+  document.getElementById('charLevel').textContent = `Lv.${level} ${labels[Math.min(level-1,5)]}`;
+}
+
+function updateRank() {
+  const totalMins = Math.floor((fireTotalSec+iceTotalSec)/60);
+  document.getElementById('totalMinVal').textContent = totalMins + ' min';
+  let rank = RANKS[0];
+  for (const r of RANKS) { if (totalMins >= r.min) rank = r; }
+  document.getElementById('rankVal').textContent = rank.name;
+}
+
+// ============ PARTICLES ============
+function spawnParticles(emoji, target) {
+  const rect = target.getBoundingClientRect();
+  for (let i=0;i<5;i++) {
+    setTimeout(()=>{
+      const el = document.createElement('div');
+      el.className='particle';
+      el.textContent=emoji;
+      el.style.left = (rect.left+rect.width/2-20+Math.random()*40-20)+'px';
+      el.style.top  = (rect.top+Math.random()*20)+'px';
+      document.body.appendChild(el);
+      setTimeout(()=>el.remove(),1200);
+    }, i*80);
+  }
+}
+function spawnParticlesRandom(emoji) {
+  const btns = document.querySelectorAll('.battle-btn');
+  spawnParticles(emoji, btns[emoji==='🔥'?0:1]);
+}
+
+// ============ SHARE ============
+function generateShareCard() {
+  const h = calcHealth(fireTotalSec, iceTotalSec);
+  const total = Math.floor((h.focus+h.appetite+h.sleep+h.vitality)/4);
+  const totalMins = Math.floor((fireTotalSec+iceTotalSec)/60);
+  let rank = RANKS[0];
+  for (const r of RANKS) { if (totalMins >= r.min) rank = r; }
+  const level = Math.floor((fireTotalSec+iceTotalSec)/6000)+1;
+
+  // Build a fun popup card
+  const overlay = document.createElement('div');
+  overlay.className = 'modal-overlay';
+  overlay.style.zIndex='999';
+  overlay.innerHTML = `
+    <div class="modal-box" style="text-align:center; max-width:320px;">
+      <div style="font-family:'Fredoka One',cursive; font-size:2rem; margin-bottom:4px;">
+        ${currentCareer.emoji} 战斗卡
+      </div>
+      <div style="font-size:10px; color:var(--muted); margin-bottom:16px;">Battle Card · バトルカード</div>
+      <div style="background:linear-gradient(135deg,#1e1428,#0e2030); border-radius:24px; padding:16px; border:1.5px solid rgba(255,215,0,0.3); margin-bottom:14px;">
+        <div style="font-family:'Fredoka One',cursive; font-size:1.5rem; color:#ffcc88;">${currentCareer.name}</div>
+        <div style="font-size:10px; color:var(--muted);">${currentCareer.title}</div>
+        <div style="margin:10px 0; font-size:1.6rem;">Lv.${level}</div>
+        <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin:10px 0;">
+          <div style="background:rgba(255,80,0,0.15);border-radius:12px;padding:8px;">
+            <div style="font-family:'Fredoka One',cursive;font-size:1.4rem;">🔥 ${Math.floor(fireTotalSec/60)}m</div>
+            <div style="font-size:9px;color:var(--muted);">加热 Heat</div>
+          </div>
+          <div style="background:rgba(0,180,255,0.15);border-radius:12px;padding:8px;">
+            <div style="font-family:'Fredoka One',cursive;font-size:1.4rem;">❄️ ${Math.floor(iceTotalSec/60)}m</div>
+            <div style="font-size:9px;color:var(--muted);">散热 Cool</div>
+          </div>
+        </div>
+        <div style="font-family:'Fredoka One',cursive;font-size:1.8rem;color:var(--gold);">${total}% 健康</div>
+        <div style="font-size:11px;color:var(--gold);margin-top:4px;">${rank.name}</div>
+        <div style="font-size:10px;margin-top:10px;color:rgba(255,255,255,0.6);font-style:italic;">"${currentCareer.slogan}"</div>
+        <div style="font-size:9px;margin-top:8px;color:var(--muted);">MQtech1 · mqtech1.com · leojim@mqtech1.com</div>
+      </div>
+      <button class="share-btn share-btn-main" onclick="this.closest('.modal-overlay').remove(); copyShareText();" style="width:100%;padding:12px;border-radius:40px;font-size:14px;">
+        📋 复制挑战文案 Copy Challenge
+      </button>
+      <button class="modal-close" onclick="this.closest('.modal-overlay').remove()">✕ 关闭 Close</button>
+    </div>`;
+  document.body.appendChild(overlay);
+}
+
+function copyShareText() {
+  const h = calcHealth(fireTotalSec, iceTotalSec);
+  const total = Math.floor((h.focus+h.appetite+h.sleep+h.vitality)/4);
+  const totalMins = Math.floor((fireTotalSec+iceTotalSec)/60);
+  let rank = RANKS[0];
+  for (const r of RANKS) { if (totalMins >= r.min) rank = r; }
+  const today = new Date().toLocaleDateString('zh-CN');
+  const text = `【足部修炼大作战 · MQtech1 五维健康挑战】
+${currentCareer.emoji} ${currentCareer.name} · ${today}
+🔥 加热 ${Math.floor(fireTotalSec/60)}分钟 | ❄️ 散热 ${Math.floor(iceTotalSec/60)}分钟
+🧠 专注力 ${h.focus}% | 🍽️ 食欲 ${h.appetite}% | 😴 睡眠 ${h.sleep}% | 💪 活力 ${h.vitality}%
+🌟 综合健康指数 ${total}% · 段位: ${rank.name}
+"${currentCareer.slogan}"
+👟 你的段位是什么？来挑战我！
+#MQtech1 #足部修炼 #五维健康 #FootTrainingBattle
+📞 +86 13549606533 · mqtech1.com`;
+  navigator.clipboard.writeText(text).then(()=>{
+    showToast('✅ 挑战文案已复制！去朋友圈晒吧！');
+  }).catch(()=>{ alert(text); });
+}
+
+// ============ TOAST ============
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 2800);
+}
+
+// ============ INIT ============
+loadState();
+updateStats();
+updateXP();
+updateRank();
+
+window.addEventListener('beforeunload', ()=>{
+  if (fireActive) stopFire();
+  if (iceActive)  stopIce();
+});
 </script>
 </body>
 </html>
----------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>

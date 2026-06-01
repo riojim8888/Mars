@@ -248,12 +248,13 @@
 </html>
 
     
-   <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>MQtech1 · 足部修炼大作战 🔥❄️</title>
+<!-- 字体优化：font-display: swap，避免布局偏移或空白 -->
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;900&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -293,9 +294,10 @@ body {
 @keyframes tickerScroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
 /* ===== HERO HEADER ===== */
+/* 修改：Hero顶部内边距从30px减为10px，消除标题和徽章间空隙 */
 .hero {
   text-align: center;
-  padding: 30px 20px 10px;
+  padding: 10px 20px 10px;
   position: relative;
 }
 .hero-logo {
@@ -320,8 +322,9 @@ body {
 }
 
 /* ===== CHARACTER CARD ===== */
+/* 修改：角色卡片区域顶部内边距紧凑 */
 .char-section {
-  padding: 20px 16px 0;
+  padding: 16px 16px 0;
   max-width: 420px;
   margin: 0 auto;
 }
@@ -567,7 +570,7 @@ body {
   border:1px solid rgba(255,255,255,0.1);
   border-radius:40px; padding:10px 8px;
   font-family:'Nunito',sans-serif;
-  font-size:13px; font-weight:600;
+  font-size:12px; font-weight:600;
   cursor:pointer; color:var(--text);
   transition:0.2s; text-align:center;
 }
@@ -765,20 +768,20 @@ body {
 <div class="toast" id="toast"></div>
 
 <script>
-// ============ DATA ============
+// ============ 职业数据 — 中英日三语精准翻译 ============
 const CAREERS = [
-  { name:"程序员", emoji:"🧑‍💻", title:"Code Wizard · コード魔法使い", slogan:"Bug再多，脚暖手快，代码飞起！" },
-  { name:"设计师", emoji:"🎨", title:"Creative Soul · クリエイティブソウル", slogan:"灵感不降温，创意更流畅！" },
-  { name:"教师", emoji:"🧑‍🏫", title:"Knowledge Guru · 知識の師", slogan:"站三尺讲台，舒适教天下！" },
-  { name:"学生", emoji:"📚", title:"Future Star · 未来のスター", slogan:"考试前脚要暖，脑子才灵光！" },
-  { name:"跑者", emoji:"🏃", title:"Road Warrior · ロードウォリアー", slogan:"每一步都干爽，PB唾手可得！" },
-  { name:"快递员", emoji:"📦", title:"Speed Demon · スピードデーモン", slogan:"日行万步，脚爽配送快！" },
-  { name:"医生", emoji:"🩺", title:"Life Saver · ライフセイバー", slogan:"连轴手术，脚底零负担！" },
-  { name:"消防员", emoji:"🧯", title:"Fire Hero · ファイアヒーロー", slogan:"火场逆行，脚下有支撑！" },
-  { name:"建筑工人", emoji:"🏗️", title:"Iron Builder · 鉄の建設者", slogan:"工地奔走，干爽一整天！" },
-  { name:"外卖骑手", emoji:"🛵", title:"Delivery Ace · デリバリーエース", slogan:"风雨兼程，温控护航！" },
-  { name:"登山向导", emoji:"⛰️", title:"Summit Seeker · 山頂探検家", slogan:"再高的山，脚温则行！" },
-  { name:"电工", emoji:"⚡", title:"Voltage King · 電圧キング", slogan:"高空作业，脚底稳如磐石！" },
+  { nameZh:"程序员", nameEn:"Programmer", nameJp:"プログラマー", emoji:"🧑‍💻", titleZh:"代码巫师", titleEn:"Code Wizard", titleJp:"コード魔法使い", slogan:"Bug再多，脚暖手快，代码飞起！" },
+  { nameZh:"设计师", nameEn:"Designer", nameJp:"デザイナー", emoji:"🎨", titleZh:"创意之魂", titleEn:"Creative Soul", titleJp:"クリエイティブソウル", slogan:"灵感不降温，创意更流畅！" },
+  { nameZh:"教师", nameEn:"Teacher", nameJp:"教師", emoji:"🧑‍🏫", titleZh:"知识导师", titleEn:"Knowledge Guru", titleJp:"知識の師", slogan:"站三尺讲台，舒适教天下！" },
+  { nameZh:"学生", nameEn:"Student", nameJp:"学生", emoji:"📚", titleZh:"未来之星", titleEn:"Future Star", titleJp:"未来のスター", slogan:"考试前脚要暖，脑子才灵光！" },
+  { nameZh:"跑者", nameEn:"Runner", nameJp:"ランナー", emoji:"🏃", titleZh:"公路战士", titleEn:"Road Warrior", titleJp:"ロードウォリアー", slogan:"每一步都干爽，PB唾手可得！" },
+  { nameZh:"快递员", nameEn:"Courier", nameJp:"配達員", emoji:"📦", titleZh:"速度恶魔", titleEn:"Speed Demon", titleJp:"スピードデーモン", slogan:"日行万步，脚爽配送快！" },
+  { nameZh:"医生", nameEn:"Doctor", nameJp:"医者", emoji:"🩺", titleZh:"生命守护者", titleEn:"Life Saver", titleJp:"ライフセイバー", slogan:"连轴手术，脚底零负担！" },
+  { nameZh:"消防员", nameEn:"Firefighter", nameJp:"消防士", emoji:"🧯", titleZh:"火焰英雄", titleEn:"Fire Hero", titleJp:"ファイアヒーロー", slogan:"火场逆行，脚下有支撑！" },
+  { nameZh:"建筑工人", nameEn:"Construction Worker", nameJp:"建設作業員", emoji:"🏗️", titleZh:"钢铁建造者", titleEn:"Iron Builder", titleJp:"鉄の建設者", slogan:"工地奔走，干爽一整天！" },
+  { nameZh:"外卖骑手", nameEn:"Delivery Rider", nameJp:"配達ライダー", emoji:"🛵", titleZh:"配送王牌", titleEn:"Delivery Ace", titleJp:"デリバリーエース", slogan:"风雨兼程，温控护航！" },
+  { nameZh:"登山向导", nameEn:"Mountain Guide", nameJp:"登山ガイド", emoji:"⛰️", titleZh:"登顶追寻者", titleEn:"Summit Seeker", titleJp:"山頂探検家", slogan:"再高的山，脚温则行！" },
+  { nameZh:"电工", nameEn:"Electrician", nameJp:"電気技師", emoji:"⚡", titleZh:"电压王者", titleEn:"Voltage King", titleJp:"電圧キング", slogan:"高空作业，脚底稳如磐石！" }
 ];
 
 const RANKS = [
@@ -792,22 +795,14 @@ const RANKS = [
 ];
 
 const FIRE_JOKES = [
-  "🔥 脚在充电中，大脑马上上线！",
-  "🔥 暖脚发动！全身血液开始加速！",
-  "🔥 足部微气候激活！老板今天不开会了吧？",
-  "🔥 暖暖的脚，暖暖的心，暖暖的绩效！",
-  "🔥 足底供暖ing... 请稍候，正在提升智商！",
-  "🔥 脚暖了！今晚睡眠质量+50%！",
-  "🔥 Heating activated! Your feet say 感谢！",
+  "🔥 脚在充电中，大脑马上上线！", "🔥 暖脚发动！全身血液开始加速！", "🔥 足部微气候激活！老板今天不开会了吧？",
+  "🔥 暖暖的脚，暖暖的心，暖暖的绩效！", "🔥 足底供暖ing... 请稍候，正在提升智商！",
+  "🔥 脚暖了！今晚睡眠质量+50%！", "🔥 Heating activated! Your feet say 感谢！",
 ];
 const ICE_JOKES = [
-  "🌬️ 散热启动！汗水再见！",
-  "🌬️ 足部沙漠空调开启，凉风习习！",
-  "🌬️ 夏天算什么！MQtech1足底26°C永远在线！",
-  "🌬️ 排汗排毒ing... 专注力+1！",
-  "🌬️ Cool down activated! Your feet say ありがとう！",
-  "🌬️ 脚爽了！食欲大开，晚饭加鸡腿！",
-  "🌬️ 通风通透！脑细胞重新充电中！",
+  "🌬️ 散热启动！汗水再见！", "🌬️ 足部沙漠空调开启，凉风习习！", "🌬️ 夏天算什么！MQtech1足底26°C永远在线！",
+  "🌬️ 排汗排毒ing... 专注力+1！", "🌬️ Cool down activated! Your feet say ありがとう！",
+  "🌬️ 脚爽了！食欲大开，晚饭加鸡腿！", "🌬️ 通风通透！脑细胞重新充电中！",
 ];
 
 // ============ STATE ============
@@ -817,13 +812,12 @@ let fireInterval = null, iceInterval = null;
 let fireTotalSec = 0, iceTotalSec = 0;
 let records = [];
 let currentCareer = CAREERS[0];
-let xp = 0;
 
 function loadState() {
-  const saved = localStorage.getItem('mqtech_career_v2');
-  if (saved) {
-    const c = CAREERS.find(x => x.name === saved);
-    if (c) currentCareer = c;
+  const savedZh = localStorage.getItem('mqtech_career_v2');
+  if (savedZh) {
+    const matched = CAREERS.find(c => c.nameZh === savedZh);
+    if (matched) currentCareer = matched;
   }
   const todayKey = 'mqtech_records_' + new Date().toISOString().slice(0,10);
   const saved2 = localStorage.getItem(todayKey);
@@ -847,11 +841,18 @@ function saveState() {
   localStorage.setItem(todayKey, JSON.stringify(records));
 }
 
-// ============ CAREER ============
+// ============ CAREER 显示与三语整合 ============
+function getCareerDisplayName(career) {
+  return `${career.nameZh} (${career.nameEn} / ${career.nameJp})`;
+}
+function getCareerTitleFull(career) {
+  return `${career.titleZh} · ${career.titleEn} · ${career.titleJp}`;
+}
+
 function renderCareer() {
   document.getElementById('charEmoji').textContent = currentCareer.emoji;
-  document.getElementById('charName').textContent = currentCareer.name;
-  document.getElementById('charTitle').textContent = currentCareer.title;
+  document.getElementById('charName').textContent = currentCareer.nameZh;
+  document.getElementById('charTitle').textContent = getCareerTitleFull(currentCareer);
 }
 
 function showCareerModal() {
@@ -860,13 +861,13 @@ function showCareerModal() {
   CAREERS.forEach(c => {
     const btn = document.createElement('button');
     btn.className = 'career-opt';
-    btn.innerHTML = `${c.emoji} ${c.name}`;
+    btn.innerHTML = `${c.emoji} ${getCareerDisplayName(c)}`;
     btn.onclick = () => {
       currentCareer = c;
-      localStorage.setItem('mqtech_career_v2', c.name);
+      localStorage.setItem('mqtech_career_v2', c.nameZh);
       renderCareer();
       closeModal();
-      showToast(`职业切换: ${c.emoji} ${c.name}`);
+      showToast(`✨ 职业切换 · Career changed ✨\n${getCareerDisplayName(c)}`);
       spawnParticles(c.emoji, document.getElementById('charEmoji'));
     };
     grid.appendChild(btn);
@@ -1019,7 +1020,6 @@ function updateStats() {
   document.getElementById('sleepVal').textContent    = h.sleep+'%';
   document.getElementById('vitalityVal').textContent = h.vitality+'%';
   document.getElementById('totalHealth').textContent = total+'%';
-  // Glow on active
   document.getElementById('statFocus').className    = 'stat-item' + (iceActive?' glow-ice':'');
   document.getElementById('statAppetite').className = 'stat-item' + (iceActive?' glow-ice':'');
   document.getElementById('statSleep').className    = 'stat-item' + (fireActive?' glow-fire':'');
@@ -1028,10 +1028,10 @@ function updateStats() {
 
 function updateXP() {
   const totalMins = Math.floor((fireTotalSec+iceTotalSec)/60);
-  xp = Math.min(100, totalMins % 100);
-  const level = Math.floor((fireTotalSec+iceTotalSec)/6000) + 1;
+  let xp = Math.min(100, totalMins % 100);
   document.getElementById('xpFill').style.width = xp + '%';
   document.getElementById('xpText').textContent = xp + ' / 100 XP';
+  const level = Math.floor((fireTotalSec+iceTotalSec)/6000) + 1;
   const labels = ['初学者','修炼者','高手','大师','宗师','传说'];
   document.getElementById('charLevel').textContent = `Lv.${level} ${labels[Math.min(level-1,5)]}`;
 }
@@ -1073,7 +1073,6 @@ function generateShareCard() {
   for (const r of RANKS) { if (totalMins >= r.min) rank = r; }
   const level = Math.floor((fireTotalSec+iceTotalSec)/6000)+1;
 
-  // Build a fun popup card
   const overlay = document.createElement('div');
   overlay.className = 'modal-overlay';
   overlay.style.zIndex='999';
@@ -1084,8 +1083,8 @@ function generateShareCard() {
       </div>
       <div style="font-size:10px; color:var(--muted); margin-bottom:16px;">Battle Card · バトルカード</div>
       <div style="background:linear-gradient(135deg,#1e1428,#0e2030); border-radius:24px; padding:16px; border:1.5px solid rgba(255,215,0,0.3); margin-bottom:14px;">
-        <div style="font-family:'Fredoka One',cursive; font-size:1.5rem; color:#ffcc88;">${currentCareer.name}</div>
-        <div style="font-size:10px; color:var(--muted);">${currentCareer.title}</div>
+        <div style="font-family:'Fredoka One',cursive; font-size:1.5rem; color:#ffcc88;">${currentCareer.nameZh}</div>
+        <div style="font-size:10px; color:var(--muted);">${getCareerTitleFull(currentCareer)}</div>
         <div style="margin:10px 0; font-size:1.6rem;">Lv.${level}</div>
         <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin:10px 0;">
           <div style="background:rgba(255,80,0,0.15);border-radius:12px;padding:8px;">
@@ -1118,7 +1117,7 @@ function copyShareText() {
   for (const r of RANKS) { if (totalMins >= r.min) rank = r; }
   const today = new Date().toLocaleDateString('zh-CN');
   const text = `【足部修炼大作战 · MQtech1 五维健康挑战】
-${currentCareer.emoji} ${currentCareer.name} · ${today}
+${currentCareer.emoji} ${currentCareer.nameZh} (${currentCareer.nameEn}/${currentCareer.nameJp}) · ${today}
 🔥 加热 ${Math.floor(fireTotalSec/60)}分钟 | ❄️ 散热 ${Math.floor(iceTotalSec/60)}分钟
 🧠 专注力 ${h.focus}% | 🍽️ 食欲 ${h.appetite}% | 😴 睡眠 ${h.sleep}% | 💪 活力 ${h.vitality}%
 🌟 综合健康指数 ${total}% · 段位: ${rank.name}
@@ -1152,8 +1151,6 @@ window.addEventListener('beforeunload', ()=>{
 </script>
 </body>
 </html>
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 <!DOCTYPE html>
 <html lang="zh-CN">

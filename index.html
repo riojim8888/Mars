@@ -140,7 +140,7 @@
 
     
 
-   <!-- 弹幕横幅 - 独立模块，不影响下方布局 -->
+  <!-- 弹幕横幅 - 独立模块，不影响下方布局 -->
 <div style="width: 100%; background: linear-gradient(145deg, #0a0f1e 0%, #0c1222 100%); overflow: hidden; position: relative; z-index: 99;">
     <div style="max-width: 1400px; margin: 0 auto; padding: 12px 0;">
         <div style="overflow: hidden; white-space: nowrap;">
@@ -167,16 +167,51 @@
                     <span style="color:#ffb7b2;">📞 電話: +86 13549606533</span>
                     <span style="color:#ffb7b2;">WhatsApp: +85247435725</span>
                     <span style="color:#ffb7b2;">📧 メール: leojim@mqtech1.com</span>
+                    
+                    <span style="color:#ffaa55;">✦✦✦</span>
+                    
+                    <!-- 阿拉伯语 (从右向左) -->
+                    <span style="color:#c3e6b2; direction: rtl; unicode-bidi: embed;">🔥 ألف محادثة عبر الإنترنت لا تساوي لقاءً واحدًا في الورشة. أنا المؤسس السيد هوانغ. هذا الأسبوع لا أبيع، بل أبحث عن شركاء. عند قدومك، تجاهل الشعارات — تحقق من بيانات النظام، المس العينات بنفسك، واحسب حصص الأرباح في الموقع. خط مباشر مع الرئيس (ليس مساعدًا). اذكر "حضوري" لأولوية الموافقة. إن تجرأت على المجيء، فلدينا ما نتحدث عنه.</span>
+                    <span style="color:#c3e6b2; direction: rtl; unicode-bidi: embed;">📞 هاتف: +86 13549606533</span>
+                    <span style="color:#c3e6b2; direction: rtl; unicode-bidi: embed;">WhatsApp: +85247435725</span>
+                    <span style="color:#c3e6b2; direction: rtl; unicode-bidi: embed;">📧 بريد إلكتروني: leojim@mqtech1.com</span>
                 </span>
             </div>
         </div>
     </div>
 </div>
 
+<!-- 滚动动画 -->
 <style>
     @keyframes scrollBar {
         0% { transform: translateX(0); }
         100% { transform: translateX(-50%); }
+    }
+    /* 针对长内容优化：让所有文本在一条弹幕中平滑滚动 */
+    .scroll-container {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    /* 确保所有文字在同一行，并且不换行 */
+    div[style*="white-space: nowrap;"] {
+        white-space: nowrap;
+    }
+    /* 移动端友好：保持相同速度，避免字体过小 */
+    @media (max-width: 768px) {
+        div[style*="max-width: 1400px;"] {
+            padding: 8px 0;
+        }
+        span[style*="display: inline-flex;"] {
+            gap: 14px;
+            padding: 0 14px;
+        }
+        span[style*="color:#ffcd94;"], 
+        span[style*="color:#b9e6ff;"], 
+        span[style*="color:#ffb7b2;"],
+        span[style*="color:#c3e6b2;"] {
+            font-size: 14px;
+            white-space: nowrap;
+        }
     }
 </style>
 

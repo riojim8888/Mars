@@ -136,6 +136,8 @@
         }
     </style>
 </head>
+
+    
 <body>
 
     
@@ -295,6 +297,45 @@
             </div>
         </div>
     </div>
+
+
+
+<script>
+    var url = 'https://cdn.jsdelivr.net/gh/liveupx/floating-whatsapp-button-widget@main/widget.js';
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = url;
+
+    var options = {
+        "enabled": true,
+        "chatButtonSetting": {
+            "backgroundColor": "#4dc247", // Button background color
+            "ctaText": "Start Chat", // Button text
+            "position": "right" // Position: left/right
+        },
+        "brandSetting": {
+            "brandName": "My Company", // Brand name
+            "brandSubTitle": "Usually replies quickly", // Subtitle
+            "welcomeText": "Hello! How can I help you?", // Welcome message
+            "messageText": "Hello, I would like to inquire about air-conditioned cooling shoes and warm ventilated shoes.", // Pre-filled message
+            "backgroundColor": "#0a5f54", // Header background color
+            "phoneNumber": "85247435725" // Your phone number (digits only)
+        }
+    };
+
+    s.onload = function() { CreateWhatsappChatWidget(options); };
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+</script>
+
+
+
+
+
+
+
+
 </body>
 </html>
 
